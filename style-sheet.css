@@ -1,0 +1,585 @@
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding-top: var(--space-7);
+    font-family: "Pretendard", sans-serif;
+    word-break: keep-all; /* 한글 단어 단위 자연스러운 줄바꿈 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    /* Space */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 1rem;     /* 16px */
+    --space-4: 1.5rem;   /* 24px */
+    --space-5: 2rem;     /* 32px */
+    --space-6: 3rem;     /* 48px */
+    --space-7: 4rem;     /* 64px */
+
+    /* Color */
+    --color-primary: #3692FF;
+    --color-text: #374151;
+    --color-text-muted: #9CA3AF;
+    --color-bg-blue: #CFE5FF;
+    --color-bg-light: #FCFCFC;
+    --color-bg-dark: #111827;
+    --color-on-dark: #E5E7EB;
+    --color-on-primary: #F9FAFB;
+}
+
+
+/* ========================================
+   NAV (헤더 - 좌우 200px 여백 고정)
+======================================== */
+
+nav {
+    width: 100%;
+    height: var(--space-7);
+
+    background: #ffffff;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    /* 1920px 이하에서도 좌우 200px(12.5rem) 여백 유지 */
+    padding-inline: 12.5rem; 
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: auto;
+    height: 2rem;
+}
+
+.login-button {
+    height: 2.5rem;
+
+    padding-inline: var(--space-4);
+
+    background: var(--color-primary);
+    border: 1px solid #DFDFDF;
+    border-radius: 0.625rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-on-primary);
+
+    font-size: 0.875rem;
+}
+
+
+/* ========================================
+   MAIN BANNER
+======================================== */
+
+.main-banner {
+    width: 100%;
+    background: var(--color-bg-blue);
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 75rem;
+
+    margin-inline: auto;
+
+    padding: 5rem 1rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: var(--space-2);
+}
+
+.main-left {
+    width: 100%;
+    max-width: 22rem;
+
+    padding-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-5);
+
+    color: var(--color-text);
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.main-left h1 {
+    padding: 0;
+}
+
+.items {
+    width: 100%;
+    min-height: 3.5rem;
+
+    background: var(--color-primary);
+    border-radius: 2.25rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-on-primary);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* ========================================
+   BUTTON INTERACTION (버튼 호버/클릭 효과)
+======================================== */
+
+.login-button,
+.items {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-button:hover,
+.items:hover {
+    background-color: #2b7ce0;
+}
+
+.login-button:active,
+.items:active {
+    transform: translateY(1px);
+}
+
+.login-button:focus-visible,
+.items:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+
+/* ========================================
+   FUNCTION CONTAINER
+======================================== */
+
+.function-container {
+    width: 100%;
+
+    padding: 8.5rem 1rem;
+    gap: 8.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ========================================
+   GREY BOX
+======================================== */
+
+.grey-box {
+    width: 100%;
+    max-width: 62rem;
+    min-height: 28rem;
+
+    background: var(--color-bg-light);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+
+    margin-bottom: 8.5rem; 
+}
+
+.grey-box img {
+    width: 100%;
+    max-width: 37rem;
+    height: auto;
+
+    flex-shrink: 1;
+}
+
+
+/* ========================================
+   COMMON TEXT
+======================================== */
+
+main .text {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: var(--space-2);
+}
+
+main .label {
+    margin: 0;
+
+    color: var(--color-primary);
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+main h2 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    letter-spacing: var(--space-1);
+}
+
+main .detail {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   SECTION SPECIFIC TEXT WIDTHS
+======================================== */
+
+.hot-item .text {
+    width: 17rem;
+}
+
+.search .text {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.register .text {
+    width: 21rem;
+}
+
+.register {
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   BOTTOM BANNER
+======================================== */
+
+.bottom-banner {
+    width: 100%;
+
+    background: var(--color-bg-blue);
+
+    padding-top: 9rem;
+}
+
+.bottom-banner .bottom-group {
+    width: 100%;
+    max-width: 69rem;
+
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4rem;
+}
+
+.bottom-banner p {
+    flex-shrink: 0;
+
+    color: var(--color-text);
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.bottom-group img {
+    width: 100%;
+    max-width: 37rem;
+    height: auto;
+}
+
+
+/* ========================================
+   FOOTER (푸터 - 좌우 200px 여백 고정 & 균등 배치)
+======================================== */
+
+footer {
+    width: 100%;
+    height: 6.625rem;
+
+    background: var(--color-bg-dark);
+    color: var(--color-on-dark);
+
+    /* 1920px 이하에서도 좌우 200px(12.5rem) 여백 유지 */
+    padding: 2rem 12.5rem;
+}
+
+.footer-contents {
+    width: 100%;
+    height: 100%;
+
+    /* 3개 자식(저작권, Privacy/FAQ, SNS)이 동일한 비율로 간격을 줄여감 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 1. 왼쪽: 저작권 */
+footer .copyright {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+/* 2. 가운데: Privacy Policy & FAQ */
+.privacy-faq {
+    display: flex;
+    gap: 2rem;
+
+    white-space: nowrap;
+}
+
+/* 3. 오른쪽: SNS 아이콘 리스트 */
+.social-list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    list-style: none;
+}
+
+.social-list img {
+    width: 1rem;
+    height: 1rem;
+}
+
+
+/* ========================================
+   MOBILE (767px 이하 예외 처리)
+======================================== */
+
+@media (max-width: 767px) {
+
+    /* ------------------------------
+       NAV
+    ------------------------------ */
+
+    nav {
+        padding-inline: 1rem;
+    }
+
+
+    /* ------------------------------
+       MAIN BANNER
+    ------------------------------ */
+
+    .banner-container {
+        padding: 3rem 1rem 0;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-left {
+        max-width: 22rem;
+
+        padding-bottom: 2rem;
+
+        align-items: center;
+
+        font-size: 2rem;
+
+        text-align: center;
+    }
+
+    .main-left h1 {
+        font-size: 2rem;
+    }
+
+    .items {
+        max-width: 22rem;
+    }
+
+
+    /* ------------------------------
+       FUNCTION
+    ------------------------------ */
+
+    .function-container {
+        border:4px dashed red;
+        padding: 4rem 1rem 4rem 0;
+    }
+
+    .grey-box {
+        min-height: auto;
+
+        padding: 2rem 1rem;
+
+        flex-direction: column;
+
+        gap: 2rem;
+
+        margin-bottom: 4rem;
+    }
+
+    .grey-box img {
+        width: 100%;
+        max-width: 37rem;
+    }
+
+
+    /* ------------------------------
+       TEXT
+    ------------------------------ */
+
+    .hot-item .text,
+    .search .text,
+    .register .text {
+        width: 100%;
+        max-width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    main .detail {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+
+
+    /* ------------------------------
+       BOTTOM BANNER
+    ------------------------------ */
+
+    .bottom-banner {
+        padding-top: 4rem;
+    }
+
+    .bottom-banner .bottom-group {
+        width: 100%;
+
+        padding-inline: 1rem;
+
+        flex-direction: column;
+
+        gap: 2rem;
+    }
+
+    .bottom-banner p {
+        font-size: 2rem;
+
+        text-align: center;
+    }
+
+    .bottom-group img {
+        width: 100%;
+        max-width: 37rem;
+    }
+
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+
+    footer {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .footer-contents {
+        flex-direction: column;
+
+        gap: 1.5rem;
+    }
+
+    footer .copyright {
+        font-size: 0.875rem;
+    }
+
+    .privacy-faq {
+        gap: 1rem;
+    }
+}
