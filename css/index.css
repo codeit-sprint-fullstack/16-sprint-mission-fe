@@ -1,0 +1,110 @@
+@import url('./header.css');
+@import url('./footer.css');
+
+main{
+  margin-top: 4.375rem; /* 70px */
+}
+main .banner-top,
+main .banner-btm{
+  width: 100%;
+  height: 33.75rem; /* 540px */
+  background: var(--bg-color);
+}
+main .banner-btm{
+  margin-top: 8.625rem; /* 138px */
+}
+main .banner-top .inner,
+main .banner-btm .inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 69.375rem; /* 1110px */
+  height: 100%;
+  margin: 0 auto;
+}
+main .banner-top .inner .txt-box p,
+main .banner-btm .inner .txt-box p{
+  color: var(--secondary-color-700);
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  line-height: 1.4;
+}
+main .banner-top .inner .txt-box p{
+  margin-bottom: 2rem; /* 32px */
+}
+main .banner-top .inner .txt-box .btn-item{
+  display: block;
+  margin-bottom: 6.25rem; /* 100px */
+  border-radius: 1.75rem; /* 28px */
+  width: 22.3125rem; /* 357px */
+  height: 3.5rem; /* 56px */
+  background: var(--primary-color-100);
+  color: var(--secondary-color-50);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  text-align: center;
+  line-height: 3.5rem; /* 56px */
+}
+main .banner-top .inner .txt-box .btn-item:hover{
+  background: var(--primary-color-200);
+}
+main .banner-top .inner .txt-box .btn-item:active{
+  background: var(--primary-color-300);
+}
+main .banner-btm .inner .txt-box p{
+  margin-bottom: 10.78125rem; /* 172.5px */
+}
+main .banner-top .inner .img-box,
+main .banner-btm .inner .img-box{
+  overflow: hidden; /* 배포에 반영 안된 부분 */
+}
+main .banner-top .inner .img-box img,
+main .banner-btm .inner .img-box img{
+  float: left;
+}
+main .banner{
+  padding: 8.625rem 0; /* 138px 0 */
+  width: 100%;
+  /* height: 720px; */
+}
+main .banner .inner{
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* 64px */
+  margin: 0 auto;
+  width: 61.75rem; /* 988px */
+  height: 27.75rem; /* 444px */
+  background: #fcfcfc;
+}
+main .banner .inner .txt-box p.sub-title{
+  color: var(--primary-color-100);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  line-height: 1.625rem; /* 26px */
+}
+main .banner .inner .txt-box p.title{
+  margin-top: 0.75rem; /* 12px */
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 2%;
+  color: var(--secondary-color-700);
+}
+main .banner .inner .txt-box p.text{
+  margin-top: 1.5rem; /* 24px */
+  color: var(--secondary-color-700);
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+  line-height: 2rem; /* 32px */
+}
+main .banner .inner .img-box{
+  width: 36.75rem; /* 588px */
+  height: 100%;
+}
+main .banner .inner .img-box img{
+  width: 100%;
+}
+main .banner:nth-child(3) .inner{
+  flex-direction: row-reverse;
+  text-align: right;
+}
