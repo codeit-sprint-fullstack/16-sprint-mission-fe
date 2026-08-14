@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>로그인 페이지</title>
+</head>
+<body>
+    <form action="">
+        <a class="logo-img" href="./index.html">
+            <img src="assets/logo-pandamarket.png" alt="판다마켓 로고">
+        </a>
+        <label for="username">이메일</label>
+        <input type="text" id="username" name="username" placeholder="이메일을 입력해주세요" required>
+
+        <label for="password">비밀번호</label>
+        <div class="input-pw">
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
+            <button class="btn-show-pw" type="button"><img src="assets/show-pw.png" alt="show password button"></button>
+        </div>
+        <button class="btn-login" type="submit">로그인</button>
+
+        <div class="social-login-box">
+            <p>간편 로그인하기</p>
+            <div class="social-login-buttons">
+                <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer"><img src="assets/logo-google.png" alt="구글 로고"></a>
+                <a href="https://www.kakao.com/" target="_blank" rel="noopener noreferrer"><img src="assets/logo-kkt.png" alt="카카오 로고"></a>
+            </div>
+        </div>
+
+        <p class="register-box">
+            판다마켓 처음이신가요? <a href="./signup.html">회원가입</a>
+        </p>
+    </form>
+</body>
+</html>
