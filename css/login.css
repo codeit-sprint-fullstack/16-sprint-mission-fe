@@ -14,7 +14,7 @@
 .social-login-box {
     border-radius: 8px;
     padding: 16px 23px;
-    background: #E6F2FF;
+    background: var(--background-lightblue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +38,7 @@ p {
 }
 a {
     text-decoration: underline;
-    color: #3692FF;
+    color: var(--primary-100);
 }
 .input-pw {
     position: relative;
@@ -54,5 +54,5 @@ a {
     z-index: 10;
 }
 .input-pw .btn-show-pw:hover {
-    background: white;
+    background: var(--background-white);
 }

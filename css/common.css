@@ -1,5 +1,30 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+:root {
+    /* Background color */
+    --background-white: #FFFFFF;
+    --background-lightgray: #FCFCFC;
+    --background-lightblue: #E6F2FF;
+    --background-skyblue: #CFE5FF;
 
+    /* Primary color */
+    --primary-100: #3692FF;
+    --primary-200: #1967D6;
+    --primary-300: #1251AA;
+
+    /* Secondary color */
+    --secondary-gray50: #F9FAFB;
+    --secondary-gray100: #F3F4F6;
+    --secondary-gray200: #E5E7EB;
+    --secondary-gray400: #9CA3AF;
+    --secondary-gray500: #6B7280;
+    --secondary-gray600: #4B5563;
+    --secondary-gray700: #374151;
+    --secondary-gray800: #1F2937;
+    --secondary-gray900: #111827;
+
+    /* Error color */
+    --error-red: #F74747;
+}
 body {
     font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
     line-height: 1.4;
@@ -31,7 +56,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background: #fff;
+    background: var(--background-white);
     border-bottom: solid 1px #DFDFDF;
 }
 h1 {
@@ -41,17 +66,17 @@ h1 {
 }
 h2 {
     font-weight: bold;
-    color: #3692FF;
+    color: var(--primary-100);
 }
 a {
     text-decoration: none;
-    color: white;
+    color: #FFF;
 }
 button {
     box-sizing: border-box;
     border: none;
-    background: #3692FF;
-    color: #fff;
+    background: var(--primary-100);
+    color: #FFF;
 }
 button:hover {
     cursor: pointer;
@@ -64,15 +89,15 @@ footer {
     height: 100px;
     display: flex;
     align-items: flex-start;
-    background: #111827;
+    background: var(--secondary-gray900);
 }
 .footer-box {
     width: 100%;
     top: 20px;
-    color: #fff;
+    color: var(--background-white);
 }
 .codeit-text {
-    color: #9CA3AF;
+    color: var(--secondary-gray400);
 }
 .footer-links a {
     display: inline-block;
@@ -93,14 +118,14 @@ label {
 input {
     box-sizing: border-box;
     width: 100%;
-    background: #F3F4F6;
+    background: var(--secondary-gray100);
     padding: 16px 64px 16px 24px;
     border: none;
     border-radius: 12px;
     font-size: 1rem;
 }
 input:focus {
-    outline: solid 1px #3692FF;
+    outline: solid 1px var(--primary-100);
 }
 form {
     width: 640px;
@@ -111,6 +136,6 @@ form {
     gap: 16px;
 }
 form:invalid .btn-login {
-    background: #9CA3AF;
+    background: var(--secondary-gray400);
     pointer-events: none; /* Prevents clicking */
 }

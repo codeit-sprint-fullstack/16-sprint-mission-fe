@@ -4,7 +4,7 @@
 }
 .outer-box {
     align-items: end;
-    background: #CFE5FF;
+    background: var(--background-skyblue);
     height: 450px;
 }
 .outer-box .card {
@@ -36,7 +36,7 @@
 }
 .inner-box .card {
     max-width: 800px;
-    background: #FCFCFC;
+    background: var(--background-lightgray);
 }
 .inner-box .card-text {
     padding: 0 40px;
