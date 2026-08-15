@@ -70,6 +70,9 @@ main form > div a{
   background-position: center center;
   text-indent: -999rem;
 }
+main form > div.on a{
+  background-image: url(../img/btn_visibility_on.svg);
+}
 main form .submit-btn{
   border: none;
   border-radius: 40px;
