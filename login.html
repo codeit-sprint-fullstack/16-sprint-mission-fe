@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판다마켓 | 로그인</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"> 
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="logo"><a href="/">판다마켓</a></h1>
+    <main>
+      <form action="">
+        <div class="email-box">
+          <label for="email">이메일</label>
+          <input id="email" type="text" placeholder="이메일을 입력해주세요" required>
+        </div>
+        <div class="password-box">
+          <label for="password">비밀번호</label>
+          <input id="password" type="password" placeholder="비밀번호를 입력해주세요" required>
+          <a href="#">비밀번호 보기</a>
+        </div>
+        <button type="submit" disabled class="submit-btn">로그인</button>
+      </form>
+      <div class="social-login">
+        <p>간편 로그인하기</p>
+        <div class="social-login-btn">
+          <a href="https://www.google.com/" target="_blank" class="ic-google">구글</a>
+          <a href="https://www.kakaocorp.com/page/" target="_blank" class="ic-kakao">카카오톡</a>
+        </div>
+      </div>
+      <p class="nav-txt">판다마켓이 처음이신가요? <a href="/signup">회원가입</a></p>
+    </main>
+  </div>
+</body>
+</html>

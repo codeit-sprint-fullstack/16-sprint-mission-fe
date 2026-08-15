@@ -1,0 +1,8 @@
+@import url(./login.css);
+
+.wrap{
+  margin: 70px auto;
+}
+main form > div label{
+  line-height: 21px;
+}

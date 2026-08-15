@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판다마켓 | 회원가입</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"> 
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="logo"><a href="/">판다마켓</a></h1>
+    <main>
+      <form action="">
+        <div class="email-box">
+          <label for="email">이메일</label>
+          <input id="email" type="text" placeholder="이메일을 입력해주세요" required>
+        </div>
+        <div class="nickname-box">
+          <label for="nickname">닉네임</label>
+          <input id="nickname" type="text" placeholder="닉네임을 입력해주세요" required>
+        </div>
+        <div class="password-box">
+          <label for="password">비밀번호</label>
+          <input id="password" type="password" placeholder="비밀번호를 입력해주세요" required>
+          <a href="#">비밀번호 보기</a>
+        </div>
+        <div class="password-check-box">
+          <label for="password-check">비밀번호 확인</label>
+          <input id="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" required>
+          <a href="#">비밀번호 보기</a>
+        </div>
+        <button type="submit" disabled class="submit-btn">회원가입</button>
+      </form>
+      <div class="social-login">
+        <p>간편 로그인하기</p>
+        <div class="social-login-btn">
+          <a href="https://www.google.com/" target="_blank" class="ic-google">구글</a>
+          <a href="https://www.kakaocorp.com/page/" target="_blank" class="ic-kakao">카카오톡</a>
+        </div>
+      </div>
+      <p class="nav-txt">이미 회원이신가요? <a href="/login">로그인</a></p>
+    </main>
+  </div>
+</body>
+</html>
