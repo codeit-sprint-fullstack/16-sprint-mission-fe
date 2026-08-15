@@ -46,12 +46,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* MY RESET */
-a{
-  color: inherit;
-  text-decoration: none;
-}
-*{
-  box-sizing: border-box;
-}
