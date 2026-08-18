@@ -1,0 +1,141 @@
+html {
+    font-size : 10px;
+    display : flex;
+    flex-direction : column;
+}
+
+body{
+    display : flex;
+    flex-direction: column;
+}
+
+body .login-wrapper{
+    width : 100%;
+    height : 100vh;;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    border : 1px solid transparent;
+}
+
+.login-wrapper .login-banner{
+    width : 64rem;
+    height : 62rem;
+    border : 1px solid transparent;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-wrapper .login-banner .panda-logo{
+    width : 40rem;
+    height : 13.2rem;
+    border : 1px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.login-wrapper .login-banner .panda-logo .panda-img{
+    width : 100%
+}
+
+.login-wrapper .login-banner-bottom-container{
+    width : 100%;
+    height : 45.4rem;
+    border : 1px solid transparent;
+}
+
+.login-wrapper .login-banner-bottom-container p{
+    color : #1f2937;
+    font-weight: 800;
+    font-style : bold;
+    font-size : 1.4rem;
+    margin-top : 2rem;
+}
+
+.login-wrapper .login-banner-bottom-container input{
+    width : 64rem;
+    height : 4.7rem;
+    background-color: #F3F4F6;
+    border-radius: 1.2rem;
+    border : 1px solid transparent;
+    font-size : var( --font-login-signup-size);
+    padding : 0 1.3rem;
+    outline : none;
+}
+
+.login-wrapper .login-banner-bottom-container input:focus{
+    border : 1px solid var(--base-blue);
+}
+
+.login-wrapper .login-banner-bottom-container .login-confirm{
+    width : 100%;
+    height : 4.7rem;
+    outline : none;
+    cursor : pointer;
+    background-color : var(--base-blue);
+    border: none;
+    font-size : 1.5rem;
+    color : #F3F4F6;
+    border-radius: 10000rem;
+    font-weight : 700;
+    margin : 3rem 0;
+}
+
+.login-wrapper .login-banner-bottom-container .login-banner-social-login{
+    background-color: #E6F2FF;
+    width : 100%;
+    height : 6rem;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    text-align: center;
+    padding : 2rem;
+}
+
+.login-wrapper .login-banner-bottom-container .login-banner-social-login .social-login-text{
+    font-size : 1.3rem;
+    font-weight : 500;
+    margin : 0;
+    padding : 0;
+}
+
+.login-wrapper .login-banner-bottom-container .social-login-button-container{
+    display : flex;
+    flex-direction: row;
+}
+
+.login-wrapper .login-banner-bottom-container .login-banner-social-login .social-button{
+    width : 3.3rem;
+    height : 3.3rem;
+    border-radius: 3000rem;
+    background-color: transparent;
+    margin : 0.8rem;
+    overflow : hidden;
+}
+
+.login-wrapper .login-banner-bottom-container .login-icon{
+    width : 100%;
+}
+
+.login-wrapper .login-banner-bottom-container .new-user-info{
+    width : 100%;
+    height : 3rem;
+    border : 1px solid transparent;
+    font-size : 1.4rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align : center;
+    display : flex;
+    flex-direction: row;
+}
+
+.login-wrapper .login-banner-bottom-container .new-user-info .signup{
+    color : #3692FF;
+    font-weight: 500;
+    margin-left : 1rem;
+    text-decoration: underline;
+}
