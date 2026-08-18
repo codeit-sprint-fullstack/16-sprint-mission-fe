@@ -1,0 +1,24 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* ROKAF Sans 굵게 */
+@font-face {
+  font-family: "ROKAF Sans";
+  src: url("../fonts/ROKAFSansBold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* 우리 사이트 전체를 관통하는 공통 폰트관련속성 */
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
