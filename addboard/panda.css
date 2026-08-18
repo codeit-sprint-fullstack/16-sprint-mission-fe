@@ -1,0 +1,159 @@
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.main1 img,
+.main5 img{
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 내부 이미지를 정중앙으로 정렬 */
+}
+
+
+.main2,
+.main3,
+.main4 {
+  display: flex;
+  justify-content: center;
+}
+
+.main2 {
+  margin-top: 5%;
+}
+
+.main3 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.main4 {
+  margin-bottom: 5%;
+}
+
+a {
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+  cursor: pointer;       /* [추가] 마우스를 올렸을 때 손가락 모양으로 변경 */
+}
+
+
+.site-footer {
+  background: black;
+  width: 100%;
+}
+
+.site-footer a {
+  color: #c4c4c4;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 200px 40px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 20px; /* 아이콘들 사이의 간격 */
+}
+
+.login-main {
+  width: 100%;
+  max-width: 640px;
+}
+
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-main label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.login-form div input{
+  width: 100%;
+  max-width: 640px;
+  height: 56px;
+  padding: 0 24px;
+  background-color: #F3F4F6;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-form div input:focus {
+  border-color: #3692FF;
+}
+
+.login-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.login-form button {
+  width: 100%;
+  max-width: 640px;
+  height: 56px;
+  background-color: #3692FF;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  color: #F3F4F6;
+}
+
+.easy-login label {
+  width: 100%;
+  max-width: 640px;
+  height: 74px;
+}
+
+.login-footer {
+  font-weight: normal;
+  margin-top: 30px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  padding: 16px 24px;
+  background-color: #E6F2FF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  font-weight: 540;
+}
+
+.social-login .icons {
+  display: flex;
+  gap: 18px;
+}
+
