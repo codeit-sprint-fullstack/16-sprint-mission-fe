@@ -1,3 +1,17 @@
+:root {
+    --primary-blue: #3692FF;
+
+    --cool-gray-100: #F3F4F6;
+    --cool-gray-400: #9CA3AF;
+
+    --secondary-400: #9CA3AF;
+
+    --light-blue: #E6F2FF;
+
+    --text-gray: #374151;
+    --white: #FFFFFF;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -36,7 +50,7 @@ a {
 
 .login-button {
     display: inline-block;
-    background-color: #3692ff;
+    background-color: var(--primary-blue);
     color: white;
 
     padding: 0.75rem 1.5rem;
@@ -78,12 +92,12 @@ a {
 
 h1,
 h2 {
-    color: #374151;
+    color: var(--text-gray);
 }
 
 .panda-text > a {
     display: block;
-    background-color: #3692ff;
+    background-color: var(--primary-blue);
     color: white;
     width: 357px;
     height: 56px;
@@ -230,7 +244,7 @@ h2 {
 }
 
 .label {
-    color: #3692ff;
+    color: var(--primary-blue);
     font-weight: 700;
     font-size: 18px;
     line-height: 26px;
@@ -312,7 +326,7 @@ h2 {
 .password input:focus,
 .nickname input:focus,
 .password-confirm input:focus {
-    border: 1px solid #3692FF;
+    border: 1px solid var(--primary-blue);
     outline: none;
 }
 
@@ -348,7 +362,7 @@ input::placeholder {
     padding: 1rem 1.5rem;  
     gap: 10px;
 
-    background-color: #3692ff;
+    background-color: var(--primary-blue);
     color: white;
     border-radius: 8px;
 }
@@ -389,7 +403,7 @@ input::placeholder {
     height: 74px;
     padding: 16px 23px;
   
-    background-color: #E6F2FF; 
+    background-color: var(--light-blue);
     border-radius: 8px;
 }
 
@@ -416,4 +430,17 @@ input::placeholder {
     align-items: center;
     gap: 4px;
     margin-top: 1.5rem;
+}
+
+.password-input-box {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
 }
