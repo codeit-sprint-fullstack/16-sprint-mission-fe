@@ -1,0 +1,187 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 1920px;
+    padding: 231px 640px 284px 640px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fcfcfc;
+    gap: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    width: 396px;
+    height: 132px;
+}
+
+.logo img {
+    display: block;
+    width: 396px;
+    height: 132px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.email-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.email {
+    display: block;
+    color: #1F2937;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+input[type="email"] {
+    display: flex;
+    width: 640px;
+    height: 56px;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #F3F4F6;
+    color: #9CA3AF;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.password-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.password {
+    display: block;
+    color: #1F2937;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+input[type="password"] {
+    display: flex;
+    width: 640px;
+    height: 56px;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #F3F4F6;
+    color: #9CA3AF;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+input:focus {
+  outline: 2px solid #3692FF;
+}
+
+.login-button {
+    display: flex;
+    width: 640px;
+    height: 56px;
+    padding: 16px 124px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    background: var(--Secondary-400, #9CA3AF);
+    color: var(--Cool-Gray-100, #F3F4F6);
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.social-login {
+    display: flex;
+    width: 640px;
+    height: 74px;
+    padding: 16px 23px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    background: #E6F2FF;
+}
+
+.social-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.google {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
+.kakao {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+.google img {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
+.kakao img {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
+.join-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
