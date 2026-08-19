@@ -22,3 +22,24 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* =============================================== */
+/* Color Palette */
+
+:root {
+  --primary-100-3692ff: #3692ff;
+  --primary-200-1967d6: #1967d6;
+  --primary-300-1251aa: #1251aa;
+
+  --error-red-f74747: #f74747;
+
+  --gray-900-111827: #111827;
+  --gray-800-1f2937: #1f2937;
+  --gray-700-374151: #374151;
+  --gray-600-4b5563: #4b5563;
+  --gray-500-6b7280: #6b7280;
+  --gray-400-9ca3af: #9ca3af;
+  --gray-200-e5e7eb: #e5e7eb;
+  --gray-100-f3f4f6: #f3f4f6;
+  --gray-50-f9fafb: #f9fafb;
+}

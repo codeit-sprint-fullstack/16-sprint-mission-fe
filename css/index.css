@@ -4,14 +4,26 @@ header {
   width: 100%; /* 화면 가로 전체 사용 */
   height: 4.375rem; /* 70px; */
   position: fixed;
+  /*
+    브라우저 화면의 위쪽 0px,
+    왼쪽 0px 위치에 붙임
+  */
   top: 0;
   left: 0;
 }
 
 header .inner {
+  /* 화면 좌우에 각각 200px을 남김 */
   width: calc(100% - 25rem); /*400px*/
+
+  /* 1920px 화면일 때: 1920 - 400 = 1520px 그 이상으로는 커지지 않음 */
+  /* 화면이 커져도 내용이 너무 옆으로 퍼지지 않게 제한, 너무 넓어지는 걸 막음 */
   max-width: 95rem; /* 1520px; */
+
+  /* 남는 공간은 좌우로 나눠서 가운데 정렬 */
   margin: 0 auto;
+
+  /* 세로: 부모의 높이를 100% 그대로 사용, 부모 높이를 그대로 따라감 */
   height: 100%;
 
   background: ffffff;
@@ -21,21 +33,19 @@ header .inner {
 }
 
 .logoname {
-  width: 10rem; /* 160px; */
-  background: #ffffff;
+  width: 10rem; /*160px; */
+  /* background: #111827; */
 }
 .logoname a {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.25rem; /* 4px; */
+  /* padding-top: 6px; */
+  /* align-items: center; */
+  /* gap: 0.25rem;  4px; */
+  overflow: hidden;
+  /* background-color: red; */
 }
 .pandaname {
-  font-size: 1.875rem; /* 30px; */
-  color: #3692ff;
-  font-family: "ROKAF Sans";
-  font-weight: 800;
-  letter-spacing: -0.08125rem; /* -1.3px; */
+  width: 100%;
 }
 .login {
   background-color: #3692ff;
@@ -45,23 +55,40 @@ header .inner {
   color: #ffffff;
   cursor: pointer;
 }
-/* banner-수정후 */
+
+/* banner */
 
 .banner {
   width: 100%; /* 화면 가로 전체를 사용 */
+  /* 헤더에 position: fixed줘서 패딩을 줘야댐 */
+  /* banner가 내려가면 그 뒤에 있는 애들은 원래 banner 다음에 배치되기 때문에 자동으로 같이 내려감 */
   padding-top: 4.375rem; /* 70px; */
   background: #cfe5ff;
+
+  /* 수정:
+     아래 .bottom-banner-inner에 margin: 0 auto;가 있어서
+     여기의 display:flex + justify-content:center는 역할이 겹침.
+     둘 중 하나만 써도 됨. 보통 여기서는 지워도 됨.
+     여기에 display하니깐 고정되지 않고 막 움직임
+     이유는?? 
+  */
+  /* display: flex; */
+  /* justify-content: center; */
 }
 .banner-inner {
-  width: 69.375rem; /* 1110px; */
+  width: 69.375rem; /* 1110px; */ /* 내용이 너무 넓게 퍼지지 않도록 가로 크기를 1110px 고정 */
   height: 33.75rem; /* 540px; 배너의 세로 높이 */
-  margin: 0 auto;
+  margin: 0 auto; /*남는 공간을 좌우로 똑같이 나눠서 가운데 정렬*/
   background: #cfe5ff;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .banner-title1 {
+  /* text-align:center */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   margin-top: 7.5rem; /* 120px; 요소 자체를 아래로 밀기 ↓ */
   background-color: #cfe5ff;
 }

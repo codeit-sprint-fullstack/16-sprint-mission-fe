@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓</title>
-    <link rel="stylesheet" href="/reset.css" />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PLWHEK9FWB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PLWHEK9FWB");
+    </script>
   </head>
   <body>
     <div>
@@ -18,12 +32,17 @@
         <div class="inner">
           <div class="logoname">
             <a href="/">
-              <img class="logo" src="/img/판다 얼굴.png" alt="판다로고" />
-              <h2 class="pandaname">판다마켓</h2>
+              <img
+                class="pandaname"
+                src="/img/Property 1=lg@3x.png"
+                alt="판다마켓로고"
+              />
             </a>
           </div>
           <div>
-            <a href="/login.html"> <button class="login">로그인</button></a>
+            <a href="/login/login.html">
+              <button class="login">로그인</button></a
+            >
           </div>
         </div>
       </header>
@@ -35,7 +54,7 @@
               일상의 모든 물건을<br />
               거래해 보세요.
             </h2>
-            <a href="/item.html"
+            <a href="/items/item.html"
               ><button class="banner-button">구경하러 가기</button></a
             >
           </div>
@@ -122,10 +141,10 @@
 
         <ul class="footer-medium">
           <li>
-            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/privacy/privacy.html">Privacy Policy</a>
           </li>
           <li>
-            <a href="/faq.html">FAQ</a>
+            <a href="/faq/faq.html">FAQ</a>
           </li>
         </ul>
         <ul class="footer-end">
