@@ -87,14 +87,18 @@ input{
   font-family: inherit;
   font-size: inherit;
 }
-input[type="password"]{
-  font-family: 'Verdana', 'Pretendard', 'Gothic';
-  letter-spacing: 0.1rem;
-}
 input::placeholder{
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  letter-spacing: 0;
+}
+input[type="password"]{
+  font-family: 'Verdana', 'Pretendard', 'Gothic';
+  letter-spacing: 0.1rem;
+}
+input[type="password"]:placeholder-shown{
+  font-family: 'Pretendard', 'Gothic';
   letter-spacing: 0;
 }
 button{
