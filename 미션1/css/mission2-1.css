@@ -1,0 +1,122 @@
+body {
+    font-family: "Pretendard",sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.로그인페이지 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 640px;
+    height: 618px;
+    margin : 0 auto;
+    margin-top: 200px;
+    gap: 24px;
+}
+
+
+.판다마켓 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.판다마켓로고 {
+    width: 396px;
+    height: 132px;
+}
+
+.이메일,
+.비밀번호 {
+    width: 640px;
+    height: 98px; 
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.이메일-1,
+.비밀번호-1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.이메일-2,
+.비밀번호-2 {
+    width: 640px;
+    height: 56px; 
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f3f4f6;
+    border-color: #f3f4f6;
+    border: none;
+    padding: 0 24px;
+}
+
+
+
+.로그인버튼 {
+    width: 640px;
+    height: 56px;
+    border-radius: 40px;
+    background-color: #9ca3af;
+    color: #f3f4f6;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.로고이미지 {
+    width: 100px;
+    height: 42px;
+    gap: 16px;
+    display: flex;
+}
+
+.간편로그인 {
+    width: 640px;
+    height: 74px;
+    border-radius: 8px;
+    background-color: #e6f2ff;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 24px;
+}
+
+
+.구글로고,
+.카카오톡로고 {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.회원가입안내 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.회원가입버튼 {
+    color: #3182f6;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.회원가입버튼 visited {
+    color: #3182f6;
+}

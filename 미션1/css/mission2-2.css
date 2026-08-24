@@ -1,0 +1,140 @@
+body {
+  font-family: "Pretendard", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input: focus {
+    border: 1px solid #3692ff;
+    outline: none;
+}
+
+.회원가입페이지 {
+  font-family: "Pretendard", sans-serif;
+  width: 640px;
+  min-height: 842px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.판다마켓로고 {
+  width: 396px;
+  height: 132px;
+  display: flex;
+  justify-content: center;
+}
+
+.이메일,
+.닉네임,
+.비밀번호,
+.비밀번호확인 {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.닉네임,
+.비밀번호,
+.비밀번호확인 {
+    margin-top: 24px;
+}
+
+.이메일-1, 
+.닉네임-1,
+.비밀번호-1,
+.비밀번호확인-1 {
+    font-size: 18px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.이메일-2,
+.닉네임-2,
+.비밀번호-2,
+.비밀번호확인-2 {
+    width: 640px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    font-size: 16px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 12px;
+
+}
+
+.회원가입 {
+    width: 640px;
+    height: 58px;
+    margin-top: 24px;
+    border-radius: 40px;
+    border: none;
+    background-color: #9ca3af;
+    color: #ffffff;
+    font-size: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.간편로그인 {
+    width: 640px;
+    height: 74px;
+    border-radius: 8px;
+    background-color: #e6f2ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.구글링크,
+.카카오링크 {
+    text-decoration: none;
+}
+
+.구글로고,
+.카카오톡로고 {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;  
+}
+
+.회원 {
+  width: 640px;
+  color: #1f2937;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.로그인버튼 {
+    color: #3182f6;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.로그인버튼 visited {
+    color: #3182f6;
+}
