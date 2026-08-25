@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>회원가입 | 판다마켓</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/signup.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWHR8JX10R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BWHR8JX10R');
+    </script>
+</head>
+
+<body class="signup-page">
+
+    <main class="signup-container">
+
+        <!-- 판다마켓 로고 -->
+        <a class="logo" href="/">
+            <img src="../images/logo.png" alt="판다마켓">
+        </a>
+
+        <!-- 회원가입 입력 영역 -->
+        <form class="signup-form">
+
+            <!-- 이메일 -->
+            <div class="email-field">
+                <label for="email">이메일</label>
+
+                <input id="email" type="email" placeholder="이메일을 입력해주세요">
+            </div>
+
+            <!-- 닉네임 -->
+            <div class="nickname-field">
+                <label for="nickname">닉네임</label>
+
+                <input id="nickname" type="text" placeholder="닉네임을 입력해주세요">
+            </div>
+
+            <!-- 비밀번호 -->
+            <div class="password-field">
+                <label for="password">비밀번호</label>
+
+                <div class="password-input-box">
+
+                    <input id="password" type="password" placeholder="비밀번호를 입력해주세요">
+
+                    <button type="button" class="password-toggle">
+                        <img src="../images/btn_visibility_off_24px.svg" alt="비밀번호 숨기기">
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- 비밀번호 확인 -->
+            <div class="password-confirm-field">
+                <label for="password-confirm">비밀번호 확인</label>
+
+                <div class="password-input-box">
+
+                    <input id="password-confirm" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+
+                    <button type="button" class="password-toggle">
+                        <img src="../images/btn_visibility_off_24px.svg" alt="비밀번호 확인 숨기기">
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- 회원가입 버튼 -->
+            <button type="submit" class="signup-button">
+                회원가입
+            </button>
+
+        </form>
+
+        <!-- 간편 로그인 -->
+        <div class="social-login">
+
+            <span class="social-login-text">
+                간편 로그인하기
+            </span>
+
+            <div class="social-icons">
+
+                <a class="social-icon" href="https://www.google.com/">
+                    <img src="../images/google.png" alt="Google 로그인">
+                </a>
+
+                <a class="social-icon" href="https://www.kakaocorp.com/page/">
+                    <img src="../images/kakao.png" alt="Kakao 로그인">
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 로그인 안내 -->
+        <div class="login-guide">
+
+            <span>
+                이미 회원이신가요?
+            </span>
+
+            <a href="/login">
+                로그인
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>로그인 | 판다마켓</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWHR8JX10R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BWHR8JX10R');
+    </script>
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <!-- 판다마켓 로고 -->
+        <a class="logo" href="/">
+            <img src="../images/logo.png" alt="판다마켓">
+        </a>
+
+
+        <!-- 로그인 입력 영역 -->
+        <form class="login-form">
+
+            <!-- 이메일 -->
+            <div class="email-field">
+
+                <label for="email">
+                    이메일
+                </label>
+
+                <input id="email" type="email" placeholder="이메일을 입력해주세요">
+
+            </div>
+
+
+            <!-- 비밀번호 -->
+            <div class="password-field">
+
+                <label for="password">
+                    비밀번호
+                </label>
+
+                <div class="password-input-box">
+
+                    <input id="password" type="password" placeholder="비밀번호를 입력해주세요">
+
+                    <button type="button" class="password-toggle">
+                        <img src="../images/btn_visibility_off_24px.svg" alt="비밀번호 숨기기">
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 로그인 버튼 -->
+            <button type="submit" class="login-button">
+                로그인
+            </button>
+
+        </form>
+
+
+        <!-- 간편 로그인 -->
+        <div class="social-login">
+
+            <span class="social-login-text">
+                간편 로그인하기
+            </span>
+
+            <div class="social-icons">
+
+                <a class="social-icon" href="https://www.google.com/">
+                    <img src="../images/google.png" alt="Google 로그인">
+                </a>
+
+                <a class="social-icon" href="https://www.kakaocorp.com/page/">
+                    <img src="../images/kakao.png" alt="Kakao 로그인">
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 회원가입 안내 -->
+        <div class="signup-guide">
+
+            <span>
+                판다마켓이 처음이신가요?
+            </span>
+
+            <a href="/signup">
+                회원가입
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

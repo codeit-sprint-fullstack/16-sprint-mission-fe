@@ -1,0 +1,400 @@
+/* Header / Footer */
+
+header,
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+header {
+    height: 4.375rem;
+    padding: 0.5625rem 12.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    background: #fff;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+footer {
+    height: 10rem;
+    padding: 2rem 12.5rem;
+
+    align-items: flex-start;
+
+    background: var(--secondary-900);
+}
+
+
+/* 공통 */
+
+.rayer {
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+
+/* Header */
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.logo {
+    display: block;
+    width: 9.5625rem;
+    height: 3.1875rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.login {
+    cursor: pointer;
+
+    display: flex;
+    width: 8rem;
+    height: 3rem;
+    padding: 0.75rem 1.4375rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.5rem;
+    background: var(--primary-100);
+
+    color: var(--secondary-100);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.625rem;
+}
+
+
+/* Home Top */
+
+.home-top,
+.home-bottom {
+    width: 100%;
+    height: 33.75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: #CFE5FF;
+}
+
+.home-top-inner {
+    width: 69.375rem;
+    height: 21.25rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+}
+
+.home-top-inner img {
+    display: flex;
+    width: 46.625rem;
+    height: 21.25rem;
+
+    padding-right: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.home-top-content {
+    width: 22.3125rem;
+    height: 12.5rem;
+
+    display: flex;
+    padding-bottom: 3.75rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.home-top-content h1,
+.home-bottom-content h1 {
+    color: var(--secondary-700);
+
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.home-top-button {
+    display: flex;
+    height: 3.5rem;
+    padding: 1rem 7.75rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 2.5rem;
+    background: var(--primary-100);
+
+    color: var(--secondary-50);
+    text-align: center;
+
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem;
+
+    cursor: pointer;
+}
+
+
+/* Item / Search / Register */
+
+.item,
+.search,
+.register {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.item {
+    padding: 8.625rem 21.5rem;
+}
+
+.search {
+    padding: 8.625rem 21.375rem;
+}
+
+.register {
+    padding: 8.625rem 22.5rem;
+}
+
+
+/* 내부 박스 공통 */
+.item-inner,
+.search-inner,
+.register-inner {
+    display: flex;
+    width: 61.75rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    background: #FCFCFC;
+}
+
+
+/* 이미지 공통 크기 */
+.item-inner img,
+.search-inner img,
+.register-inner img {
+    width: 36.75rem;
+    height: 27.75rem;
+}
+
+.item-inner img {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+.register-inner img {
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+
+/* 콘텐츠 공통 */
+.item-content,
+.search-content,
+.register-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.item-content,
+.register-content {
+    align-items: flex-start;
+}
+
+.search-content {
+    align-items: flex-end;
+}
+
+
+/* 제목 영역 공통 */
+.item-title,
+.search-title,
+.register-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.item-title,
+.register-title {
+    align-items: flex-start;
+}
+
+.search-title {
+    align-items: flex-end;
+}
+
+
+/* Hot item / Search / Register */
+.item-content span,
+.search-content span,
+.register-content span {
+    color: var(--primary-100);
+
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+
+/* 큰 제목 공통 */
+.item-content h2,
+.search-content h3,
+.register-content h4 {
+    color: var(--secondary-700);
+
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+}
+
+.search-content h3 {
+    text-align: right;
+}
+
+
+/* 설명 텍스트 공통 */
+.item-content h5,
+.search-content h6,
+.register-content p {
+    color: var(--secondary-700);
+
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.search-content h6 {
+    text-align: right;
+}
+
+
+/* Home Bottom */
+
+.home-bottom-inner {
+    width: 69.375rem;
+    height: 24.8125rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4.3125rem;
+}
+
+.home-bottom-inner img {
+    display: flex;
+    width: 46.625rem;
+    height: 24.8125rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.home-bottom-content {
+    width: 18.4375rem;
+    height: 7rem;
+
+    display: flex;
+    padding-bottom: 3.75rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.625rem;
+}
+
+
+/* Footer */
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.footer-copyright,
+.footer-menu a {
+    text-align: center;
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer-copyright {
+    color: var(--secondary-400);
+}
+
+.footer-menu {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.footer-menu a {
+    color: var(--secondary-200);
+}
+
+.footer-sns {
+    display: flex;
+    width: 7.25rem;
+
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.footer-sns img {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}

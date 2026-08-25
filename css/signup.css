@@ -1,0 +1,243 @@
+.signup-page {
+    display: flex;
+    width: 100%;
+    padding: 3.75rem 40rem 11.125rem 40rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signup-container {
+    display: flex;
+    width: 40rem;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* 로고 */
+.logo {
+    width: 24.75rem;
+    height: 8.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 회원가입 폼 */
+.signup-form {
+    display: flex;
+    width: 40rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 이메일 / 닉네임 / 비밀번호 / 비밀번호 확인 영역 */
+.email-field,
+.nickname-field,
+.password-field,
+.password-confirm-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* 라벨 */
+.email-field label,
+.nickname-field label,
+.password-field label,
+.password-confirm-field label {
+    color: var(--secondary-800);
+
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* 입력창 공통 텍스트 */
+#email,
+#nickname,
+#password,
+#password-confirm {
+    color: var(--secondary-800);
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+}
+
+/* 이메일 / 닉네임 입력창 */
+#email,
+#nickname {
+    display: flex;
+    width: 40rem;
+    height: 3.5rem;
+    padding: 1rem 1.5rem;
+
+    align-items: center;
+    gap: 0.625rem;
+
+    border: none;
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+/* placeholder */
+#email::placeholder,
+#nickname::placeholder,
+#password::placeholder,
+#password-confirm::placeholder {
+    color: var(--secondary-400);
+}
+
+/* 비밀번호 회색 박스 */
+.password-input-box {
+    display: flex;
+    width: 40rem;
+    height: 3.5rem;
+    padding: 1rem 1.5rem;
+
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+/* 비밀번호 입력창 */
+#password,
+#password-confirm {
+    flex: 1 0 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/* 입력창 선택 상태 */
+#email:focus,
+#nickname:focus {
+    border: 1px solid var(--primary-100);
+    outline: none;
+}
+
+.password-input-box:focus-within {
+    border: 1px solid var(--primary-100);
+}
+
+/* 눈 아이콘 버튼 */
+.password-toggle {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* 회원가입 버튼 */
+.signup-button {
+    display: flex;
+    padding: 1rem 7.75rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+
+    border: none;
+    border-radius: 2.5rem;
+    background: var(--secondary-400);
+
+    color: #FFF;
+    text-align: center;
+
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem;
+
+    cursor: pointer;
+}
+
+/* 간편 로그인 */
+.social-login {
+    display: flex;
+    width: 40rem;
+    height: 4.625rem;
+    padding: 1rem 1.4375rem;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: #E6F2FF;
+    margin-bottom: 1.5rem;
+}
+
+.social-login-text {
+    color: var(--secondary-800);
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.625rem;
+}
+
+/* 구글 / 카카오 아이콘 영역 */
+.social-icons {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.social-icon,
+.social-icon img {
+    width: 2.625rem;
+    height: 2.625rem;
+}
+
+/* 로그인 안내 */
+.login-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.login-guide span {
+    color: var(--secondary-800);
+
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.login-guide a {
+    color: #3182F6;
+
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
