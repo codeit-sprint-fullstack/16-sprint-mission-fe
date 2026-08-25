@@ -1,5 +1,7 @@
 # 🐼 판다마켓 프로젝트
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/299821ac-daa9-40f5-b707-d7ae258d2d1e/deploy-status)](https://app.netlify.com/projects/esxmod/deploys)
+
 > _이 저장소는 판다마켓 프로젝트의 프론트엔드 코드를 관리하는 곳입니다. 프로젝트를 클론하여 개발 환경을 설정하고, 각 브랜치에서 해당 스프린트 미션을 수행해 주세요!_ 🛠️
 
 ## 소개
@@ -43,6 +45,23 @@ _위 이미지는 판다마켓의 대표 이미지입니다._ 📸
    - **스프린트 미션 7부터** 시작하는 프론트엔드 내용을 포함하고 있어요.
    - 만약 스프린트 미션 8부터 프론트엔드 코드를 React가 아닌 Next로 구현하고 싶다면 next 브랜치를 사용해요.
 
+## 기술 스택 ⚙️
+
+### Frontend
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white)
+
+### Backend
+
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+
+### Etc.
+
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 ---
 

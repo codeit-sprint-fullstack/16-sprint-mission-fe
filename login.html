@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-02H8CMDDQX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-02H8CMDDQX");
+    </script>
+  </head>
+  <body class="login-page">
+    <div class="login-wrapper">
+      <a class="logo" href="/">
+        <img src="./image/logo.png" alt="로고" />
+      </a>
+      <form>
+        <label for="email">이메일</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="이메일을 입력해주세요"
+          autocomplete="email"
+          required
+        />
+        <div class="password-wrapper">
+          <label for="password">비밀번호</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+            autocomplete="current-password"
+            required
+          />
+          <div class="button-visibility">
+            <img src="./image/btn_visibility.svg" alt="비밀번호 보이기" />
+          </div>
+        </div>
+        <button class="button button-login" type="submit">로그인</button>
+      </form>
+      <div class="login-oauth">
+        <div class="login-oauth-text">간편 로그인하기</div>
+        <ul class="login-oauth-button">
+          <li>
+            <a href="https://www.google.com/">
+              <img src="./image/login_google.svg" alt="구글 로그인" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kakaocorp.com/page/">
+              <img src="./image/login_kakao.svg" alt="카카오 로그인" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <footer>판다마켓이 처음이신가요? <a href="/signup">회원가입</a></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css");
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
