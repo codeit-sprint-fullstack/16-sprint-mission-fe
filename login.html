@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판다마켓</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ0MEC11NJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VQ0MEC11NJ');
+</script>
+<body>
+  <section class="login">
+    <div class="login-container">
+      <h1 class="logo">
+        <a href="/">
+          <img src="/img/logo-lg.png" alt="판다마켓로고">
+        </a>
+      </h1>
+      <form action="/login" method="POST" class="login-form">
+        <div class="input-group">
+          <label for="userEmail">이메일</label>
+          <input type="text" id="userEmail" name="userEmail" placeholder="이메일을 입력해주세요" required>
+        </div>
+        <div class="input-group ">
+          <label for="password">비밀번호</label>
+          <div class="password-wrap position-relative">
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
+            <button type="button" class="password-toggle">
+              <img src="/img/ic_password-toggle.png" alt="비밀번호 보기">
+            </button>
+          </div>
+        </div>
+        <button class="login-btn" type="submit">로그인</button>
+      </form>
+      <div class="social-login">
+        <p>간편 로그인하기</p>
+        <div class="social-login-buttons">
+          <a href="https://www.google.com/">
+            <img src="/img/ic_google.png" alt="구글로고">
+          </a>
+          <a href="https://www.kakaocorp.com/page/">
+            <img src="/img/ic_kakao.png" alt="카카오로고">
+          </a>
+        </div>
+      </div>
+      <p class="signup-link">
+        판다마켓이 처음이신가요?
+        <a href="/signup.html">회원가입</a>
+      </p>
+    </div>
+  </section>
+</body>
+
+</html>

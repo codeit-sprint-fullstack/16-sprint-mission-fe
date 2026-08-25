@@ -1,0 +1,40 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+
+:root {
+  /* 색 */
+  --color-white: #FFFFFF;
+  --color-bg: #FCFCFC;
+  --color-banner: #CFE5FF; 
+  --color-blue: #3692FF; 
+  --color-text-white: #F9FAFB;
+  --color-text-darkGray: #374151;
+  --color-footer: #111827;
+  --color-footer-text: #E5E7EB;
+  --color-coolGray-100: #F3F4F6;
+  --color-secondary-400: #9CA3AF;
+  --color-secondary-800: #1F2937;
+  --color-snsLogin: #E6F2FF;;
+  --color-coolGray-600: #4B5563;
+  --color-kakao: #F5E14B;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* 우리 사이트 전체를 관통하는 공통 폰트관련속성 */
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Pretendard", sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.position-relative {
+  position: relative;
+}
