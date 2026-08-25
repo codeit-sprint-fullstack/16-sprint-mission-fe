@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FBZGHTMZR"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7FBZGHTMZR');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="reset2.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <div class="main-title">
+            <img src="./logo.svg"  alt="판다로고">
+        </div>
+    </header>
+
+    <!--이메일, 비밀번호, 닉네임, 비밀번호 확인, 회원가입 버튼, 간편 로그인-->
+
+    <main>
+        <section class="important">
+         <div class="form-item">
+         <label>이메일</label>
+          <div class="input-wrapper">
+            <input type="text" id="user-email" placeholder="이메일을 입력해주세요" class="put">
+            
+         </div>
+        </div>
+
+        <div class="form-item">
+            <label>닉네임</label>
+            <div class="input-wrapper">
+                <input type="text" id="user-nikname" placeholder= "닉네임을 입력해주세요" class="put">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>비밀번호</label>
+            <div class="input-wrapper">
+                <input type="password" id="user-password" placeholder="비밀번호를 입력해주세요" class="put">
+                <img src="btn.visible.svg" alt="visiblebtn" class="btn">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>비밀번호 확인</label>
+            <div class="input-wrapper">
+                <input type="password" id="check-password" placeholder="비밀번호를 다시 한 번 입력해주세요"class="put">
+                <img src="btn2.svg" alt="visiblebtn" class="btn2">
+            </div>
+        </div>
+
+        <div class="log-in">
+            <button id="submit" class="log">회원가입</button>
+        </div>
+      </section>
+
+       <section class="easy">
+        <div class="easy-login">
+            <label>간편 로그인하기</label>
+              <div class="sns">
+                <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="google.svg" alt="구글">
+                </a>
+                <a href="https://www.kakaotalk.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="kakaotalk..svg" alt="카카오톡">
+                </a>
+            </div>
+         </div>
+       </section>
+    </main>
+    <!--이미 회원이신가요..?-->
+
+    <footer>
+      <section class="first">
+        <div class="first">
+            <label>이미 회원이신가요?</label>
+            <div class="entering">
+                <a href="/login/index-login.html">로그인</a>
+            </div>
+        </div>
+      </section>
+    </footer> 
+</body>
+</html>

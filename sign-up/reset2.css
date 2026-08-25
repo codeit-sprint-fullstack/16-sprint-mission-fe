@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.put:focus{
+    border-color: #3692FF;
+    outline-color: #3692FF;
+}
