@@ -1,0 +1,106 @@
+@import url('./reset.css');
+
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root{
+  --primary-color-100: #3692FF;
+  --primary-color-200: #1967D6;
+  --primary-color-300: #1251AA;
+  --secondary-color-900: #111827;
+  --secondary-color-800: #1F2937;
+  --secondary-color-700: #374151;
+  --secondary-color-600: #4B5563;
+  --secondary-color-500: #6B7280;
+  --secondary-color-400: #9CA3AF;
+  --secondary-color-200: #E5E7EB;
+  --secondary-color-100: #F3F4F6;
+  --secondary-color-50: #F9FAFB;
+  --error-color: #F74747;
+  --bg-color: #CFE5FF;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Pretendard', 'Gothic';
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+input{
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+input::placeholder{
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 0;
+}
+input[type="password"]{
+  font-family: 'Verdana', 'Pretendard', 'Gothic';
+  letter-spacing: 0.1rem;
+}
+input[type="password"]:placeholder-shown{
+  font-family: 'Pretendard', 'Gothic';
+  letter-spacing: 0;
+}
+button{
+  cursor: pointer;
+}

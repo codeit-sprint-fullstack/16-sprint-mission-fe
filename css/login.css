@@ -1,0 +1,147 @@
+body{
+  background: #fcfcfc;
+}
+.wrap{
+  margin: 130px auto;
+  width: 640px;
+}
+.logo{
+  overflow: hidden;
+  margin: 0 auto;
+  width: 396px;
+  height: 132px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-indent: -999rem;
+}
+.logo a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main{
+  margin-top: 40px;
+  color: var(--secondary-color-800);
+}
+main form{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+main form > div{
+  position: relative;
+}
+main form > div label{
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  line-height: 21px;
+}
+main form > div input{
+  display: block;
+  padding: 16px 24px;
+  border: 1px solid #00000000;
+  border-radius: 12px;
+  width: 100%;
+  height: 56px;
+  background: var(--secondary-color-100);
+}
+main form > div input:focus{
+  border: 1px solid var(--primary-color-100);
+}
+main form > div input::placeholder{
+  color: var(--secondary-color-400);
+}
+main form > div a{
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/btn_visibility_off.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-indent: -999rem;
+}
+main form > div.on a{
+  background-image: url(../img/btn_visibility_on.svg);
+}
+main form .submit-btn{
+  border: none;
+  border-radius: 40px;
+  width: 100%;
+  height: 56px;
+  background: var(--primary-color-100);
+  color: var(--secondary-color-100);
+  font-size: 20px;
+  font-weight: 600;
+}
+main form .submit-btn:hover{
+  background: var(--primary-color-200);
+}
+main form .submit-btn:active{
+  background: var(--primary-color-300);
+}
+main form .submit-btn:disabled{
+  background: var(--secondary-color-400);
+}
+main .social-login{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  width: 100%;
+  height: 74px;
+  border-radius: 8px;
+  padding: 16px 23px;
+  background: #E6F2FF;
+}
+main .social-login p{
+  font-weight: 500;
+}
+main .social-login .social-login-btn{
+  display: flex;
+  gap: 16px;
+}
+main .social-login .social-login-btn a{
+  overflow: hidden;
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  text-indent: -999rem;
+}
+main .social-login .social-login-btn a.ic-google{
+  border: 1px solid var(--secondary-color-50);
+  background-color: #fff;
+  background-image: url(../img/ic_google.png);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: center center;
+}
+main .social-login .social-login-btn a.ic-kakao{
+  background-color: #F5E14B;
+  background-image: url(../img/ic_kakao.svg);
+  background-repeat: no-repeat;
+  background-size: 26px 24px;
+  background-position: center center;
+}
+main .nav-txt{
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 24px;
+}
+main .nav-txt a{
+  color: var(--primary-color-100);
+  font-weight: 500;
+  text-decoration: underline;
+}
