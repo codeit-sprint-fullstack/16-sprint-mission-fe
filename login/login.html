@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <!-- 전체 페이지 -->
+    <div class="login-page">
+      <!-- 로그인 로고 -->
+
+      <div class="login-logo">
+        <a href="/">
+          <div class="image-box">
+            <img
+              class="logo-image"
+              src="/img/Property 1=lg@3x.png"
+              alt="판다마켓로고"
+            />
+          </div>
+        </a>
+      </div>
+      <!-- 이메일부터 판다마켓이 처음이신가요?까지 -->
+      <div class="first-panda">
+        <!-- 폼 타입 전체 묵기 -->
+        <form class="form-login">
+          <!-- 이메일 -->
+          <div class="email-password-box">
+            <label class="email-label" for="email">이메일</label>
+            <input
+              class="email-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="이메일을 입력해주세요"
+              required
+            />
+          </div>
+          <!-- 비밀번호 -->
+          <div class="email-password-box">
+            <label class="password-label" for="password">비밀번호</label>
+            <div class="input-eyes-box">
+              <input
+                class="password-input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력해주세요"
+                required
+              />
+              <div class="password_eyes">
+                <img
+                  class="password_eye2"
+                  src="/img/btn_visibility_off.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 로그인 버튼-->
+          <button class="login-button" type="submit">로그인</button>
+        </form>
+        <!-- form타입 끝 -->
+
+        <!-- 간편 로그인 -->
+        <div class="easy-login-box">
+          <div class="login-box">
+            <h2 class="easy-login-text">간편 로그인하기</h2>
+            <div class="sns-login">
+              <a class="google-login" href="https://www.google.com/">
+                <img src="/img/google.png" alt="google img" />
+              </a>
+
+              <a class="kakao-login" href="https://www.kakaocorp.com/page/">
+                <img src="/img/kakao.png" alt="kakao img" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 회원가입 -->
+        <div class="signup-box">
+          <div class="box">
+            <h2 class="first">판다마켓이 처음이신가요?</h2>
+            <a href="/signup/signup.html" class="signup">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

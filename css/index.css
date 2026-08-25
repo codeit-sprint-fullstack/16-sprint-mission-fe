@@ -1,0 +1,331 @@
+/* 헤더 */
+header {
+  background: #ffffff;
+  width: 100%; /* 화면 가로 전체 사용 */
+  height: 4.375rem; /* 70px; */
+  position: fixed;
+  /*
+    브라우저 화면의 위쪽 0px,
+    왼쪽 0px 위치에 붙임
+  */
+  top: 0;
+  left: 0;
+}
+
+header .inner {
+  /* 화면 좌우에 각각 200px을 남김 */
+  width: calc(100% - 25rem); /*400px*/
+
+  /* 1920px 화면일 때: 1920 - 400 = 1520px 그 이상으로는 커지지 않음 */
+  /* 화면이 커져도 내용이 너무 옆으로 퍼지지 않게 제한, 너무 넓어지는 걸 막음 */
+  max-width: 95rem; /* 1520px; */
+
+  /* 남는 공간은 좌우로 나눠서 가운데 정렬 */
+  margin: 0 auto;
+
+  /* 세로: 부모의 높이를 100% 그대로 사용, 부모 높이를 그대로 따라감 */
+  height: 100%;
+
+  background: ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoname {
+  width: 10rem; /*160px; */
+  /* background: #111827; */
+}
+.logoname a {
+  display: flex;
+  /* padding-top: 6px; */
+  /* align-items: center; */
+  /* gap: 0.25rem;  4px; */
+  overflow: hidden;
+  /* background-color: red; */
+}
+.pandaname {
+  width: 100%;
+}
+.login {
+  background-color: #3692ff;
+  padding: 0.75rem 2.5rem; /* 12px 40px; */
+  border: 0.0625rem; /* 1px; */
+  border-radius: 0.625rem; /* 10px; */
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* banner */
+
+.banner {
+  width: 100%; /* 화면 가로 전체를 사용 */
+  /* 헤더에 position: fixed줘서 패딩을 줘야댐 */
+  /* banner가 내려가면 그 뒤에 있는 애들은 원래 banner 다음에 배치되기 때문에 자동으로 같이 내려감 */
+  padding-top: 4.375rem; /* 70px; */
+  background: #cfe5ff;
+
+  /* 수정:
+     아래 .bottom-banner-inner에 margin: 0 auto;가 있어서
+     여기의 display:flex + justify-content:center는 역할이 겹침.
+     둘 중 하나만 써도 됨. 보통 여기서는 지워도 됨.
+     여기에 display하니깐 고정되지 않고 막 움직임
+     이유는?? 
+  */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.banner-inner {
+  width: 69.375rem; /* 1110px; */ /* 내용이 너무 넓게 퍼지지 않도록 가로 크기를 1110px 고정 */
+  height: 33.75rem; /* 540px; 배너의 세로 높이 */
+  margin: 0 auto; /*남는 공간을 좌우로 똑같이 나눠서 가운데 정렬*/
+  background: #cfe5ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner-title1 {
+  /* text-align:center */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin-top: 7.5rem; /* 120px; 요소 자체를 아래로 밀기 ↓ */
+  background-color: #cfe5ff;
+}
+.banner-text {
+  font-weight: bold;
+  color: #374151;
+  font-size: 3.125rem; /* 50px; */
+}
+.banner-button {
+  background: #3692ff;
+  width: 25rem; /* 400px; */
+  margin-top: 3rem;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1.4rem;
+  border-radius: 2.1875rem; /* 35px; */
+  border: none;
+  cursor: pointer;
+}
+.banner-image {
+  width: 45rem; /* 720px; */
+  height: 100%;
+  background: cfe5ff;
+
+  display: flex;
+  align-items: end;
+
+  overflow: hidden;
+}
+.banner-image img {
+  width: 100%;
+}
+
+/* main - section 1 */
+main {
+  background: #ffffff;
+  width: 100%; /* 화면 가로 전체 사용 */
+}
+
+/* section1 */
+.section1 {
+  display: flex;
+  justify-content: center;
+}
+
+.promo-banner1 {
+  width: 61.75rem; /* 988px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  height: 45rem; /* 720px; */
+  gap: 6.25rem; /* 100px; */
+}
+.promo {
+  width: 33.75rem; /* 540px; */
+  overflow: hidden;
+  background: #ffffff;
+}
+.promo-img {
+  width: 100%;
+}
+
+.promo-content {
+  background: #ffffff;
+  width: 20.625rem; /* 330px; */
+}
+
+.promo-item1 {
+  font-size: 1.125rem; /* 18px; */
+  font-weight: bold;
+  line-height: 2;
+  color: #3692ff;
+}
+.promo-item2 {
+  font-size: 2.5rem; /* 40px; */
+  font-weight: bold;
+  color: #374151;
+}
+.promo-item3 {
+  font-size: 1.5rem; /* 24px; */
+  line-height: 2;
+  color: #374151;
+}
+
+/* section2 */
+.section2 {
+  display: flex;
+  justify-content: center;
+}
+
+.promo-banner2 {
+  width: 61.75rem; /* 988px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  height: 45rem; /* 720px; */
+  gap: 5.5rem; /*88px;*/
+}
+
+.promo-content2 {
+  background: #ffffff;
+  text-align: right;
+  width: 21.875rem; /*350px;*/
+}
+
+.promo-item11 {
+  font-size: 1.125rem; /*18px;*/
+  font-weight: bold;
+  line-height: 2;
+  color: #3692ff;
+}
+.promo-item22 {
+  font-size: 2.5rem; /*40px;*/
+  font-weight: bold;
+  color: #374151;
+}
+.promo-item33 {
+  font-size: 1.5rem; /* 24px; */
+  line-height: 2;
+  color: #374151;
+}
+.promo2 {
+  width: 34.375rem; /*550px;*/
+  overflow: hidden;
+  background: #ffffff;
+}
+.promo-img2 {
+  width: 100%;
+}
+
+/* section3 */
+.promo-banner3 {
+  width: 61.75rem; /* 988px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  height: 45rem; /* 720px; */
+  gap: 3rem; /* 48px; */
+}
+.promo-content3 {
+  background: #ffffff;
+  width: 25rem; /* 400px; */
+}
+
+.promo-item111 {
+  font-size: 1.125rem; /* 18px; */
+  font-weight: bold;
+  line-height: 2;
+  color: #3692ff;
+}
+.promo-item222 {
+  font-size: 2.5rem; /* 40px; */
+  font-weight: bold;
+  color: #374151;
+}
+.promo-item333 {
+  font-size: 1.5rem; /* 24px; */
+  line-height: 2;
+  color: #374151;
+}
+
+/* 하얀공백 */
+.white {
+  width: 100%;
+  background: #ffffff;
+  height: 9.375rem; /* 150px; */
+}
+
+/* bottom-banner */
+.bottom-banner {
+  width: 100%; /* 화면 가로 전체를 사용 */
+
+  background: #cfe5ff;
+}
+.bottom-banner-inner {
+  width: 69.375rem; /* 1110px; 내용이 너무 넓게 퍼지지 않도록 가로 크기를 1110px 고정 */
+  height: 33.75rem; /* 540px; 배너의 세로 높이 */
+  margin: 0 auto; /*남는 공간을 좌우로 똑같이 나눠서 가운데 정렬*/
+  background: #cfe5ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-banner-title {
+  font-weight: bold;
+  font-size: 3rem; /* 48px; */
+  color: #374151;
+}
+.bottom-banner-image {
+  width: 45rem; /* 720px; */
+  height: 100%;
+  background: #cfe5ff;
+
+  display: flex;
+  align-items: end;
+
+  overflow: hidden;
+}
+.bottom-banner-image img {
+  width: 100%;
+}
+
+/* footer */
+.footer {
+  width: 100%; /* 화면 가로 전체 사용 */
+  height: 10rem; /* 160px; */
+  background-color: #111827;
+  color: #e5e7eb;
+}
+.footer-inner {
+  width: calc(100% - 25rem); /*400px*/
+  max-width: 95rem; /* 1520px; */
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.875rem; /*30px*/
+}
+
+.footer-inner p {
+  color: #ffffff;
+}
+.footer-inner li {
+  color: #ffffff;
+}
+
+.footer-medium {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.875rem; /* 30px; */
+}
+.footer-end {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.875rem; /* 30px; */
+}

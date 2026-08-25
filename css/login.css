@@ -1,0 +1,217 @@
+/* 전체 페이지 */
+body {
+  /* background-color: rgb(6, 255, 226); */
+  display: flex;
+  /* body는 블록 요소. 가로는 body가 원래 꽉 차니까 따로 width 필요 없음 */
+  justify-content: center;
+
+  /* 세로는 높이가 없으니까 화면 높이를 만들어줘야 함 */
+  min-height: 100vh;
+  align-items: center;
+}
+.login-page {
+  /* background-color: rgb(129, 94, 94); */
+  /* padding: 100px; */
+  width: 40rem; /*640px;*/
+  height: 38.625rem; /*618px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* <!-- 이메일부터 판다마켓이 처음이신가요?까지 --> */
+.first-panda {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; 이거 쓰면 여기서 화면이 이상해짐 이유는??  gap으로 바꿈*/
+  gap: 1.5rem; /*24px;*/
+}
+
+/* 로그인 로고 */
+.login-logo {
+  /* background: #d3fd05; */
+  display: flex;
+  justify-content: center;
+}
+.image-box {
+  /* background: red; */
+  width: 24.75rem; /*396px;*/
+  overflow: hidden;
+}
+.logo-image {
+  width: 100%;
+}
+
+/* <!-- 폼 타입 전체 묵기 --> */
+.form-login {
+  width: 40rem; /*640px;*/
+  /* height: 300px; */
+  /* background-color: rgb(132, 120, 245); */
+  display: flex;
+  flex-direction: column; /*자식들을 가로로 배치  */
+  /*justify-content: space-between; 이거 쓰면 여기서 화면이 이상해짐 이유는??  gap으로 바꿈*/
+  gap: 1.5rem; /*24px;*/
+}
+
+/* <!-- 이메일 박스 --> */
+.email-password-box {
+  width: 40rem; /*640px;*/
+  /* height: 98px; */
+  /* background: orange; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; 이거 쓰면 여기서 화면이 이상해짐 이유는??  gap으로 바꿈*/
+  gap: 0.75rem; /*12px;*/
+}
+
+/* <!-- 이메일,비밀번호 공통 --> */
+.email-label,
+.password-label {
+  font-size: 1.125rem; /*18px;*/
+  font-weight: 700;
+  font-family: "Pretendard";
+  color: var(--gray-800-1f2937);
+}
+.input-eyes-box {
+  /* 비밀번호 눈 */
+  position: relative;
+}
+
+.password_eyes {
+  overflow: hidden;
+  /* background: #eb0707; */
+  width: 1.5625rem; /*25px;*/
+  height: 1.5625rem; /*25px;*/
+  /* 비밀번호 눈 */
+  position: absolute;
+  right: 1.25rem; /*20px;*/
+  /* 세로 가운데 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.password_eye2 {
+  width: 100%;
+  cursor: pointer;
+}
+.email-input,
+.password-input {
+  width: 40rem; /*640px;*/
+  height: 3.5rem; /*56px;*/
+  background-color: var(--gray-100-f3f4f6);
+  border-radius: 0.75rem;
+  border: none;
+  outline: none;
+  padding-left: 1.25rem; /*20px;*/
+  font-family: "Pretendard";
+  font-size: 0.9375rem; /*15px;*/
+  font-weight: 400;
+}
+.email-input:focus,
+.password-input:focus {
+  outline: 2px solid var(--primary-100-3692ff);
+}
+
+/* <!-- 로그인 버튼--> */
+
+.login-button {
+  width: 40rem; /*640px;*/
+  height: 3.5rem; /*56px;*/
+  background-color: var(--gray-400-9ca3af);
+  border-radius: 10rem;
+  border: none;
+  outline: none;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.25rem; /*20px;*/
+  color: var(--gray-100-f3f4f6);
+  cursor: pointer;
+}
+
+/* <!-- 간편 로그인 --> */
+.easy-login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem; /*640px;*/
+  height: 4.625rem; /*74px;*/
+  background-color: #e6f2ff;
+  border-radius: 0.5rem;
+  color: var(--gray-800-1f2937);
+  font-weight: 500;
+  font-size: 1rem; /*16px;*/
+}
+.login-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 37.125rem; /*594px;*/
+  height: 2.625rem; /*42px;*/
+}
+
+.easy-login-text {
+  font-size: 1rem; /*16px;*/
+  font-family: "Pretendard";
+  font-weight: 500;
+  color: var(--gray-800-1f2937);
+  cursor: pointer;
+}
+.sns-login {
+  /* background-color: #3200fb; */
+  display: flex;
+  justify-content: space-between;
+  width: 6.25rem; /*100px;*/
+  height: 2.625rem; /*42px;*/
+}
+.google-login {
+  width: 2.625rem; /*42px;*/
+  height: 2.625rem; /*42px;*/
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.google-login > img {
+  width: 60%;
+  cursor: pointer;
+}
+.kakao-login {
+  width: 2.625rem; /*42px;*/
+  /* background-color: #51ff00; */
+  height: 2.625rem; /*42px;*/
+  overflow: hidden;
+}
+.kakao-login > img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* <!-- 회원가입 --> */
+.signup-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 200px;
+  height: 1.5rem; /*24px;*/
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #51ff00; */
+}
+.first {
+  font-size: 0.875rem; /*14px;*/
+  font-weight: 500;
+  color: var(--gray-800-1f2937);
+  font-family: "Pretendard";
+}
+.signup {
+  font-size: 0.875rem; /*14px;*/
+  font-weight: 500;
+  color: var(--primary-100-3692ff);
+  text-decoration: underline;
+  /* 밑줄과 글자 사이 간격 */
+  text-underline-offset: 0.25rem; /*4px;*/
+  cursor: pointer;
+  font-family: "Pretendard";
+}
