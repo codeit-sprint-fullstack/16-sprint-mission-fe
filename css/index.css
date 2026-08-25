@@ -1,0 +1,43 @@
+.box {
+    display: flex;
+    justify-content: center;
+}
+.outer-box {
+    align-items: end;
+    background: var(--background-skyblue);
+    height: 450px;
+}
+.outer-box .card {
+    max-width: 1100px;
+}
+.card {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer-box img, .inner-box img {
+    height: 100%;
+}
+.outer-box button {
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.box-1, .box-2, .box-3{
+    align-items: center;
+    height: 500px;
+}
+.box-2 .card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.inner-box .card {
+    max-width: 800px;
+    background: var(--background-lightgray);
+}
+.inner-box .card-text {
+    padding: 0 40px;
+}
