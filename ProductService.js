@@ -40,7 +40,7 @@ export const getProduct = async (id) => {
     }
 }
 
-export const createProduct = async (name, description, price, tags, image) => {
+export const createProduct = async (name, description, price, tags, images) => {
     try {
         const response = await fetch(`${BASE_URL}/products`, {
             method: HTTP_METHODS.POST,
@@ -52,7 +52,7 @@ export const createProduct = async (name, description, price, tags, image) => {
                 description,
                 price,
                 tags,
-                image
+                images
             })
         });
         const data = await response.json();
@@ -101,6 +101,3 @@ export const deleteProduct = async (id) => {
         console.log(error);
     }
 }
-
-getProductList(1, 3);
-// getProduct(4309);
