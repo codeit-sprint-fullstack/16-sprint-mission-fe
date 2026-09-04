@@ -2,6 +2,8 @@ import { getArticleList, getArticle, createArticle, patchArticle, deleteArticle 
 import { getProductList, getProduct, createProduct, patchProduct, deleteProduct } from './ProductService.js';
 
 
+
+
 //article 실행함수
 
 getArticleList(1,10,'')
