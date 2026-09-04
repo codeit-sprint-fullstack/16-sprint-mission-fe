@@ -1,6 +1,7 @@
 import { getArticleList, getArticle, createArticle, patchArticle, deleteArticle } from './ArticleService.js';
 import { getProductList, getProduct, createProduct, patchProduct, deleteProduct } from './ProductService.js';
 
+
 //article 실행함수
 
 getArticleList(1,10,'')
@@ -73,4 +74,4 @@ patchProduct(4310,
 deleteProduct(4318)
   .then((data) => {
     console.log(data);
-  });
+  }); 
