@@ -16,6 +16,9 @@ export const getProductList = async (page, pageSize, keyword) => {
                 "Content-Type": CONTENT_TYPE,
             }
         });
+        if (!response.ok) {
+            console.log(`Error code: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
     }
@@ -32,6 +35,9 @@ export const getProduct = async (id) => {
                 "Content-Type": CONTENT_TYPE,
             }
         });
+        if (!response.ok) {
+            console.log(`Error code: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
     }
@@ -55,6 +61,9 @@ export const createProduct = async (name, description, price, tags, images) => {
                 images
             })
         });
+        if (!response.ok) {
+            console.log(`Error code: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
     }
@@ -78,6 +87,9 @@ export const patchProduct = async (id, name, description, price, tags, image) =>
                 image
             })
         });
+        if (!response.ok) {
+            console.log(`Error code: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
     }
@@ -94,6 +106,9 @@ export const deleteProduct = async (id) => {
                 "Content-Type": CONTENT_TYPE,
             }
         });
+        if (!response.ok) {
+            console.log(`Error code: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
     }

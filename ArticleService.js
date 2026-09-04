@@ -8,13 +8,18 @@ export const getArticleList = (page, pageSize, keyword) => {
         pageSize: pageSize || 10,
         keyword: keyword || "",
     });
-    fetch(`${BASE_URL}/articles?${params}`, {
+    fetch(`${BASE_URL}/articless?${params}`, {
         method: HTTP_METHODS.GET,
         headers: {
             "Content-Type": CONTENT_TYPE,
         }
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                console.log(`Error code: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => console.log(data))
         .catch(error => console.log(error));
 }
@@ -26,7 +31,12 @@ export const getArticle = (id) => {
             "Content-Type": CONTENT_TYPE,
         }
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                console.log(`Error code: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => console.log(data))
         .catch(error => console.log(error));
 }
@@ -44,7 +54,12 @@ export const createArticle = (title, content, image) => {
         },
         body: JSON.stringify(articleData)
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                console.log(`Error code: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => console.log(data))
         .catch(error => console.log(error));
 }
@@ -62,7 +77,12 @@ export const patchArticle = (id, title, content, image) => {
         },
         body: JSON.stringify(articleData)
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                console.log(`Error code: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => console.log(data))
         .catch(error => console.log(error));
 }
@@ -74,7 +94,12 @@ export const deleteArticle = (id) => {
             "Content-Type": CONTENT_TYPE,
         }
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                console.log(`Error code: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => console.log(data))
         .catch(error => console.log(error));
 }

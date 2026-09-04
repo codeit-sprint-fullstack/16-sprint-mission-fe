@@ -10,12 +10,5 @@ import {getProductList, getProduct, createProduct, patchProduct, deleteProduct} 
 // getProductList(1, 3);
 // getProduct(4309);
 // createProduct("New Product", "This is the description of the new product.", 19, ["tag1", "tag2"], "https://example.com/product-image.jpg");
-// patchProduct(
-//     4309,
-//     "Updated Product",
-//     "This is the updated description of the product.",
-//     29,
-//     ["tag1", "tag2"],
-//     "https://example.com/updated-product-image.jpg"
-// );
+// patchProduct(4309, "Updated Product", "This is the updated description of the product.", 29, ["tag1", "tag2"], "https://example.com/updated-product-image.jpg");
 // deleteProduct(4309);
