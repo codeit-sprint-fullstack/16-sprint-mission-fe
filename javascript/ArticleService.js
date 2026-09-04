@@ -8,7 +8,7 @@ export const getArticleList = (page, pageSize, keyword) => {
         pageSize: pageSize || 10,
         keyword: keyword || "",
     });
-    fetch(`${BASE_URL}/articless?${params}`, {
+    fetch(`${BASE_URL}/articles?${params}`, {
         method: HTTP_METHODS.GET,
         headers: {
             "Content-Type": CONTENT_TYPE,
