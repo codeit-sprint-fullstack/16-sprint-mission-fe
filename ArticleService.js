@@ -1,6 +1,6 @@
 import {APIconfig} from './config.js';
 
-const { baseURL, HTTP_METHODS, CONTENT_TYPE } = APIconfig;
+const { BASE_URL, CONTENT_TYPE, HTTP_METHODS} = APIconfig;
 
 export const getArticleList = (page, pageSize, keyword) => {
     const params = new URLSearchParams({
@@ -8,7 +8,7 @@ export const getArticleList = (page, pageSize, keyword) => {
         pageSize: pageSize || 10,
         keyword: keyword || "",
     });
-    fetch(`${baseURL}/articles?${params}`, {
+    fetch(`${BASE_URL}/articles?${params}`, {
         method: HTTP_METHODS.GET,
         headers: {
             "Content-Type": CONTENT_TYPE,
@@ -20,7 +20,7 @@ export const getArticleList = (page, pageSize, keyword) => {
 }
 
 export const getArticle = (id) => {
-    fetch(`${baseURL}/articles/${id}`, {
+    fetch(`${BASE_URL}/articles/${id}`, {
         method: HTTP_METHODS.GET,
         headers: {
             "Content-Type": CONTENT_TYPE,
@@ -37,7 +37,7 @@ export const createArticle = (title, content, image) => {
         content,
         image
     };
-    fetch(`${baseURL}/articles`, {
+    fetch(`${BASE_URL}/articles`, {
         method: HTTP_METHODS.POST,
         headers: {
             "Content-Type": CONTENT_TYPE,
@@ -55,7 +55,7 @@ export const patchArticle = (id, title, content, image) => {
         content,
         image
     };
-    fetch(`${baseURL}/articles/${id}`, {
+    fetch(`${BASE_URL}/articles/${id}`, {
         method: HTTP_METHODS.PATCH,
         headers: {
             "Content-Type": CONTENT_TYPE,
@@ -68,7 +68,7 @@ export const patchArticle = (id, title, content, image) => {
 }
 
 export const deleteArticle = (id) => {
-    fetch(`${baseURL}/articles/${id}`, {
+    fetch(`${BASE_URL}/articles/${id}`, {
         method: HTTP_METHODS.DELETE,
         headers: {
             "Content-Type": CONTENT_TYPE,
