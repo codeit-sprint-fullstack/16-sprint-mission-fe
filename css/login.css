@@ -2,14 +2,14 @@ body{
   background: #fcfcfc;
 }
 .wrap{
-  margin: 130px auto;
-  width: 640px;
+  margin: 8.125rem auto; /* 130px auto */
+  width: 40rem; /* 640px */
 }
 .logo{
   overflow: hidden;
   margin: 0 auto;
-  width: 396px;
-  height: 132px;
+  width: 24.75rem; /* 396px */
+  height: 8.25rem; /* 132px */
   background-image: url(../img/logo.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -22,32 +22,31 @@ body{
   height: 100%;
 }
 main{
-  margin-top: 40px;
+  margin-top: 2.5rem; /* 40px */
   color: var(--secondary-color-800);
 }
 main form{
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem; /* 24px */
 }
 main form > div{
   position: relative;
 }
 main form > div label{
   display: block;
-  margin-bottom: 16px;
-  font-size: 18px;
+  margin-bottom: 1rem; /* 16px */
+  font-size: 1.125rem; /* 18px */
   font-weight: 700;
-  line-height: 26px;
-  line-height: 21px;
+  line-height: 1.625rem; /* 26px */
 }
 main form > div input{
   display: block;
-  padding: 16px 24px;
+  padding: 1rem 1.5rem; /* 16px 24px */
   border: 1px solid #00000000;
-  border-radius: 12px;
+  border-radius: 0.75rem; /* 12px */
   width: 100%;
-  height: 56px;
+  height: 3.5rem; /* 56px */
   background: var(--secondary-color-100);
 }
 main form > div input:focus{
@@ -56,31 +55,32 @@ main form > div input:focus{
 main form > div input::placeholder{
   color: var(--secondary-color-400);
 }
-main form > div a{
+main form > div .password-toggle-btn{
   overflow: hidden;
   display: block;
   position: absolute;
-  right: 24px;
-  bottom: 16px;
-  width: 24px;
-  height: 24px;
+  right: 1.5rem; /* 24px */
+  bottom: 1rem; /* 16px */
+  border: none;
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
   background-image: url(../img/btn_visibility_off.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
   text-indent: -999rem;
 }
-main form > div.on a{
+main form > div.on .password-toggle-btn{
   background-image: url(../img/btn_visibility_on.svg);
 }
 main form .submit-btn{
   border: none;
-  border-radius: 40px;
+  border-radius: 2.5rem; /* 40px */
   width: 100%;
-  height: 56px;
+  height: 3.5rem; /* 56px */
   background: var(--primary-color-100);
   color: var(--secondary-color-100);
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   font-weight: 600;
 }
 main form .submit-btn:hover{
@@ -96,11 +96,11 @@ main .social-login{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 1.5rem; /* 24px */
   width: 100%;
-  height: 74px;
-  border-radius: 8px;
-  padding: 16px 23px;
+  height: 4.625rem; /* 74px */
+  border-radius: 0.5rem; /* 8px */
+  padding: 1rem 1.4375rem; /* 16px 23px */
   background: #E6F2FF;
 }
 main .social-login p{
@@ -108,13 +108,13 @@ main .social-login p{
 }
 main .social-login .social-login-btn{
   display: flex;
-  gap: 16px;
+  gap: 1rem; /* 16px */
 }
 main .social-login .social-login-btn a{
   overflow: hidden;
   display: block;
-  width: 42px;
-  height: 42px;
+  width: 2.625rem; /* 42px */
+  height: 2.625rem; /* 42px */
   border-radius: 50%;
   text-indent: -999rem;
 }
@@ -123,22 +123,22 @@ main .social-login .social-login-btn a.ic-google{
   background-color: #fff;
   background-image: url(../img/ic_google.png);
   background-repeat: no-repeat;
-  background-size: 22px 22px;
+  background-size: 1.375rem 1.375rem; /* 22px 22px */
   background-position: center center;
 }
 main .social-login .social-login-btn a.ic-kakao{
   background-color: #F5E14B;
   background-image: url(../img/ic_kakao.svg);
   background-repeat: no-repeat;
-  background-size: 26px 24px;
+  background-size: 1.625rem 1.5rem; /* 26px 24px */
   background-position: center center;
 }
 main .nav-txt{
-  margin-top: 24px;
-  font-size: 14px;
+  margin-top: 1.5rem; /* 24px */
+  font-size: 0.875rem; /* 14px */
   font-weight: 500;
   text-align: center;
-  line-height: 24px;
+  line-height: 1.5rem; /* 24px */
 }
 main .nav-txt a{
   color: var(--primary-color-100);
