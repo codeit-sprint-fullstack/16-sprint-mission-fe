@@ -1,5 +1,3 @@
-title="style-sheet.css"
-:::writing{variant="document" id="48217" title="style-sheet.css"}
 /* ========================================
    RESET
 ======================================== */
@@ -82,20 +80,20 @@ ul {
 nav {
     width: 100%;
     height: var(--space-7);
-
-    background: #ffffff;
+    background: #fff;
 
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-
-    padding-inline: 12.5rem;
 }
 
 .nav-container {
     width: 100%;
+    max-width: 1920px;
     height: 100%;
+    margin: 0 auto;
+    padding-inline: 12.5rem;
 
     display: flex;
     justify-content: space-between;
@@ -577,33 +575,33 @@ footer .copyright {
 
 
 /* ========================================
-   LOGIN PAGE
+   AUTH PAGE (LOGIN & SIGN-UP 공통)
 ======================================== */
 
-.login-page {
+.auth-page {
     min-height: 100vh;
 
-    padding-top: 0;
+    /* 로고 상단 기준을 고정값으로 통일 (기존 로그인 페이지 기준 162px = 10.125rem) */
+    padding-top: 10.125rem;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.login-page .body-container {
-    width: 640px;
+.auth-page .body-container {
+    width: 40rem;
 
     display: flex;
     flex-direction: column;
 
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 
-/* LOGIN HEADER */
+/* HEADER */
 
-.login-page header {
+.auth-page header {
     padding: 0 100px;
 
     display: flex;
@@ -611,9 +609,9 @@ footer .copyright {
 }
 
 
-/* LOGIN FORM */
+/* FORM */
 
-.login-page label {
+.auth-page label {
     display: block;
 
     color: var(--color-text-secondary);
@@ -622,26 +620,26 @@ footer .copyright {
     font-weight: 700;
 }
 
-.login-page form {
+.auth-page form {
     display: flex;
     flex-direction: column;
 
-    gap: 24px;
+    gap: 1.5rem;
 }
 
-.login-page form div {
+.auth-page form div {
     display: flex;
     flex-direction: column;
 
-    gap: 16px;
+    gap: 1rem;
 }
 
 
 /* INPUT */
 
-.login-page form input {
+.auth-page form input {
     width: 100%;
-    height: 56px;
+    height: 3.5rem;
 
     background: var(--color-login-box);
 
@@ -651,12 +649,12 @@ footer .copyright {
     padding: 16px 24px;
 }
 
-.login-page input:focus {
+.auth-page input:focus {
     border-color: var(--input-focusin-border);
     outline: none;
 }
 
-.login-page input::placeholder {
+.auth-page input::placeholder {
     color: var(--color-text-muted);
 
     font-size: 16px;
@@ -664,11 +662,11 @@ footer .copyright {
 }
 
 
-/* LOGIN BUTTON */
+/* BUTTON */
 
-.login-page button {
+.auth-page button {
     width: 100%;
-    height: 56px;
+    height: 3.5rem;
 
     background: var(--color-text-muted);
 
@@ -683,20 +681,21 @@ footer .copyright {
     cursor: pointer;
 }
 
-.login-page button:active {
+.auth-page button:active {
     background-color: var(--color-primary);
 }
 
-/* LOGIN FOOTER */
 
-.login-page footer {
+/* FOOTER */
+
+.auth-page footer {
     display: flex;
     flex-direction: column;
 
-    gap: 24px;
+    gap: 1.5rem;
 }
 
-.login-page footer .container {
+.auth-page footer .container {
     height: 74px;
 
     padding: 16px 23px;
@@ -718,215 +717,48 @@ footer .copyright {
 
 /* SOCIAL LOGIN */
 
-.login-page footer section {
+.auth-page footer section {
     display: flex;
 
-    gap: 16px;
+    gap: 1rem;
 }
 
-.login-page footer section a {
+.auth-page footer section a {
     display: block;
 }
 
-.login-page footer section img {
+.auth-page footer section img {
     display: block;
 }
 
 
-/* SIGN UP TEXT */
+/* BOTTOM TEXT / LINK */
 
-.login-page .bottom-text {
+.auth-page .bottom-text {
     display: flex;
     justify-content: center;
 
-    gap: 4px;
+    gap: 0.25rem;
 
     font-size: 14px;
 }
 
-.login-page .bottom-text p {
+.auth-page .bottom-text p {
     color: var(--color-text-secondary);
 }
 
-.login-page .signup-button {
+.auth-page .auth-link {
     color: var(--input-focusin-border);
 
     text-decoration: underline;
 }
+
 
 /* ========================================
-   SIGN-UP PAGE
+   LOGIN PAGE (페이지 전용 규칙)
 ======================================== */
 
-.signup-page {
-    min-height: 100vh;
 
-    padding-top: 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.signup-page .body-container {
-    width: 640px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-}
-
-
-/* SIGNUP HEADER */
-
-.signup-page header {
-    padding: 0 100px;
-
-    display: flex;
-    justify-content: center;
-}
-
-
-/* LOGIN FORM */
-
-.signup-page label {
-    display: block;
-
-    color: var(--color-text-secondary);
-
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.signup-page form {
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-}
-
-.signup-page form div {
-    display: flex;
-    flex-direction: column;
-
-    gap: 16px;
-}
-
-
-/* INPUT */
-
-.signup-page form input {
-    width: 100%;
-    height: 56px;
-
-    background: var(--color-login-box);
-
-    border: 1px solid transparent;
-    border-radius: 8px;
-
-    padding: 16px 24px;
-}
-
-.signup-page input:focus {
-    border-color: var(--input-focusin-border);
-    outline: none;
-}
-
-.signup-page input::placeholder {
-    color: var(--color-text-muted);
-
-    font-size: 16px;
-    font-weight: 400;
-}
-
-
-/* SIGN-UP BUTTON */
-
-.signup-page button {
-    width: 100%;
-    height: 56px;
-
-    background: var(--color-text-muted);
-
-    border: none;
-    border-radius: 32px;
-
-    color: var(--color-login-box);
-
-    font-size: 20px;
-    font-weight: 600;
-
-    cursor: pointer;
-}
-
-.signup-page button:active {
-    background-color: var(--color-primary);
-}
-
-/* SIGN-UP FOOTER */
-
-.signup-page footer {
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-}
-
-.signup-page footer .container {
-    height: 74px;
-
-    padding: 16px 23px;
-
-    background: var(--color-bg-lightblue);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-radius: 8px;
-
-    color: var(--color-text-secondary);
-
-    font-size: 16px;
-    font-weight: 500;
-}
-
-
-/* SOCIAL LOGIN */
-
-.signup-page footer section {
-    display: flex;
-
-    gap: 16px;
-}
-
-.signup-page footer section a {
-    display: block;
-}
-
-.signup-page footer section img {
-    display: block;
-}
-
-
-/* LOGIN TEXT */
-
-.signup-page .bottom-text {
-    display: flex;
-    justify-content: center;
-
-    gap: 4px;
-
-    font-size: 14px;
-}
-
-.signup-page .bottom-text p {
-    color: var(--color-text-secondary);
-}
-
-.signup-page .login-link {
-    color: var(--input-focusin-border);
-    text-decoration: underline;
-}
+/* ========================================
+   SIGN-UP PAGE (페이지 전용 규칙)
+======================================== */
