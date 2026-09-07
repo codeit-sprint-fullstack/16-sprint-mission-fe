@@ -36,7 +36,7 @@ const formatDate = (dateValue) => {
   let minutes = createdDate.getMinutes();
   minutes = minutes < 10 ? '0' + minutes : minutes;
 
-  return `${year}.${month}.${date} ${hours}:${minutes}`
+  return `${year}.${month}.${date} ${hours}:${minutes}`;
 }
 
 // ===== 상품 관련 함수 정의 ===== //
@@ -48,12 +48,14 @@ export const getProductList = async (keyword = '', pageSize = 10, page = 1) => {
     const response = await fetch(apiUrl + queryUrl);
     const data = await validateResponse(response);
     
-    console.log('🛒 상품 목록을 불러왔습니다.\n');
+    console.log('\n🛒 상품 목록을 불러왔습니다.\n');
     console.log(`전체 상품: ${data.totalCount}개`);
     console.log(`불러온 상품: ${data.list.length}개\n`);
     data.list.forEach(product => {
       console.log(`[${product.id}] ${product.name} | ${product.price.toLocaleString()}원`);
     });
+
+    return data.list;
   }catch(error){
     printErrorMessage(error);
   }
@@ -65,7 +67,7 @@ export const getProduct = async (id) => {
     const response = await fetch(`${apiUrl}/${id}`);
     const product = await validateResponse(response);
 
-    console.log('🎁 상품 정보를 불러왔습니다.\n');
+    console.log('\n🎁 상품 정보를 불러왔습니다.\n');
     console.log(`번호: ${product.id}`);
     console.log(`상품: ${product.name}`);
     console.log(`설명: ${product.description}`);
@@ -80,24 +82,18 @@ export const getProduct = async (id) => {
 }
 
 // 상품 등록하기
-export const createProduct = async (name, description, price, tags, images) => {
+export const createProduct = async (productData) => {
   try{
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'
       },
-      body: JSON.stringify({
-        "name": name,
-        "description": description,
-        "price": price,
-        "tags": tags,
-        "images": images
-      })
+      body: JSON.stringify(productData)
     });
     const product = await validateResponse(response);
 
-    console.log('🖼️ 상품을 등록했습니다.\n');
+    console.log('\n🖼️ 상품을 등록했습니다.\n');
     console.log(`번호: ${product.id}`);
     console.log(`상품: ${product.name}`);
     console.log(`설명: ${product.description}`);
@@ -105,30 +101,26 @@ export const createProduct = async (name, description, price, tags, images) => {
     console.log(`태그: ${product.tags.join(', ')}`);
     console.log(`이미지: ${product.images.join(', ')}`);
     console.log(`등록일: ${formatDate(product.createdAt)}`);
+
+    return product;
   }catch(error){
     printErrorMessage(error);
   }
 }
 
 // 상품 수정하기
-export const patchProduct = async (id, name, description, price, tags, images) => {
+export const patchProduct = async (id, productData) => {
   try{
     const response = await fetch(`${apiUrl}/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type' : 'application/json'
       },
-      body: JSON.stringify({
-        "name": name,
-        "description": description,
-        "price": price,
-        "tags": tags,
-        "images": images
-      })
+      body: JSON.stringify(productData)
     });
     const product = await validateResponse(response);
 
-    console.log('🏷️ 상품을 수정했습니다.\n');
+    console.log('\n🏷️ 상품을 수정했습니다.\n');
     console.log(`번호: ${product.id}`);
     console.log(`상품: ${product.name}`);
     console.log(`설명: ${product.description}`);
@@ -150,7 +142,7 @@ export const deleteProduct = async (id) => {
     });
     const product = await validateResponse(response);
 
-    console.log('🗑️ 상품을 삭제했습니다.\n');
+    console.log('\n🗑️ 상품을 삭제했습니다.\n');
     console.log(`번호: ${product.id}`);
   }catch(error){
     printErrorMessage(error);

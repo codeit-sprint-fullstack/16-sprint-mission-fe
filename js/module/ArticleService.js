@@ -35,7 +35,7 @@ const formatDate = (dateValue) => {
   let minutes = createdDate.getMinutes();
   minutes = minutes < 10 ? '0' + minutes : minutes;
 
-  return `${year}.${month}.${date} ${hours}:${minutes}`
+  return `${year}.${month}.${date} ${hours}:${minutes}`;
 }
 
 // ===== 게시글 관련 함수 정의 ===== //
@@ -46,7 +46,7 @@ export const getArticleList = (keyword = '', pageSize = 10, page = 1) => {
   fetch(apiUrl + queryUrl)
     .then(response => validateResponse(response))
     .then(data => {
-      console.log('📜 게시글 목록을 불러왔습니다.\n');
+      console.log('\n📜 게시글 목록을 불러왔습니다.\n');
       console.log(`전체 게시글: ${data.totalCount}개`);
       console.log(`불러온 게시글: ${data.list.length}개\n`);
       data.list.forEach(article => {
@@ -61,7 +61,7 @@ export const getArticle = (id) => {
   fetch(`${apiUrl}/${id}`)
     .then(response => validateResponse(response))
     .then(article => {
-      console.log('📄 게시글 정보를 불러왔습니다.\n');
+      console.log('\n📄 게시글 정보를 불러왔습니다.\n');
       console.log(`번호: ${article.id}`);
       console.log(`제목: ${article.title}`);
       console.log(`내용: ${article.content}`);
@@ -73,21 +73,17 @@ export const getArticle = (id) => {
 }
 
 // 게시글 작성하기
-export const createArticle = (title, content, image) => {
+export const createArticle = (articleData) => {
   fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type' : 'application/json'
     },
-    body: JSON.stringify({
-      "title": title,
-      "content": content,
-      "image": image
-    })
+    body: JSON.stringify(articleData)
   })
     .then(response => validateResponse(response))
     .then(article => {
-      console.log('📝 게시글을 작성했습니다.\n');
+      console.log('\n📝 게시글을 작성했습니다.\n');
       console.log(`번호: ${article.id}`);
       console.log(`제목: ${article.title}`);
       console.log(`내용: ${article.content}`);
@@ -98,21 +94,17 @@ export const createArticle = (title, content, image) => {
 }
 
 // 게시글 수정하기
-export const patchArticle = (id, title, content, image) => {
+export const patchArticle = (id, articleData) => {
   fetch(`${apiUrl}/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type' : 'application/json'
     },
-    body: JSON.stringify({
-      "title": title,
-      "content": content,
-      "image": image
-    })
+    body: JSON.stringify(articleData)
   })
     .then(response => validateResponse(response))
     .then(article => {
-      console.log('✍🏻 게시글을 수정했습니다.\n');
+      console.log('\n✍🏻 게시글을 수정했습니다.\n');
       console.log(`번호: ${article.id}`);
       console.log(`제목: ${article.title}`);
       console.log(`내용: ${article.content}`);
@@ -130,7 +122,7 @@ export const deleteArticle = (id) => {
   })
     .then(response => validateResponse(response))
     .then(article => {
-      console.log('🗑️ 게시글을 삭제했습니다.\n');
+      console.log('\n🗑️ 게시글을 삭제했습니다.\n');
       console.log(`번호: ${article.id}`);
     })
     .catch(error => printErrorMessage(error));
