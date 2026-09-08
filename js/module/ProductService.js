@@ -19,7 +19,7 @@ const printErrorMessage = (error) => {
       error.message = '서버 요청에 실패했습니다.'
       break;
     case 'Validation Failed':
-      error.message = '매개변수를 제대로 입력해주세요.'
+      error.message = '매개변수가 잘못 입력됐습니다.'
       break;
   }
   console.log(`⛔ 에러: ${error.message}`);
@@ -109,7 +109,7 @@ export const createProduct = async (productData) => {
 }
 
 // 상품 수정하기
-export const patchProduct = async (id, productData) => {
+export const patchProduct = async ({id, ...productData}) => {
   try{
     const response = await fetch(`${apiUrl}/${id}`, {
       method: 'PATCH',

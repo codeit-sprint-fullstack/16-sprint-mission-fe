@@ -18,7 +18,7 @@ const printErrorMessage = (error) => {
       error.message = '서버 요청에 실패했습니다.'
       break;
     case 'Validation Failed':
-      error.message = '매개변수를 제대로 입력해주세요.'
+      error.message = '매개변수가 잘못 입력됐습니다.'
       break;
   }
   console.log(`⛔ 에러: ${error.message}`);
@@ -94,7 +94,7 @@ export const createArticle = (articleData) => {
 }
 
 // 게시글 수정하기
-export const patchArticle = (id, articleData) => {
+export const patchArticle = ({id, ...articleData}) => {
   fetch(`${apiUrl}/${id}`, {
     method: 'PATCH',
     headers: {
