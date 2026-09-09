@@ -1,0 +1,412 @@
+.signup-page {
+    display: flex;
+    width: 100%;
+    padding: 3.75rem 0 11.125rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signup-container {
+    display: flex;
+    width: 100%;
+    max-width: 40rem;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 로고 */
+.logo {
+    width: 24.75rem;
+    height: 8.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* 회원가입 폼 */
+.signup-form {
+    display: flex;
+    width: 100%;
+    max-width: 40rem;
+    margin-bottom: 1.5rem;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* 이메일 / 닉네임 / 비밀번호 / 비밀번호 확인 영역 */
+.email-field,
+.nickname-field,
+.password-field,
+.password-confirm-field {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* 라벨 */
+.email-field label,
+.nickname-field label,
+.password-field label,
+.password-confirm-field label {
+    color: var(--secondary-800);
+
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* 입력창 공통 텍스트 */
+#email,
+#nickname,
+#password,
+#password-confirm {
+    color: var(--secondary-800);
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+}
+
+/* 이메일 / 닉네임 입력창 */
+#email,
+#nickname {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+
+    align-items: center;
+    gap: 0.625rem;
+
+    border: none;
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+/* placeholder */
+#email::placeholder,
+#nickname::placeholder,
+#password::placeholder,
+#password-confirm::placeholder {
+    color: var(--secondary-400);
+}
+
+/* 비밀번호 입력 영역 */
+.password-input-box {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+
+    align-items: center;
+    gap: 0.625rem;
+
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+/* 비밀번호 입력창 */
+#password,
+#password-confirm {
+    min-width: 0;
+    flex: 1;
+
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/* 입력창 선택 상태 */
+#email:focus,
+#nickname:focus {
+    border: 1px solid var(--primary-100);
+    outline: none;
+}
+
+.password-input-box:focus-within {
+    border-color: var(--primary-100);
+}
+
+/* 눈 아이콘 버튼 */
+.password-toggle {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* 회원가입 버튼 */
+.signup-button {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    padding: 1rem 7.75rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border: none;
+    border-radius: 2.5rem;
+    background: var(--secondary-400);
+
+    color: #FFF;
+    text-align: center;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+/* 회원가입 버튼 상태 */
+.signup-button:disabled {
+    background: var(--secondary-400);
+    cursor: not-allowed;
+}
+
+.signup-button:not(:disabled) {
+    background: var(--primary-100);
+    cursor: pointer;
+}
+
+/* 간편 로그인 */
+.social-login {
+    display: flex;
+    width: 100%;
+    max-width: 40rem;
+    height: 4.625rem;
+    padding: 1rem 1.4375rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: #E6F2FF;
+}
+
+.social-login-text {
+    color: var(--secondary-800);
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.625rem;
+}
+
+/* 구글 / 카카오 아이콘 영역 */
+.social-icons {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.social-icon,
+.social-icon img {
+    display: block;
+    width: 2.625rem;
+    height: 2.625rem;
+}
+
+/* 로그인 안내 */
+.login-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.login-guide span {
+    color: var(--secondary-800);
+
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.login-guide a {
+    color: var(--primary-100);
+
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+}
+
+/* 유효성 검사 에러 */
+.error-message {
+    display: none;
+    margin-top: -0.5rem;
+
+    color: var(--error-red);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+#email.input-error {
+    border: 1px solid var(--error-red);
+}
+
+.password-input-box.input-error {
+    border-color: var(--error-red);
+}
+
+/* 오류 모달 배경 */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+/* 오류 모달 */
+.error-modal {
+    position: relative;
+
+    display: flex;
+    width: 100%;
+    max-width: 33.75rem;
+    height: 15.625rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: #FFF;
+}
+
+/* 모달 메시지 */
+.modal-message {
+    color: var(--secondary-800);
+    text-align: center;
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* 모달 확인 버튼 */
+.modal-confirm-button {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    display: flex;
+    width: 7.5rem;
+    height: 3rem;
+    padding: 0.75rem 1.4375rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-100);
+
+    color: #FFF;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+/* Tablet: 744px ~ 1199px */
+@media (min-width: 744px) and (max-width: 1199px) {
+    .signup-page {
+        padding: 3rem 1.5rem 10.6875rem;
+    }
+
+    .signup-container,
+    .signup-form,
+    .social-login {
+        width: 100%;
+        max-width: 40rem;
+    }
+}
+
+/* Mobile: 375px ~ 743px */
+@media (min-width: 375px) and (max-width: 743px) {
+    .signup-page {
+        padding: 1.5rem 0.9375rem 12.25rem 1rem;
+    }
+
+    .signup-container,
+    .signup-form,
+    .social-login {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    .logo {
+        width: 12.375rem;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+
+    .logo img {
+        height: auto;
+    }
+
+    .signup-button {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
