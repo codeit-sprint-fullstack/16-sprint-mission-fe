@@ -1,5 +1,5 @@
 // ===== 전역 변수 선언 ===== //
-const apiUrl = 'https://panda-market-api-crud.vercel.app/products';
+const url = 'https://panda-market-api-crud.vercel.app/products';
 
 // ===== 함수 정의 ===== //
 
@@ -42,11 +42,18 @@ const formatDate = (dateValue) => {
 // ===== 상품 관련 함수 정의 ===== //
 
 // 상품 목록 불러오기
-export const getProductList = async (keyword = '', pageSize = 10, page = 1) => {
+export const getProductList = async ({
+    page = 1,
+    pageSize = 10,
+    orderBy = 'recent',
+    keyword = '',
+  }) => {
   try{
-    const queryUrl = `?page=${page}&pageSize=${pageSize}&orderBy=recent&keyword=${keyword}`;
-    const response = await fetch(apiUrl + queryUrl);
+    const queryUrl = `?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&keyword=${keyword}`;
+    const response = await fetch(url + queryUrl);
     const data = await validateResponse(response);
+
+    console.log(queryUrl)
     
     console.log('\n🛒 상품 목록을 불러왔습니다.\n');
     console.log(`전체 상품: ${data.totalCount}개`);
@@ -62,9 +69,9 @@ export const getProductList = async (keyword = '', pageSize = 10, page = 1) => {
 }
 
 // 상품 정보 불러오기
-export const getProduct = async (id) => {
+export const getProduct = async ({id}) => {
   try{
-    const response = await fetch(`${apiUrl}/${id}`);
+    const response = await fetch(`${url}/${id}`);
     const product = await validateResponse(response);
 
     console.log('\n🎁 상품 정보를 불러왔습니다.\n');
@@ -84,7 +91,7 @@ export const getProduct = async (id) => {
 // 상품 등록하기
 export const createProduct = async (productData) => {
   try{
-    const response = await fetch(apiUrl, {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'
@@ -111,7 +118,7 @@ export const createProduct = async (productData) => {
 // 상품 수정하기
 export const patchProduct = async ({id, ...productData}) => {
   try{
-    const response = await fetch(`${apiUrl}/${id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type' : 'application/json'
@@ -135,9 +142,9 @@ export const patchProduct = async ({id, ...productData}) => {
 }
 
 // 상품 삭제하기
-export const deleteProduct = async (id) => {
+export const deleteProduct = async ({id}) => {
   try{
-    const response = await fetch(`${apiUrl}/${id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: 'DELETE'
     });
     const product = await validateResponse(response);

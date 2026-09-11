@@ -1,5 +1,5 @@
 // ===== 전역 변수 선언 ===== //
-const apiUrl = 'https://panda-market-api-crud.vercel.app/articles';
+const url = 'https://panda-market-api-crud.vercel.app/articles';
 
 // ===== 함수 정의 ===== //
 
@@ -41,9 +41,14 @@ const formatDate = (dateValue) => {
 // ===== 게시글 관련 함수 정의 ===== //
 
 // 게시글 목록 불러오기
-export const getArticleList = (keyword = '', pageSize = 10, page = 1) => {
-  const queryUrl = `?page=${page}&pageSize=${pageSize}&orderBy=recent&keyword=${keyword}`;
-  fetch(apiUrl + queryUrl)
+export const getArticleList = ({
+    page = 1,
+    pageSize = 10,
+    orderBy = 'recent',
+    keyword = '',
+  }) => {
+  const queryUrl = `?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&keyword=${keyword}`;
+  fetch(url + queryUrl)
     .then(response => validateResponse(response))
     .then(data => {
       console.log('\n📜 게시글 목록을 불러왔습니다.\n');
@@ -57,8 +62,8 @@ export const getArticleList = (keyword = '', pageSize = 10, page = 1) => {
 }
 
 // 게시글 정보 불러오기
-export const getArticle = (id) => {
-  fetch(`${apiUrl}/${id}`)
+export const getArticle = ({id}) => {
+  fetch(`${url}/${id}`)
     .then(response => validateResponse(response))
     .then(article => {
       console.log('\n📄 게시글 정보를 불러왔습니다.\n');
@@ -74,7 +79,7 @@ export const getArticle = (id) => {
 
 // 게시글 작성하기
 export const createArticle = (articleData) => {
-  fetch(apiUrl, {
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type' : 'application/json'
@@ -95,7 +100,7 @@ export const createArticle = (articleData) => {
 
 // 게시글 수정하기
 export const patchArticle = ({id, ...articleData}) => {
-  fetch(`${apiUrl}/${id}`, {
+  fetch(`${url}/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type' : 'application/json'
@@ -116,8 +121,8 @@ export const patchArticle = ({id, ...articleData}) => {
 }
 
 // 게시글 삭제하기
-export const deleteArticle = (id) => {
-  fetch(`${apiUrl}/${id}`, {
+export const deleteArticle = ({id}) => {
+  fetch(`${url}/${id}`, {
     method: 'DELETE'
   })
     .then(response => validateResponse(response))

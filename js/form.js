@@ -16,7 +16,7 @@ form.addEventListener('click', event => {
 });
 
 // 로그인, 회원가입 버튼 활성화
-form.addEventListener('change', event => {
+form.addEventListener('input', event => {
   const inputs = form.querySelectorAll('input');
   const inputsValues = [...inputs].map(input => input.value.trim());
   const isSubmitOk = inputsValues.every(value => value !== '');
