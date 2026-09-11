@@ -48,7 +48,8 @@ header {
   padding: auto;
   background-color: #ffffff;
   border-bottom: 0.1rem solid #dfdfdf;
-  position: fixed
+  position: fixed;
+  z-index: 9999;
 }
 
 footer {
@@ -86,6 +87,16 @@ h1 {
   letter-spacing: 0.02em;
 }
 
+.wrapper h1 {
+  max-width: 400px;
+}
+
+.feature-content h1{
+  
+  font-size: 4rem;
+  
+}
+
 
 .button {
   background-color: #3692ff;
@@ -116,4 +127,16 @@ h1 {
   font-weight: 700;
   border-radius: 99.9rem;
   padding: 1.6rem 12.4rem;
+}
+
+@media (max-width: 1199px) {
+  .wrapper h1 {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 743px) {
+  .wrapper h1 {
+    max-width: 240px;
+  }
 }
