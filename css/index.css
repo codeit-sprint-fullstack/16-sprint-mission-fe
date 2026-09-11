@@ -26,7 +26,7 @@ header .inner {
   /* 세로: 부모의 높이를 100% 그대로 사용, 부모 높이를 그대로 따라감 */
   height: 100%;
 
-  background: ffffff;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +107,9 @@ header .inner {
   border-radius: 2.1875rem; /* 35px; */
   border: none;
   cursor: pointer;
+  text-align: center;
 }
+
 .banner-image {
   width: 45rem; /* 720px; */
   height: 100%;
