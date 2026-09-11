@@ -35,7 +35,6 @@ body {
   color: #374151;
   word-break: keep-all;
   font-family: "Pretendard", sans-serif;
-  min-width: 1024px;
 }
 
 
@@ -48,8 +47,8 @@ header {
   padding: auto;
   background-color: #ffffff;
   border-bottom: 0.1rem solid #dfdfdf;
-  position: fixed;
-  z-index: 9999;
+  z-index: 99;
+  position: fixed
 }
 
 footer {
@@ -87,14 +86,8 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-.wrapper h1 {
+#hero h1 {
   max-width: 400px;
-}
-
-.feature-content h1{
-  
-  font-size: 4rem;
-  
 }
 
 
@@ -130,13 +123,37 @@ h1 {
 }
 
 @media (max-width: 1199px) {
-  .wrapper h1 {
+  #hero h1 {
     max-width: 700px;
   }
-}
-
-@media (max-width: 743px) {
-  .wrapper h1 {
-    max-width: 240px;
+  #bottomBanner h1{
+    max-width: 400px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
+  footer{
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+@media (max-width: 743px) {
+  #hero h1 {
+    max-width: 400px;
+  }
+  #bottomBanner h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .button.pill-button {
+    padding-inline: 16px;
+  }
+  footer{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
 }

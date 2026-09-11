@@ -11,11 +11,11 @@
   display: flex; /* 추가: Flexbox 레이아웃 적용 */
   justify-content: space-between; /* 양쪽 끝으로 요소 배치 */
   align-items: center; /* 추가: 세로 방향 중앙 정렬 */
-  
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 20px;
+  box-sizing: border-box; 
 }
 
 .banner .wrapper {
@@ -178,7 +178,7 @@
     order: 2;
   }
   .banner{
-    height: 900px;
+    height: 700px;
   }
   .banner .wrapper {
     padding-top: 70px;
@@ -206,7 +206,7 @@
     height: 771px;
   }
   #bottomBanner {
-    height: 1000px;
+    height: 700px;
   }
   .feature{
     padding: 0px;

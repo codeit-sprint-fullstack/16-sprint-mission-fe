@@ -2,20 +2,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     margin: 0;
     background-color: #F9FAFB;
 }
 
 main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
+
 .login_container {
     max-width: 700px;
     justify-content: center;
     align-items: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
 }
 
 h1{
@@ -23,10 +31,12 @@ h1{
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .login_logo{
     width: 50%;
+    height: auto;
 }
 
 .login_form{
@@ -35,13 +45,14 @@ h1{
 }
 .login_text{
     font-size: 18px;
+    color: #1F2937;
 }
 .login_input{
     font-size: 16px;
     font-weight: 400;
     border-radius: 8px;
     padding: 11.5px 23px;
-    color: #F3F4F6;
+    color: #1F2937;
     background-color: #F3F4F6;
     border: none;
     padding-top: 15px;
@@ -103,6 +114,7 @@ h1{
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    color: #1F2937;
 }
 .sign-up_title{
     display: flex;
@@ -121,4 +133,13 @@ h1{
     justify-content: center;
     align-items: center;
     text-decoration: underline;
+}
+
+
+@media (max-width: 743px) {
+  .login_container {
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+}
 }
