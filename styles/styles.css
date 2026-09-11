@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #F9FAFB;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.login_container {
+    max-width: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.login_logo{
+    width: 50%;
+    height: auto;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column; 
+}
+.login_text{
+    font-size: 18px;
+    color: #1F2937;
+}
+.login_input{
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 11.5px 23px;
+    color: #1F2937;
+    background-color: #F3F4F6;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.login_text{
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 10px;
+}
+
+.login_button{
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 30px;
+    padding: 11.5px 23px;
+    color: #FFFFFF;
+    background-color: #9CA3AF;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.oauth{
+    display: flex;
+    background-color: #E6F2FF;
+    border-radius: 10px;
+    align-items: center;
+    height: 60px;
+    justify-content: space-between;
+}
+.oauth_title{
+    margin-left: 20px;
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 500;
+}
+.oauth_icon_container{
+    float: right;
+}
+.oauth_icon{
+    margin-right: 10px;
+    width: 42px;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top:20px;
+}
+.sign-up_text{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #1F2937;
+}
+.sign-up_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.sign-up_button{
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 30px;
+    color: #3692FF;
+    background-color: transparent;
+    border: none;    
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 743px) {
+  .login_container {
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+}
