@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,19 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
 
-  <link rel="stylesheet" href="../addboard/panda.css">
+  <link rel="stylesheet" href="../css/panda.css">
 </head>
 <body>
 
   <header class="gnb">
     <div class="header-container">
 
-      <a href="index.html" class="btn-logo">
+      <a href="/" class="btn-logo">
         <img src="../img/Property 1=sm.png"
          alt="판다마켓 로고">
       </a>
 
-      <a href="../addboard/panda login.html" class="btn-login">
+      <a href="/login" class="btn-login">
           <img src="../img/type=solid, status=hover.png"
          alt="판다마켓">
       </a>
@@ -29,24 +29,32 @@
   
   <main>
     <div>
-        <a href="/items" class="main1">
-        <img src="../img/desktop_01.png" alt="#">
-       </a>
+      <section class="index-section">
+        <div class="index-container">
+          <div class="index-content">
+            <h2>일상의 모든 물건을<br>거래해 보세요</h2>
+            <a href="/items" class="btn-item">구경하러 가기</a>
+          </div>
+          <img src="./img/Img_home_top.png" alt="판다마켓 캐릭터">
+        </div>
+      </section>
+
+
 
       <a href="#" class="main2">
-        <img src="../img/desktop_02.png" alt="#">
+        <img src="./img/desktop_02.png" alt="#">
       </a>
 
        <a href="#" class="main3">
-        <img src="../img/desktop_03.png" alt="#">
+        <img src="./img/desktop_03.png" alt="#">
        </a>
 
        <a href="#" class="main4">
-        <img src="../img/desktop_04.png" alt="#">
+        <img src="./img/desktop_04.png" alt="#">
        </a>
 
        <a href="#" class="main5">
-        <img src="../img/desktop_05.png" alt="#">
+        <img src="./img/desktop_05.png" alt="#">
        </a>
     </div>
   </main>
@@ -70,23 +78,28 @@
       </div>
 
       <div class="footer-sns">
-       <a href="https://www.facebook.com/?locale=ko_KR" class="facebook">
+       <a href="https://www.facebook.com/?locale=ko_KR"
+        class="facebook" target="_blank" rel="noopener noreferrer">
         <img src="../img/ic_facebook.png" alt="페이스북">
        </a>
 
-       <a href="https://x.com/?lang=ko" class="twitter">
+       <a href="https://x.com/?lang=ko" 
+       class="twitter" target="_blank" rel="noopener noreferrer">
         <img src="../img/ic_twitter.png" alt="트위터">
        </a>
 
-       <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" class="youtube">
+       <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" 
+       class="youtube" target="_blank" rel="noopener noreferrer">
         <img src="../img/ic_youtube.png" alt="유튜브">
        </a>
 
-       <a href="https://www.instagram.com/" class="instagram">
+       <a href="https://www.instagram.com/" 
+       class="instagram" target="_blank" rel="noopener noreferrer">
         <img src="../img/ic_instagram.png" alt="인스타그램">
        </a>
       </div>
     </div>
   </footer>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
