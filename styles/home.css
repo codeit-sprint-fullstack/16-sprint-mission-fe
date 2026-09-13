@@ -102,6 +102,10 @@
   margin-top: 24px;
 }
 
+footer{
+  flex-wrap: wrap;
+}
+
 @media (max-width: 1199px) {
 
   .feature-image-1 {
@@ -215,5 +219,10 @@
   }
   #features {
     padding-bottom: 0px;
+  }
+  .license_title{
+    width: 100%;
+    margin-top: 24px;
+    order: 3;
   }
 }

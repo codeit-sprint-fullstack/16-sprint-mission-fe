@@ -43,9 +43,23 @@ h1{
     display: flex;
     flex-direction: column; 
 }
+.signup_form{
+    display: flex;
+    flex-direction: column; 
+}
 .login_text{
+    font-weight: 600;
     font-size: 18px;
     color: #1F2937;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.signup_text{
+    font-weight: 600;
+    font-size: 18px;
+    color: #1F2937;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 .login_input{
     font-size: 16px;
@@ -57,26 +71,17 @@ h1{
     border: none;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 30px;
 }
-
-.login_text{
-    font-weight: 600;
-    color: #1F2937;
-    margin-bottom: 10px;
-}
-
-.login_button{
+.signup_input{
     font-size: 16px;
     font-weight: 400;
-    border-radius: 30px;
+    border-radius: 8px;
     padding: 11.5px 23px;
-    color: #FFFFFF;
-    background-color: #9CA3AF;
+    color: #1F2937;
+    background-color: #F3F4F6;
     border: none;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 20px;
 }
 
 .oauth{
@@ -135,6 +140,76 @@ h1{
     text-decoration: underline;
 }
 
+.login_button {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 30px;
+    background-color: #9CA3AF;
+    border: none;
+    cursor: not-allowed;
+    transition: background-color 0.2s ease;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.signup_button {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 30px;
+    background-color: #9CA3AF;
+    border: none;
+    cursor: not-allowed;
+    transition: background-color 0.2s ease;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.login_input:not(:placeholder-shown):invalid {
+  border: 1px solid #ff4d4f;
+}
+
+.login_input:not(:placeholder-shown):valid {
+  border: 1px solid #3692FF;
+}
+
+.signup_input:not(:placeholder-shown):invalid {
+  border: 1px solid #ff4d4f;
+}
+
+.signup_input:not(:placeholder-shown):valid {
+  border: 1px solid #3692FF;
+}
+
+.error-message {
+  display: none;
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.login_input:not(:placeholder-shown):invalid + .error-message {
+  display: block;
+}
+
+.login_form:not(:has(.login_input:invalid)) .login_button {
+  background-color: #3692FF;
+  cursor: pointer;
+}
+
+.signup_input:not(:placeholder-shown):invalid + .error-message {
+  display: block;
+}
+
+.signup_form:not(:has(.signup_input:invalid)) .signup_button {
+  background-color: #3692FF;
+  cursor: pointer;
+}
 
 @media (max-width: 743px) {
   .login_container {
