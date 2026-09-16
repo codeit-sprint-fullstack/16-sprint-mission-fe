@@ -1,7 +1,7 @@
 .login-page {
     display: flex;
     width: 100%;
-    padding: 14.4375rem 0 17.75rem;
+    padding: 3.75rem 0 17.75rem;
     justify-content: center;
     align-items: center;
 }
@@ -234,4 +234,172 @@
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-skip-ink: none;
+}
+
+/* 유효성 검사 에러 */
+.error-message {
+    display: none;
+    margin-top: -0.5rem;
+
+    color: var(--error-red);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+#email.input-error {
+    border: 1px solid var(--error-red);
+}
+
+.password-input-box.input-error {
+    border: 1px solid var(--error-red);
+}
+
+/* 로그인 버튼 상태 */
+.login-button:disabled {
+    background: var(--secondary-400);
+    cursor: not-allowed;
+}
+
+.login-button:not(:disabled) {
+    background: var(--primary-100);
+    cursor: pointer;
+}
+
+/* 오류 모달 배경 */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+/* 오류 모달 */
+.error-modal {
+    position: relative;
+
+    display: flex;
+    width: calc(100% - 2rem);
+    max-width: 33.75rem;
+    height: 15.625rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: #FFF;
+}
+
+/* 모달 메시지 */
+.modal-message {
+    color: var(--secondary-800);
+    text-align: center;
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* 확인 버튼 */
+.modal-confirm-button {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    display: flex;
+    width: 7.5rem;
+    height: 3rem;
+    padding: 0.75rem 1.4375rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-100);
+
+    color: #FFF;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+/* Tablet: 744px ~ 1199px */
+@media (min-width: 744px) and (max-width: 1199px) {
+    .login-page {
+        padding: 3rem 1.5rem 17.75rem;
+    }
+
+    .login-container,
+    .login-form,
+    .email-field,
+    .password-field,
+    #email,
+    .password-input-box,
+    .login-button,
+    .social-login {
+        width: 100%;
+        max-width: 40rem;
+    }
+}
+
+/* Mobile: 375px ~ 743px */
+@media (min-width: 375px) and (max-width: 743px) {
+    .login-page {
+        padding: 1.5rem 0.9375rem 17.75rem 1rem;
+        box-sizing: border-box;
+    }
+
+    .login-container,
+    .login-form,
+    .email-field,
+    .password-field,
+    #email,
+    .password-input-box,
+    .login-button,
+    .social-login {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    .login-container {
+        flex-shrink: 1;
+    }
+
+    .logo {
+        width: 12.375rem;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+
+    .logo img {
+        height: auto;
+    }
+
+    .login-button {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }

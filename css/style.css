@@ -31,10 +31,14 @@ footer {
     background: var(--secondary-900);
 }
 
+main {
+    padding-top: 4.375rem;
+}
+
 
 /* 공통 */
 
-.rayer {
+.layer {
     border-radius: 0.75rem;
     background: var(--secondary-100);
 }
@@ -44,9 +48,11 @@ footer {
 
 .header-inner {
     display: flex;
+    width: 100%;
+    max-width: 95rem;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    align-self: stretch;
 }
 
 .logo {
@@ -131,7 +137,7 @@ footer {
 }
 
 .home-top-content h1,
-.home-bottom-content h1 {
+.home-bottom-content h2 {
     color: var(--secondary-700);
 
     font-size: 2.5rem;
@@ -178,16 +184,10 @@ footer {
     gap: 0.625rem;
 }
 
-.item {
-    padding: 8.625rem 21.5rem;
-}
-
-.search {
-    padding: 8.625rem 21.375rem;
-}
-
+.item,
+.search,
 .register {
-    padding: 8.625rem 22.5rem;
+    padding: 8.625rem 0;
 }
 
 
@@ -197,6 +197,7 @@ footer {
 .register-inner {
     display: flex;
     width: 61.75rem;
+    margin: 0 auto;
 
     justify-content: center;
     align-items: center;
@@ -285,8 +286,8 @@ footer {
 
 /* 큰 제목 공통 */
 .item-content h2,
-.search-content h3,
-.register-content h4 {
+.search-content h2,
+.register-content h2 {
     color: var(--secondary-700);
 
     font-size: 2.5rem;
@@ -296,14 +297,14 @@ footer {
     letter-spacing: 0.05rem;
 }
 
-.search-content h3 {
+.search-content h2 {
     text-align: right;
 }
 
 
 /* 설명 텍스트 공통 */
-.item-content h5,
-.search-content h6,
+.item-content p,
+.search-content p,
 .register-content p {
     color: var(--secondary-700);
 
@@ -313,7 +314,7 @@ footer {
     line-height: 2rem;
 }
 
-.search-content h6 {
+.search-content p {
     text-align: right;
 }
 
@@ -356,9 +357,11 @@ footer {
 
 .footer-content {
     display: flex;
+    width: 100%;
+    max-width: 95rem;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    align-self: stretch;
 }
 
 .footer-copyright,
@@ -397,4 +400,386 @@ footer {
     width: 1.25rem;
     height: 1.25rem;
     flex-shrink: 0;
+}
+
+
+/* Tablet */
+@media (min-width: 46.5rem) and (max-width: 74.9375rem) {
+    header,
+    footer {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .home-top {
+        height: 48.1875rem;
+    }
+
+    .home-top-inner {
+        width: 46.5rem;
+        height: 43.8125rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-top-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .home-top-button {
+        width: 22.3125rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .home-top-inner img {
+        width: 46.5rem;
+        height: auto;
+    }
+
+    .item,
+    .search,
+    .register {
+        padding: 0;
+    }
+
+    .item {
+        padding-top: 8.625rem;
+    }
+
+    .search,
+    .register {
+        padding-top: 3.25rem;
+    }
+
+    .register {
+        padding-bottom: 4.5rem;
+    }
+
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        width: 43.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .item-content,
+    .search-content,
+    .register-content {
+        gap: 1rem;
+    }
+
+    .search-title {
+        gap: 0;
+    }
+
+    .search-title h2 {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-inner .layer {
+        order: 1;
+    }
+
+    .search-content {
+        order: 2;
+        width: 100%;
+    }
+
+    .search-title {
+        width: 100%;
+    }
+
+    .item-inner img,
+    .search-inner img,
+    .register-inner img {
+        width: 43.5rem;
+        height: auto;
+    }
+
+    .search-content,
+    .search-title {
+        align-items: flex-end;
+    }
+
+    .search-content h2,
+    .search-content p {
+        text-align: right;
+    }
+
+    .item-content h2 br,
+    .search-content h2 br,
+    .register-content h2 br {
+        display: none;
+    }
+
+    .home-top-content h1 br {
+        display: none;
+    }
+
+    .home-bottom {
+        height: 57.9375rem;
+    }
+
+    .home-bottom-inner {
+        width: 46.5rem;
+        height: 45.375rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-bottom-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-bottom-inner img {
+        width: 46.5rem;
+        height: auto;
+    }
+}
+
+
+/* Mobile */
+@media (min-width: 23.4375rem) and (max-width: 46.4375rem) {
+    header {
+        padding: 0.625rem 1rem 0.5625rem;
+    }
+
+    .logo {
+        display: flex;
+        width: 6.4375rem;
+        height: 3.1875rem;
+        align-items: center;
+    }
+
+    .logo img {
+        height: auto;
+    }
+
+    .home-top,
+    .home-bottom {
+        height: 33.75rem;
+    }
+
+    .home-top-inner,
+    .home-bottom-inner,
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        flex-direction: column;
+    }
+
+    .home-top-inner {
+        width: 100%;
+        height: 29.375rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-top-content,
+    .item-content,
+    .search-content,
+    .register-content {
+        width: 21.5rem;
+        max-width: calc(100% - 1.9375rem);
+        height: auto;
+        padding-bottom: 0;
+        align-items: flex-start;
+    }
+
+    .home-top-content {
+        width: auto;
+        max-width: none;
+        margin: 0 auto;
+        align-items: center;
+        gap: 1.125rem;
+        text-align: center;
+    }
+
+    .home-top-content h1,
+    .home-bottom-content h2 {
+        font-size: 2rem;
+    }
+
+    .home-top-button {
+        width: auto;
+        height: 3rem;
+        padding: 0.75rem 4.4375rem;
+        align-self: stretch;
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .home-top-inner img,
+    .home-bottom-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .item,
+    .search,
+    .register {
+        padding: 0;
+    }
+
+    .item {
+        padding-top: 3.25rem;
+    }
+
+    .search,
+    .register {
+        padding-top: 2.5rem;
+    }
+
+    .register {
+        padding-bottom: 5.1875rem;
+    }
+
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        width: calc(100% - 2rem);
+        max-width: none;
+        gap: 1.5rem;
+    }
+
+    .item-inner .layer,
+    .search-inner .layer,
+    .register-inner .layer {
+        width: 100%;
+    }
+
+    .search-inner .layer {
+        order: 1;
+    }
+
+    .search-content {
+        order: 2;
+    }
+
+    .item-inner img,
+    .search-inner img,
+    .register-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-content,
+    .search-content,
+    .register-content {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        gap: 0.5rem;
+    }
+
+    .item-title,
+    .search-title,
+    .register-title {
+        width: 100%;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .search-title {
+        gap: 0;
+    }
+
+    .search-title h2 {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-content h2,
+    .search-content p {
+        text-align: right;
+    }
+
+    .search-content,
+    .search-title {
+        align-items: flex-end;
+    }
+
+    .item-content h2 br,
+    .search-content h2 br,
+    .register-content h2 br {
+        display: none;
+    }
+
+    .item-content p,
+    .search-content p,
+    .register-content p {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .item-content span,
+    .search-content span,
+    .register-content span {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .item-content h2,
+    .search-content h2,
+    .register-content h2 {
+        font-size: 1.5rem;
+        line-height: 140%;
+    }
+
+    .home-bottom-inner {
+        width: 100%;
+        height: 27.5rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-bottom-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer {
+        height: 10rem;
+        padding: 2rem 1rem;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        row-gap: 3.75rem;
+    }
+
+    .footer-menu {
+        order: 1;
+    }
+
+    .footer-sns {
+        order: 2;
+        justify-content: flex-end;
+    }
+
+    .footer-copyright {
+        order: 3;
+        width: 100%;
+        text-align: left;
+    }
 }

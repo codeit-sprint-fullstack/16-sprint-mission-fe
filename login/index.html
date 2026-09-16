@@ -44,6 +44,7 @@
 
                 <input id="email" type="email" placeholder="이메일을 입력해주세요">
 
+                <p id="email-error" class="error-message"></p>
             </div>
 
 
@@ -64,11 +65,12 @@
 
                 </div>
 
+                <p id="password-error" class="error-message"></p>
             </div>
 
 
             <!-- 로그인 버튼 -->
-            <button type="submit" class="login-button">
+            <button type="submit" class="login-button" disabled>
                 로그인
             </button>
 
@@ -112,6 +114,19 @@
 
     </main>
 
+    <div id="error-modal" class="modal-overlay" hidden>
+        <div class="error-modal" role="dialog" aria-modal="true" aria-labelledby="modal-message">
+            <p id="modal-message" class="modal-message">
+                비밀번호가 일치하지 않습니다.
+            </p>
+
+            <button type="button" class="modal-confirm-button">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./login.js"></script>
 </body>
 
 </html>

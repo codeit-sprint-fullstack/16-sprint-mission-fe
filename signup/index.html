@@ -39,6 +39,7 @@
                 <label for="email">이메일</label>
 
                 <input id="email" type="email" placeholder="이메일을 입력해주세요">
+                <p id="email-error" class="error-message"></p>
             </div>
 
             <!-- 닉네임 -->
@@ -61,6 +62,7 @@
                     </button>
 
                 </div>
+                <p id="password-error" class="error-message"></p>
             </div>
 
             <!-- 비밀번호 확인 -->
@@ -76,10 +78,11 @@
                     </button>
 
                 </div>
+                <p id="password-confirm-error" class="error-message"></p>
             </div>
 
             <!-- 회원가입 버튼 -->
-            <button type="submit" class="signup-button">
+            <button type="submit" class="signup-button" disabled>
                 회원가입
             </button>
 
@@ -120,7 +123,20 @@
         </div>
 
     </main>
+    <div id="error-modal" class="modal-overlay" hidden>
+        <div class="error-modal" role="dialog" aria-modal="true" aria-labelledby="modal-message">
+            <p id="modal-message" class="modal-message">
+                사용 중인 이메일입니다
+            </p>
 
+            <button type="button" class="modal-confirm-button">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./signup.js"></script>
 </body>
+
 
 </html>
