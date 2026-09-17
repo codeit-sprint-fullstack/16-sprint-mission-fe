@@ -24,6 +24,7 @@
 
       gtag("config", "G-PLWHEK9FWB");
     </script>
+    <script type="module" src="./JS/main.js"></script>
   </head>
   <body>
     <div>
@@ -40,9 +41,7 @@
             </a>
           </div>
           <div>
-            <a href="/login/login.html">
-              <button class="login">로그인</button></a
-            >
+            <a href="/login/login.html" class="login"> 로그인 </a>
           </div>
         </div>
       </header>
@@ -54,9 +53,9 @@
               일상의 모든 물건을<br />
               거래해 보세요.
             </h2>
-            <a href="/items/item.html"
-              ><button class="banner-button">구경하러 가기</button></a
-            >
+            <div class="banner-button">
+              <a href="/items/item.html">구경하러 가기</a>
+            </div>
           </div>
           <div class="banner-image">
             <img src="/img/Img_home_top.png" alt="판다손인사" />
@@ -73,11 +72,11 @@
               <img class="promo-img" src="/img/Img_home_01.png" alt="" />
             </div>
             <div class="promo-content">
-              <h2 class="promo-item1">Hot item</h2>
+              <p class="promo-item1">Hot item</p>
               <h2 class="promo-item2">인기 상품을 <br />확인해 보세요</h2>
-              <h2 class="promo-item3">
+              <p class="promo-item3">
                 가장 HOT한 중고거래 물품을 <br />판다 마켓에서 확인해 보세요
-              </h2>
+              </p>
             </div>
           </div>
         </section>
@@ -85,14 +84,14 @@
         <section class="section2">
           <div class="promo-banner2">
             <div class="promo-content2">
-              <h2 class="promo-item11">Search</h2>
+              <p class="promo-item11">Search</p>
               <h2 class="promo-item22">
                 구매를 원하는<br />
                 상품을 검색하세요
               </h2>
-              <h2 class="promo-item33">
+              <p class="promo-item33">
                 구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
-              </h2>
+              </p>
             </div>
             <div class="promo2">
               <img class="promo-img2" src="/img/Img_home_02.png" alt="" />
@@ -106,13 +105,13 @@
               <img class="promo-img" src="/img/Img_home_03.png" alt="" />
             </div>
             <div class="promo-content3">
-              <h2 class="promo-item111">Register</h2>
+              <p class="promo-item111">Register</p>
               <h2 class="promo-item222">
                 판매를 원하는<br />상품을 등록하세요
               </h2>
-              <h2 class="promo-item333">
+              <p class="promo-item333">
                 어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
-              </h2>
+              </p>
             </div>
           </div>
         </section>
@@ -149,22 +148,31 @@
         </ul>
         <ul class="footer-end">
           <li>
-            <a href="https://www.facebook.com/" target="_blank"
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              aria-label="페이스북"
               ><i class="fa-brands fa-facebook-f"></i
             ></a>
           </li>
           <li>
-            <a href="https://x.com/" target="_blank"
+            <a href="https://x.com/" target="_blank" aria-label="x"
               ><i class="fa-brands fa-x-twitter"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.youtube.com/" target="_blank"
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              aria-label="youtube"
               ><i class="fa-brands fa-youtube"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" target="_blank"
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              aria-label="instagram"
               ><i class="fa-brands fa-instagram"></i
             ></a>
           </li>
