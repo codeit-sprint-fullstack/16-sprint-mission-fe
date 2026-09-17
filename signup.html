@@ -8,6 +8,7 @@
   <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/signup.css">
+  <script src="./js/form.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ2D85E541"></script>
   <script>
@@ -34,12 +35,12 @@
         <div class="password-box">
           <label for="password">비밀번호</label>
           <input id="password" type="password" placeholder="비밀번호를 입력해주세요" maxlength="20" required>
-          <a href="#">비밀번호 보기</a>
+          <button type="button" class="password-toggle-btn">비밀번호 보기</button>
         </div>
         <div class="password-check-box">
           <label for="password-check">비밀번호 확인</label>
           <input id="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" maxlength="20" required>
-          <a href="#">비밀번호 보기</a>
+          <button type="button" class="password-toggle-btn">비밀번호 보기</button>
         </div>
         <button type="submit" disabled class="submit-btn">회원가입</button>
       </form>
@@ -54,5 +55,4 @@
     </main>
   </div>
 </body>
-<script src="./js/form.js"></script>
 </html>

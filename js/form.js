@@ -1,44 +1,27 @@
-// PASSWORD TOGGLE
-const toggleBtn = document.querySelectorAll('form > div a')
+// ===== DOM 캐싱 =====
+const form = document.querySelector('form');
 
-function togglePassword(){
-  event.preventDefault()
+// ===== 이벤트 핸들러 바인딩 =====
+// 비밀번호 보기 토글
+form.addEventListener('click', event => {
+  const isToggleBtn = event.target.classList.contains('password-toggle-btn');
 
-  const btnBox = this.parentElement
-  const passwordInput = btnBox.getElementsByTagName('input')[0]
+  if(!isToggleBtn) return;
 
-  if(passwordInput.type === 'password'){
-    passwordInput.type = 'text'
-  }else{
-    passwordInput.type = 'password'
-  }
-  btnBox.classList.toggle('on')
-}
+  const inputBox = event.target.closest('div');
+  const input = inputBox.querySelector('input');
+  
+  input.type = input.type === 'password' ? 'text' : 'password';
+  inputBox.classList.toggle('on');
+});
 
-toggleBtn.forEach((element) => {
-  element.addEventListener('click', togglePassword)
-})
+// 로그인, 회원가입 버튼 활성화
+form.addEventListener('input', event => {
+  const inputs = form.querySelectorAll('input');
+  const inputsValues = [...inputs].map(input => input.value.trim());
+  const isSubmitOk = inputsValues.every(value => value !== '');
+  
+  const submitBtn = form.querySelector('.submit-btn');
 
-
-// SUBMIT BUTTON ENABLED
-const myForm = document.getElementsByTagName('form')[0]
-const inputs = myForm.querySelectorAll('input')
-const submitBtn = myForm.querySelector('.submit-btn')
-
-function formChecker(){
-  let inputsValue = []
-
-  for(let i = 0; i <= inputs.length - 1; i++){
-    inputsValue[i] = inputs[i].value
-  }
-
-  if(inputsValue.every(val => val !== '')){
-    submitBtn.disabled = false
-  }else{
-    submitBtn.disabled = true
-  }
-}
-
-inputs.forEach((element) => {
-  element.addEventListener('keyup', formChecker)
-})
+  isSubmitOk ? submitBtn.disabled = false : submitBtn.disabled = true;
+});
