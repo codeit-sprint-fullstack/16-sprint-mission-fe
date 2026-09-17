@@ -2,9 +2,14 @@ const address = "https://panda-market-api-crud.vercel.app";
 
 // getProductList
 export const getProductList = async (page, pageSize, keyword) => {
-  const response = await fetch(
-    `${address}/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}`,
-  );
+  // ✅ 수정된 부분
+  const params = new URLSearchParams({
+    page,
+    pageSize,
+    keyword,
+  });
+
+  const response = await fetch(`${address}/products?${params}`);
   if (!response.ok) {
     throw new Error(
       `상품 목록을 못 받았어요 — 서버가 ${response.status}로 답했어요`,

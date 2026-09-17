@@ -2,9 +2,14 @@ const address = "https://panda-market-api-crud.vercel.app";
 
 // getArticleList
 export const getArticleList = (page, pageSize, keyword) => {
-  return fetch(
-    `${address}/articles?page=${page}&pageSize=${pageSize}&keyword=${keyword}`,
-  )
+  // ✅ 수정된 부분
+  const params = new URLSearchParams({
+    page,
+    pageSize,
+    keyword,
+  });
+
+  return fetch(`${address}/articles?${params}`)
     .then((response) => {
       // 404, 500 같은 서버 오류 확인
       if (!response.ok) {

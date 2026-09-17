@@ -98,6 +98,7 @@ header .inner {
   font-size: 3.125rem; /* 50px; */
 }
 .banner-button {
+  display: inline-block;
   background: #3692ff;
   width: 25rem; /* 400px; */
   margin-top: 3rem;
