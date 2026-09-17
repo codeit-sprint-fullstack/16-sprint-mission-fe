@@ -233,6 +233,7 @@ img {
   color: var(--color-coolgray100);
 
   cursor: pointer;
+  border: none;
 
   display: flex;
   justify-content: center;
@@ -242,7 +243,7 @@ img {
 }
 
 .button-login {
-  /* padding 으로 버튼 사이즈를 조절해야 할까? 아니면 width 로 고정? */
+  min-width: 150px;
   padding: 1rem 3rem;
 
   border-radius: var(--radius-md);
@@ -254,6 +255,7 @@ img {
   font-size: 1.25rem;
   font-weight: 600;
   border-radius: 40px;
+  min-width: 200px;
   padding: 1rem 0.5rem;
 
   margin-bottom: 8rem;
@@ -261,8 +263,7 @@ img {
 
 /* login, signup */
 
-.login-page,
-.signup-page {
+.auth-page {
   display: flex;
 
   justify-content: center;
@@ -271,7 +272,7 @@ img {
   margin: 5% 0;
 }
 
-.login-wrapper {
+.auth-wrapper {
   display: flex;
 
   width: 640px;
@@ -312,7 +313,7 @@ img {
       font-size: 1rem;
       font-weight: 400;
 
-      margin: 1rem 0 1.5rem 0;
+      margin: 1rem 0;
 
       &::placeholder {
         color: var(--color-secondary400);
@@ -324,10 +325,8 @@ img {
       }
     }
 
-    button {
+    .button-login {
       width: 100%;
-      border: none;
-      padding: 1rem auto;
 
       background-color: var(--color-secondary400);
       border-radius: var(--radius-pill);
@@ -359,7 +358,7 @@ img {
       color: var(--color-secondary800);
     }
 
-    .login-oauth-button {
+    .oauth-list {
       display: flex;
       gap: 1rem;
     }
@@ -380,8 +379,11 @@ img {
 
     .button-visibility {
       position: absolute;
-      bottom: 2.3rem; /* 이게 맞나 */
+      top: 50%;
+      transform: translateY(-50%);
       right: 1.5rem;
+
+      background-color: transparent;
     }
   }
 }
