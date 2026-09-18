@@ -1,0 +1,129 @@
+@use "../../styles/variables" as *;
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 24px 80px;
+}
+
+.sectionTitle {
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: $gray-900;
+}
+
+.bestSection {
+  margin-bottom: 40px;
+}
+
+.bestGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.productSection {
+  margin-bottom: 80px;
+}
+
+.productToolbar {
+  display: grid;
+  grid-template-columns: 1fr 325px auto 130px;
+  grid-template-areas:
+    "title search add sort";
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.toolbarTop, .toolbarBottom {
+  display: contents;
+}
+
+.productTitle {
+  grid-area: title;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.addButton {
+  height: 42px;
+  padding: 12px 23px;
+  border-radius: 0.5rem;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  cursor: pointer;
+  grid-area: add;
+  white-space: nowrap;
+}
+
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+
+
+//반응형
+
+@media (max-width: 1199px)  {
+  .bestGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .productToolbar{
+    grid-template-columns: 1fr 242px auto 130px;
+  }
+}
+
+@media (max-width: 743px) {
+
+  .bestGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .productToolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .toolbarTop {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .toolbarBottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .sectionTitle,
+  .addButton {
+    grid-area: auto;
+  }
+}

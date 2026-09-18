@@ -1,0 +1,77 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  width: 100%;
+  height: 160px;
+  padding: 32px 200px;
+  background: $gray-900;
+
+  .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    color: $gray-200;
+    font-size: 1rem;
+    font-weight: 400;
+
+    .footerLinks {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footerSns {
+      display: flex;
+      gap: 12px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 743px) {
+  .footer {
+    height: 160px;
+    padding: 32px 16px;
+
+    .footerContainer {
+      display: grid;
+
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "links . sns"
+        "copyright copyright copyright";
+
+      row-gap: 24px;
+      align-items: center;
+
+      font-size: 12px;
+    }
+
+    .footerContainer > div:first-child {
+      grid-area: copyright;
+    }
+
+    .footerLinks {
+      grid-area: links;
+      gap: 24px;
+    }
+
+    .footerSns {
+      grid-area: sns;
+      gap: 12px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
