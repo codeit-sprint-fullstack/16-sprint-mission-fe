@@ -1,4 +1,5 @@
-import Layout from './component/Layout.jsx'
+import Layout from './components/Layout.jsx'
+import HomePage from './pages/HomePage.jsx'
 import {BrowserRouter, Route, Routes} from "react-router";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route path="/"></Route>
+                    <Route path="/" element={<HomePage />}></Route>
                 </Routes>
             </Layout>
         </BrowserRouter>
