@@ -1,0 +1,30 @@
+{
+  "name": "codeit-panda-market",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./src/main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyAeroCode/codeit-panda-market.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MyAeroCode/codeit-panda-market/issues"
+  },
+  "homepage": "https://github.com/MyAeroCode/codeit-panda-market#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prettier": "^3.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}
