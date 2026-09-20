@@ -6,12 +6,17 @@ const ProductItem = ({
     image,
     name,
     price,
-    favoriteCount,
+    favoriteCount
   }) => {  
+    
+  const handleAnchor = (event) => {
+    event.preventDefault();
+  };
+  
   return (
     <div className={`product${className}`}>
       <div className='img-box'>
-        <a href='#'>
+        <a href='#' onClick={handleAnchor}>
           <img
             src={image ?? defaultImage}
             alt={name}
@@ -22,10 +27,10 @@ const ProductItem = ({
         </a>
       </div>
       <p className='title'>
-        <a href='#'>{name}</a>
+        <a href='#' onClick={handleAnchor}>{name}</a>
       </p>
       <p className='price'>
-        <a href='#'>{price?.toLocaleString()}원</a>
+        <a href='#' onClick={handleAnchor}>{price?.toLocaleString()}원</a>
       </p>
       <button className='like-btn'>
         <span className='like-count'>{favoriteCount?.toLocaleString()}</span>

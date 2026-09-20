@@ -7,6 +7,7 @@ form.toolbar{
 form.toolbar #searchInput{
   padding: 0;
   padding-left: 2.75rem; // 44px
+  padding-right: 1rem; // 16px
   // 설명 적을 것
   width: calc(100dvw - 88px);
   min-width: 17rem; // 272px
@@ -83,6 +84,10 @@ form.toolbar #sort{
     top: 0.5rem; // 8px
     border: none;
     background: none;
+  }
+
+  &:disabled{
+    cursor: not-allowed;
   }
 }
 form.toolbar #sort option{

@@ -9,7 +9,9 @@ const api = axios.create({
 // api.interceptors.response.use((response) => response.data);
 
 export const productApi = {
-  getProducts: (query) => api.get(`${PRODUCTS}?${query}`),
+  getProducts: (query, controllerSignal) => api.get(`${PRODUCTS}?${query}`, {
+    signal: controllerSignal,
+  }),
 };
 
 export default api;

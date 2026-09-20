@@ -12,6 +12,9 @@ export const useProducts = () => {
   const [keyword, setKeyword] = useState('');
   const [indicators, setIndicators] = useState([]);
   const [hasProducts, setHasProducts] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+  const [error, setError] = useState(null);
 
   const createIndicators = (targetPage) => {
     const indicatorPool = [];
@@ -31,8 +34,11 @@ export const useProducts = () => {
     if (targetPage < 1 || targetPage > maxPage) return;
     setPage(targetPage);
   };
-
+  
   useEffect(() => {
+    const controller = new AbortController();
+    let cancelled = false;
+
     const loadProducts = async () => {
       const query = new URLSearchParams();
       query.set('page', page);
@@ -40,27 +46,50 @@ export const useProducts = () => {
       query.set('orderBy', order);
       if (keyword) query.set('keyword', keyword);
 
-      const envelop = await productApi.getProducts(query.toString());
-      const { list, totalCount } = envelop.data;
-      
-      maxPage = Math.ceil(totalCount / pageSize);
+      setIsLoading(true);
+      setError(null);
 
-      totalCount !== 0 ? setHasProducts(true) : setHasProducts(false);
-      setProducts(list);
-      setIndicators(createIndicators(page));
+      if (isSearch) return;
+
+      try {
+        const envelop = await productApi.getProducts(query.toString(), controller.signal);
+        const { list, totalCount } = envelop.data;
+        
+        maxPage = Math.ceil(totalCount / pageSize);
+
+        totalCount !== 0 ? setHasProducts(true) : setHasProducts(false);
+        setProducts(list);
+        setIndicators(createIndicators(page));
+      } catch (err) {
+        if (err.name === 'CanceledError') return;
+        console.error(err);
+        setError(err);
+      } finally {
+        if (!cancelled){
+          setIsLoading(false);
+        }
+      }
     };
 
     loadProducts();
-  }, [pageSize, page, order, keyword]);
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    }
+  }, [pageSize, page, order, keyword, isSearch]);
 
   return {
     products,
     page,
     indicators,
     hasProducts,
+    isLoading,
+    error,
     setPage,
     setOrder,
     setKeyword,
+    setIsSearch,
     goToPage
   };
 };
