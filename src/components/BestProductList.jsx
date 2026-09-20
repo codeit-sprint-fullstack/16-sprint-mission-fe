@@ -23,7 +23,7 @@ const BestProductList = ({ onSetBestError }) => {
       onSetBestError(null);
 
       try {
-        const envelop = await productApi.getProducts(query.toString());
+        const envelop = await productApi.getProducts(query.toString(), controller.signal);
         setProducts(envelop.data.list);
       } catch (err) {
         if (err.name === 'CanceledError') return;
