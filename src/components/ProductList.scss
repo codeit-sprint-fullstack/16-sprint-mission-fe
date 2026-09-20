@@ -1,0 +1,117 @@
+/* 모바일 */
+body{
+  background: #FCFCFC;
+}
+
+main{
+  margin-top: 5.938rem; // 95px
+  min-width: 22.5rem; // 360px
+}
+
+.best-product-section,
+.product-section{
+  padding: 0 1rem; // 0 16px
+}
+.best-product-section{
+  margin-bottom: 1.5rem; // 24px
+}
+.product-section{
+  margin-bottom: 8.438rem; // 135px
+}
+.product-container-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0.5rem; // 8px
+  position: relative;
+  margin-bottom: 1rem; // 16px
+}
+.product-container-title{
+  color: var(--secondary-color-900);
+  font-size: 1.25rem; // 20px
+  font-weight: 700;
+  line-height: 2rem; // 32px
+}
+.product-section .product-container-title{
+  position: absolute;
+  top: 0;
+}
+.best-product-section .product-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.product-section .product-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 0.5rem; // 8px
+  row-gap: 2rem; // 32px
+}
+
+/* 태블릿 */
+@media (min-width: 768px){
+  .best-product-section,
+  .product-section{
+    padding: 0 1.5rem; // 0 24px
+  }
+  .best-product-section{
+    margin-bottom: 2.5rem; // 40px
+  }
+  .product-section{
+    margin-bottom: 10.313rem; // 165px
+  }
+  .product-container-header{
+    flex-wrap: nowrap;
+  }
+  .product-section .product-container-header{
+    margin-bottom: 1.5rem; // 24px
+  }
+  .product-section .product-container-title{
+    position: static;
+  }
+  .best-product-section .product-container{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.625rem; // 10px
+  }
+  .product-section .product-container{
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem; // 16px
+    row-gap: 2.5rem; // 40px
+  }
+}
+
+/* 데스크톱 */
+@media (min-width: 1024px) {
+  .best-product-section,
+  .product-section{
+    margin: 0 auto;
+    padding: 0;
+    width: 75rem; // 1200px
+  }
+  .product-section{
+    margin-bottom: 8.75rem; // 140px
+  }
+  .product-container-title{
+    color: var(--secondary-color-900);
+    font-size: 1.25rem; // 20px
+    font-weight: 700;
+    line-height: 2rem; // 32px
+  }
+  .product-container{
+    margin: 1rem 0 2.5rem; // 16px 0 40px
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1.5rem; // 24px
+    row-gap: 2.5rem; // 40px
+  }
+  .best-product-section .product-container{
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5rem; // 24px
+  }
+  .product-section .product-container{
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1.5rem; // 24px
+  }
+}

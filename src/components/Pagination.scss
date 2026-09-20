@@ -1,0 +1,50 @@
+/* 모든 화면 동일 */
+.pagination{
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem; // 4px
+  margin-top: 2.5rem; // 40px
+}
+.pagination li{
+  overflow: hidden;
+  width: 2.5rem; // 40px
+  height: 2.5rem; // 40px
+  border: 1px solid var(--secondary-color-200);
+  border-radius: 50%;
+  background-color: #fff;
+}
+.pagination li.prev-btn,
+.pagination li.next-btn{
+  overflow: hidden;
+  text-indent: -999rem;
+  background-image: url(../assets/ic_arrow_left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pagination li.next-btn{
+  background-image: url(../assets/ic_arrow_right.svg);
+}
+.pagination li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--secondary-color-500);
+  font-size: 1rem; // 16px
+  font-weight: 600;
+  text-align: center;
+  line-height: 2.5rem; // 40px
+}
+.pagination li.on{
+  border: none;
+  background: #2F80ED;
+
+  a{
+    color: var(--secondary-color-100);
+  }
+}
+.pagination .indicators{
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem; // 4px
+  width: 13.5rem; // 216px
+}
