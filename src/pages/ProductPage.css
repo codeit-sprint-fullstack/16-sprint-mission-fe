@@ -1,0 +1,134 @@
+.product-page {
+  min-height: calc(100vh - var(--space-7));
+  display: flex;
+  flex-direction: column;
+}
+
+.product-page main {
+  flex: 1;
+}
+
+.market-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) 0;
+}
+
+.best-products-section {
+  margin-bottom: 5rem;
+}
+
+.best-products-section h2,
+.products-section h2 {
+  color: var(--color-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.best-products-list {
+ margin-top: var(--space-3);
+ display: grid;
+ grid-template-columns: repeat(4, minmax(0, 1fr));
+ gap: var(--space-3);
+}
+
+.products-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.product-actions input,
+.product-actions select {
+  height: 2.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0 var(--space-3);
+  color: var(--color-text);
+}
+
+.product-actions input {
+  width: 20.125rem;
+}
+
+.product-actions button {
+  height: 2.625rem;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+}
+
+.all-products-list {
+  margin-top: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+
+@media (max-width: 1199px) {
+  .market-container {
+    padding-inline: var(--space-6);
+  }
+
+  .best-products-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .all-products-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .market-container {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .best-products-section {
+    margin-bottom: var(--space-6);
+  }
+
+  .best-products-list {
+    grid-template-columns: 1fr;
+  }
+
+  .all-products-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+  }
+
+  .products-section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-actions {
+    flex-wrap: wrap;
+  }
+
+  .product-actions input {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+}
+
+.status-message {
+  grid-column: 1 / -1;
+  padding: var(--space-5) 0;
+  color: var(--color-text-muted);
+  text-align: center;
+}

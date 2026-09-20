@@ -1,0 +1,18 @@
+.product-card-image,
+.product-card-image-fallback {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.75rem;
+}
+
+.product-card-image {
+  display: block;
+  object-fit: cover;
+}
+
+.product-card-image-fallback {
+  display: grid;
+  place-items: center;
+  background: var(--color-login-box);
+  color: var(--color-text-muted);
+}
