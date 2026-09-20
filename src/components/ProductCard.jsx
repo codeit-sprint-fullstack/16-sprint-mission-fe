@@ -1,18 +1,15 @@
-const ProductCard = () => {
+import { FaRegHeart } from "react-icons/fa";
 
-    // const response = await fetch('http://panda-market-api.vercel.app/products');
-    // const data = await response.json();
-    // const one = data.list[0];
-    // console.log(one);
+const ProductCard = ({img, name, price, favCount}) => {
 
     return (
-        <div>
-            Product card
-            <img src="" alt=""/>
-            <p></p>
-            <div>
-                <svg></svg>
-                <p></p>
+        <div className="flex flex-col gap-2">
+            <img src={img} alt={name} className="w-full h-40 object-cover rounded-lg"/>
+            <p className="text-xs">{name}</p>
+            <p className="text-sm font-bold">{price.toLocaleString()}원</p>
+            <div className="flex flex-row items-center gap-1">
+                <FaRegHeart className="h-3"/>
+                <p className="text-xs">{favCount}</p>
             </div>
         </div>
     );
