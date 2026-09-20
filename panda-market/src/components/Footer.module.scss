@@ -1,0 +1,31 @@
+.siteFooter {
+  background: #111827;
+  width: 100%;
+}
+
+/* Footer 내부 링크 텍스트 색상 */
+.siteFooter a {
+  color: #c4c4c4;
+}
+
+/* Footer 내부 콘텐츠 정렬 및 여백 (양끝 정렬) */
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 200px 100px;
+}
+
+/* Privacy Policy, FAQ 링크 묶음 간격 */
+.footerLinks {
+  display: flex;
+  gap: 30px;
+}
+
+/* SNS 아이콘(페이스북, 트위터 등) 묶음 간격 */
+.footerSns {
+  display: flex;
+  gap: 20px; /* 아이콘들 사이의 간격 */
+}

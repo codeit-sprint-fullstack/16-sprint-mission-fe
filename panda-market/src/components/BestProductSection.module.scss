@@ -1,0 +1,13 @@
+.section {
+  padding: 32px 0;
+
+  h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+}
