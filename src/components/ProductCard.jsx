@@ -4,7 +4,7 @@ const ProductCard = ({img, name, price, favCount}) => {
 
     return (
         <div className="flex flex-col gap-2">
-            <img src={img} alt={name} className="w-auto h-50 object-cover rounded-lg"/>
+            <img src={img} alt={name} className="w-full aspect-square object-cover rounded-lg"/>
             <p className="text-xs">{name}</p>
             <p className="text-sm font-bold">{price.toLocaleString()}원</p>
             <div className="flex flex-row items-center gap-1">
