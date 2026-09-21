@@ -25,7 +25,7 @@ const HomePage = () => {
     return (
         <div className="m-auto w-2/3">
             <div className="my-6">
-                <h1>베스트 상품</h1>
+                <h1 className="my-4">베스트 상품</h1>
                 <div className="grid grid-cols-4 grid-rows-1 gap-4">
                     {
                         productsByFavcount.map((item) => {
@@ -41,7 +41,17 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="my-6">
-                <h1>판매 중인 상품</h1>
+                <div className="my-4 flex flex-row justify-between h-8">
+                    <h1>판매 중인 상품</h1>
+                    <div className="flex text-xs gap-4">
+                        <input className="p-2 bg-[#F3F4F6] rounded-lg" type="text" placeholder="검색할 삼품을 입력해주세요"/>
+                        <button className="btn-primary text-xs h-8">상품 등록하기</button>
+                        <select className="border rounded-lg p-2" name="" id="">
+                            <option value="최신순">최신순</option>
+                            <option value="좋아요순">좋아요순</option>
+                        </select>
+                    </div>
+                </div>
                 <div className="grid grid-cols-5 grid-rows-2 gap-4">
                     {
                         products.map((item) => {

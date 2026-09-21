@@ -6,3 +6,9 @@
   --font-display: "Inter", sans-serif;
   --color-brand: #3b82f6;
 }
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#3692FF] px-4 rounded-lg text-white h-10 text-sm
+  }
+}

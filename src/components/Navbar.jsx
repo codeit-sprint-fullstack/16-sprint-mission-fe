@@ -10,7 +10,7 @@ const Navbar = () => {
                 <button>자유게시판</button>
                 <button>중고마켓</button>
             </div>
-            <button className="">로그인</button>
+            <button className="btn-primary self-center">로그인</button>
         </nav>
     );
 };
