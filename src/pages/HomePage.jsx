@@ -1,7 +1,5 @@
 import ProductCard from '../components/ProductCard.jsx'
 import {useEffect, useState} from "react";
-import { SlArrowLeft } from "react-icons/sl";
-
 
 const HomePage = () => {
     let pageSize = 10;
@@ -28,8 +26,8 @@ const HomePage = () => {
 
     return (
         <div className="m-auto w-2/3">
-            <div className="my-6">
-                <h1 className="my-4">베스트 상품</h1>
+            <div className="my-10">
+                <h1 className="my-4 font-bold">베스트 상품</h1>
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
                     {productsByFavcount.slice(0, 4).map((item, index) => {
                         // index 0: Always visible (1 item for mobile)
@@ -52,9 +50,9 @@ const HomePage = () => {
                     })}
                 </div>
             </div>
-            <div className="my-6">
+            <div className="my-10">
                 <div className="my-4 flex flex-row justify-between h-8">
-                    <h1>판매 중인 상품</h1>
+                    <h1 className="font-bold" >판매 중인 상품</h1>
                     <div className="flex text-xs gap-4">
                         <input className="p-2 bg-[#F3F4F6] rounded-lg" type="text" placeholder="검색할 삼품을 입력해주세요"/>
                         <button className="btn-primary text-xs h-8">상품 등록하기</button>
