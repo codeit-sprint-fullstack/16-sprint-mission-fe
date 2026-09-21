@@ -1,0 +1,167 @@
+/* src/index.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #111827;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* Header */
+
+.header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Main */
+
+.market-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.best-section {
+  margin-bottom: 80px;
+}
+
+.product-section {
+  margin-bottom: 80px;
+}
+
+/* 베스트 상품 */
+
+.best-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 전체 상품 */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+/* 상품 카드 */
+
+.product-card {
+  min-width: 0;
+}
+
+.product-image {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.product-card strong {
+  font-size: 16px;
+}
+
+/* 검색 */
+
+.product-title-area {
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  flex: 1;
+
+  padding: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+/* 페이지네이션 */
+
+.pagination {
+  margin-top: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+
+/* Footer */
+
+.footer {
+  min-height: 120px;
+  padding: 32px;
+
+  background: #111827;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Tablet */
+
+@media (max-width: 1199px) {
+  .best-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .best-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
