@@ -4,11 +4,11 @@
 /* Optional: Custom global font imports or CSS variables */
 @theme {
   --font-display: "Inter", sans-serif;
-  --color-brand: #3b82f6;
+  --color-brand: #3692FF;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-[#3692FF] px-4 rounded-lg text-white h-10 text-sm
+    @apply bg-[#3692FF] px-4 rounded-lg text-white text-sm
   }
 }
