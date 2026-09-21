@@ -6,18 +6,21 @@ import './bestCell.css'
 function BestProductCard({id, name, price, favoriteCount, images}) {
   
   
-const imageUrl = images && images.length > 0 
-    ? images[0] 
-    : 'https://placeholder.com';
+const imageUrl = images && images.length > 0
+    ? images[0]
+    : null;
 
   return (
     <div className='best-card-cell-wrapper'>
       <div className='best-card-cell-image'>
-        <img 
-          className='best-card-cell-image'
-          src={imageUrl} 
-          alt={name} 
-         
+        <img
+          className="best-card-cell-image"
+          src={imageUrl || "../asset/img_default.svg"}
+          alt={name}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = "../asset/img_default.svg";
+          }}
         />
       </div>
       <p className = 'best-card-cell-name'>{name}</p>

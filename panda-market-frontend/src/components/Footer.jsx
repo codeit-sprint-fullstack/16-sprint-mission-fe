@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import './footer.css'
+import '../css/reset.css'
+import '../css/variables.css'
 
 
 function Footer() {
@@ -9,7 +11,7 @@ function Footer() {
     return (
         <footer>
             <div class="footer-wrapper">
-                <a href="">ⓒcodeit-2024</a>
+                <a className = "codeit" href="">ⓒcodeit-2024</a>
                 <div class="footer-center">
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/faq">FAQ</a>

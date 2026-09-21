@@ -1,41 +1,49 @@
-.best-card-cell-wrapper{
-    height : 100%;
-    width : 29rem;
-   
-    
+.best-card-cell-wrapper {
+    height: 100%;
+    width: 29rem;
+
 }
 
-.best-card-cell-image{
-    width : 29rem;
-    height : 29rem;
-    background-color: gray;
+.best-card-cell-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: transparent;
     border-radius: 1.6rem;
-   
+
 }
 
-.best-card-cell-name{
+.best-card-cell-name {
     font-size: 1.4rem;
-   
-    margin : 1rem 0;
+
+    margin: 1rem 0;
 }
 
-.best-card-cell-price{
+.best-card-cell-price {
     font-size: 1.4rem;
     font-weight: 800;
-    
-    margin : 1rem 0;
+
+    margin: 1rem 0;
 }
 
-.best-card-cell-favorite{
+.best-card-cell-favorite {
     font-size: 1.2rem;
-   
-    margin : 1rem 0;
+
+    margin: 1rem 0;
     display: flex;
     align-items: center;
-    gap : 0.2rem;
+    gap: 0.2rem;
 }
 
-.heart-icon{
-    width : 1.5rem;
-    height : 1.5rem;
+.heart-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media(max-width : 1023px) {
+    .best-card-cell-wrapper {
+        height: 100%;
+        width: 29rem;
+        border : 1px solid red;
+    }
 }
