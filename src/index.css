@@ -1,0 +1,14 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* Optional: Custom global font imports or CSS variables */
+@theme {
+  --font-display: "Inter", sans-serif;
+  --color-brand: #3692FF;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#3692FF] px-4 rounded-lg text-white text-sm
+  }
+}
