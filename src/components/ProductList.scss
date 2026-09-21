@@ -1,22 +1,16 @@
 /* 모바일 */
-body{
-  background: #FCFCFC;
-}
-
-main{
-  margin-top: 5.938rem; // 95px
+.items-main{
+  padding-top: 5.938rem; // 95px
+  padding-bottom: 8.438rem; // 135px
   min-width: 22.5rem; // 360px
+  background: #fcfcfc;
 }
-
 .best-product-section,
 .product-section{
   padding: 0 1rem; // 0 16px
 }
 .best-product-section{
   margin-bottom: 1.5rem; // 24px
-}
-.product-section{
-  margin-bottom: 8.438rem; // 135px
 }
 .product-container-header{
   display: flex;
@@ -89,9 +83,6 @@ main{
     margin: 0 auto;
     padding: 0;
     width: 75rem; // 1200px
-  }
-  .product-section{
-    margin-bottom: 8.75rem; // 140px
   }
   .product-container-title{
     color: var(--secondary-color-900);

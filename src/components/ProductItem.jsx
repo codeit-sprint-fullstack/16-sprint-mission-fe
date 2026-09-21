@@ -1,39 +1,34 @@
+import { Link } from 'react-router';
 import defaultImage from '../assets/product_default.png';
 import './ProductItem.scss';
 
 const ProductItem = ({
     className = '',
-    image,
+    postId,
     name,
     price,
-    favoriteCount
-  }) => {  
-    
-  const handleAnchor = (event) => {
-    event.preventDefault();
-  };
-  
+  }) => {
   return (
     <div className={`product${className}`}>
       <div className='img-box'>
-        <a href='#' onClick={handleAnchor}>
+        <Link to={`/items/${postId}`}>
           <img
-            src={image ?? defaultImage}
+            src={defaultImage}
             alt={name}
             onError={(event) => {
               event.target.src = defaultImage;
             }}
           />
-        </a>
+        </Link>
       </div>
       <p className='title'>
-        <a href='#' onClick={handleAnchor}>{name}</a>
+        <Link to={`/items/${postId}`}>{name}</Link>
       </p>
       <p className='price'>
-        <a href='#' onClick={handleAnchor}>{price?.toLocaleString()}원</a>
+        <Link to={`/items/${postId}`}>{price?.toLocaleString()}원</Link>
       </p>
       <button className='like-btn'>
-        <span className='like-count'>{favoriteCount?.toLocaleString()}</span>
+        <span className='like-count'>0</span>
       </button>
     </div>
   );

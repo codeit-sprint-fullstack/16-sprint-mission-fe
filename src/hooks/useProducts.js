@@ -52,7 +52,7 @@ export const useProducts = () => {
       if (isSearch) return;
 
       try {
-        const envelop = await productApi.getProducts(query.toString(), controller.signal);
+        const envelop = await productApi.getPage(query.toString(), controller.signal);
         const { list, totalCount } = envelop.data;
         
         maxPage = Math.ceil(totalCount / pageSize);

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './ProductToolbar.scss';
 
 let timer;
@@ -36,14 +37,14 @@ const ProductToolbar = ({
         // value={keyword}
         onChange={(event) => handleInput(event)}
       />
-      <button className='open-modal-btn' type='button'>상품 등록하기</button>
+      <Link to='/registration' className='product-add-btn'>상품 등록하기</Link>
       <select
         id='sort'
         onChange={(event) => handleSelect(event)}
         disabled={!hasProducts || isLoading}
       >
         <option value='recent'>최신순</option> 
-        <option value='favorite'>좋아요순</option>
+        <option value='favorite' disabled>좋아요순</option>
       </select>
     </form>
   )

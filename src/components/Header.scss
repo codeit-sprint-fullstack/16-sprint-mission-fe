@@ -56,6 +56,10 @@ header{
   &:hover{
     color: var(--primary-color-100);
   }
+
+  &.active{
+    color: var(--primary-color-100);
+  }
 }
 .gnb .login-btn{
   display: block;
@@ -68,7 +72,7 @@ header{
   text-align: center;
   line-height: 2.625rem; // 42px
   background: var(--primary-color-100);
-
+  
   &:hover{
     background: var(--primary-color-200);
   }
@@ -76,6 +80,14 @@ header{
   &:active{
     background: var(--primary-color-300);
   }
+}
+.landing .gnb ul{
+  display: none;
+}
+.landing .gnb .login-btn{
+  width: 8rem; // 128px
+  height: 3rem; // 48px
+  line-height: 3rem; // 48px
 }
 
 /* 태블릿 */

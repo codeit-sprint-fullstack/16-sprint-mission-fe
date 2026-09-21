@@ -3,15 +3,16 @@ import axios from 'axios';
 const PRODUCTS = '/products';
 
 const api = axios.create({
-  baseURL: 'https://panda-market-api.vercel.app',
+  baseURL: 'https://pandamarket-uav8.onrender.com/api',
 });
 
 // api.interceptors.response.use((response) => response.data);
 
 export const productApi = {
-  getProducts: (query, controllerSignal) => api.get(`${PRODUCTS}?${query}`, {
+  getPage: (query, controllerSignal) => api.get(`${PRODUCTS}?${query}`, {
     signal: controllerSignal,
   }),
+  create: (product) => api.post(PRODUCTS, product),
 };
 
 export default api;
