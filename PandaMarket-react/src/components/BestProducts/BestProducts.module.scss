@@ -1,0 +1,43 @@
+// ======================================================
+// src/components/BestProducts/BestProducts.module.scss
+// 베스트 상품 반응형
+// PC 4열 / Tablet 2열 / Mobile 1열
+// ======================================================
+.section {
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 24px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.message {
+  color: #6b7280;
+}
+
+.error {
+  color: #ef4444;
+}
+
+// Tablet
+@media (max-width: 1199px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,46 @@
+// ======================================================
+// src/components/Pagination/Pagination.module.scss
+// ======================================================
+.pagination {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #4b5563;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    border-color: #3692ff;
+    color: #3692ff;
+  }
+
+  &:disabled {
+    color: #d1d5db;
+    cursor: default;
+  }
+}
+
+.active {
+  border-color: #3692ff;
+  background-color: #3692ff;
+  color: #ffffff;
+
+  &:hover:not(:disabled) {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    width: 36px;
+    height: 36px;
+  }
+}

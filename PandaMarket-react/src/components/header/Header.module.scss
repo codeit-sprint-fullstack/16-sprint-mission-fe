@@ -1,0 +1,128 @@
+/* 헤더 */
+header {
+  background: #ffffff;
+  /* 화면 가로 전체 사용 */
+  width: 100%;
+  height: 68px; /* 68px; */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  .headerInner {
+    background-color: #ffffff;
+    /* 화면 좌우에 각각 200px을 남김. 반응형에서 문제 pc는 괜찮음*/
+    width: calc(100% - 25rem); // 400px
+
+    /* 1920px 화면일 때: 1920 - 400 = 1520px 그 이상으로는 커지지 않음 */
+    /* 화면이 커져도 내용이 너무 옆으로 퍼지지 않게 제한, 너무 넓어지는 걸 막음 */
+    max-width: 95rem; /* 1520px; */
+
+    /* 남는 공간은 좌우로 나눠서 가운데 정렬 */
+    margin: 0 auto;
+
+    /* 세로: 부모의 높이를 100% 그대로 사용, 부모 높이를 그대로 따라감 */
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.leftMenu {
+  background-color: #ffffff;
+  //   width: 400px 반응형에서는 고정 width를 빼는 게 편함;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logoname {
+  background-color: #ffffff;
+  display: flex;
+  /* padding-top: 6px; */
+  /* align-items: center; */
+  /* gap: 0.25rem;  4px; */
+
+  // img 배치 = width overflow이용함
+  width: 160px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.loginButton {
+  background-color: #3692ff;
+  padding: 0.75rem 2.5rem; /* 12px 40px; */
+  border: 0.0625rem; /* 1px; */
+  border-radius: 0.625rem; /* 10px; */
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==================================================
+   ⭐ Tablet
+   744px ~ 1199px
+================================================== */
+
+@media (min-width: 744px) and (max-width: 1199px) {
+  header {
+    .headerInner {
+      /* PC처럼 좌우 200px을 빼면 너무 좁아짐 */
+      /* 태블릿에서는 좌우 24px */
+      width: calc(100% - 48px);
+    }
+  }
+
+  .leftMenu {
+    /* 로고 ↔ 메뉴 간격 조금 줄이기 */
+    gap: 30px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .loginButton {
+    /* 로그인 버튼도 살짝 작게 */
+    padding: 10px 24px;
+  }
+}
+
+/* ==================================================
+   ⭐ Mobile
+   743px 이하
+   (375px 미만은 고려하지 않음)
+================================================== */
+
+@media (max-width: 743px) {
+  header {
+    .headerInner {
+      /* 모바일 좌우 16px */
+      width: calc(100% - 32px);
+    }
+  }
+
+  .leftMenu {
+    /* 공간이 작으니까 간격 더 줄이기 */
+    gap: 12px;
+  }
+
+  .logoname {
+    /* 로고도 조금 작게 */
+    width: 120px;
+  }
+
+  .nav {
+    gap: 10px;
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .loginButton {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
