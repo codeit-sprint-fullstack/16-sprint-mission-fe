@@ -1,0 +1,785 @@
+/* Header / Footer */
+
+header,
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+header {
+    height: 4.375rem;
+    padding: 0.5625rem 12.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    background: #fff;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+footer {
+    height: 10rem;
+    padding: 2rem 12.5rem;
+
+    align-items: flex-start;
+
+    background: var(--secondary-900);
+}
+
+main {
+    padding-top: 4.375rem;
+}
+
+
+/* 공통 */
+
+.layer {
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+
+/* Header */
+
+.header-inner {
+    display: flex;
+    width: 100%;
+    max-width: 95rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    width: 9.5625rem;
+    height: 3.1875rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.login {
+    cursor: pointer;
+
+    display: flex;
+    width: 8rem;
+    height: 3rem;
+    padding: 0.75rem 1.4375rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.5rem;
+    background: var(--primary-100);
+
+    color: var(--secondary-100);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.625rem;
+}
+
+
+/* Home Top */
+
+.home-top,
+.home-bottom {
+    width: 100%;
+    height: 33.75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: #CFE5FF;
+}
+
+.home-top-inner {
+    width: 69.375rem;
+    height: 21.25rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+}
+
+.home-top-inner img {
+    display: flex;
+    width: 46.625rem;
+    height: 21.25rem;
+
+    padding-right: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.home-top-content {
+    width: 22.3125rem;
+    height: 12.5rem;
+
+    display: flex;
+    padding-bottom: 3.75rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.home-top-content h1,
+.home-bottom-content h2 {
+    color: var(--secondary-700);
+
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.home-top-button {
+    display: flex;
+    height: 3.5rem;
+    padding: 1rem 7.75rem;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 2.5rem;
+    background: var(--primary-100);
+
+    color: var(--secondary-50);
+    text-align: center;
+
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem;
+
+    cursor: pointer;
+}
+
+
+/* Item / Search / Register */
+
+.item,
+.search,
+.register {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.item,
+.search,
+.register {
+    padding: 8.625rem 0;
+}
+
+
+/* 내부 박스 공통 */
+.item-inner,
+.search-inner,
+.register-inner {
+    display: flex;
+    width: 61.75rem;
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    background: #FCFCFC;
+}
+
+
+/* 이미지 공통 크기 */
+.item-inner img,
+.search-inner img,
+.register-inner img {
+    width: 36.75rem;
+    height: 27.75rem;
+}
+
+.item-inner img {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+.register-inner img {
+    border-radius: 0.75rem;
+    background: var(--secondary-100);
+}
+
+
+/* 콘텐츠 공통 */
+.item-content,
+.search-content,
+.register-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.item-content,
+.register-content {
+    align-items: flex-start;
+}
+
+.search-content {
+    align-items: flex-end;
+}
+
+
+/* 제목 영역 공통 */
+.item-title,
+.search-title,
+.register-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.item-title,
+.register-title {
+    align-items: flex-start;
+}
+
+.search-title {
+    align-items: flex-end;
+}
+
+
+/* Hot item / Search / Register */
+.item-content span,
+.search-content span,
+.register-content span {
+    color: var(--primary-100);
+
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+
+/* 큰 제목 공통 */
+.item-content h2,
+.search-content h2,
+.register-content h2 {
+    color: var(--secondary-700);
+
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+}
+
+.search-content h2 {
+    text-align: right;
+}
+
+
+/* 설명 텍스트 공통 */
+.item-content p,
+.search-content p,
+.register-content p {
+    color: var(--secondary-700);
+
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.search-content p {
+    text-align: right;
+}
+
+
+/* Home Bottom */
+
+.home-bottom-inner {
+    width: 69.375rem;
+    height: 24.8125rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4.3125rem;
+}
+
+.home-bottom-inner img {
+    display: flex;
+    width: 46.625rem;
+    height: 24.8125rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.home-bottom-content {
+    width: 18.4375rem;
+    height: 7rem;
+
+    display: flex;
+    padding-bottom: 3.75rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.625rem;
+}
+
+
+/* Footer */
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    max-width: 95rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright,
+.footer-menu a {
+    text-align: center;
+
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer-copyright {
+    color: var(--secondary-400);
+}
+
+.footer-menu {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.footer-menu a {
+    color: var(--secondary-200);
+}
+
+.footer-sns {
+    display: flex;
+    width: 7.25rem;
+
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.footer-sns img {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+
+/* Tablet */
+@media (min-width: 46.5rem) and (max-width: 74.9375rem) {
+    header,
+    footer {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .home-top {
+        height: 48.1875rem;
+    }
+
+    .home-top-inner {
+        width: 46.5rem;
+        height: 43.8125rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-top-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .home-top-button {
+        width: 22.3125rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .home-top-inner img {
+        width: 46.5rem;
+        height: auto;
+    }
+
+    .item,
+    .search,
+    .register {
+        padding: 0;
+    }
+
+    .item {
+        padding-top: 8.625rem;
+    }
+
+    .search,
+    .register {
+        padding-top: 3.25rem;
+    }
+
+    .register {
+        padding-bottom: 4.5rem;
+    }
+
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        width: 43.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .item-content,
+    .search-content,
+    .register-content {
+        gap: 1rem;
+    }
+
+    .search-title {
+        gap: 0;
+    }
+
+    .search-title h2 {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-inner .layer {
+        order: 1;
+    }
+
+    .search-content {
+        order: 2;
+        width: 100%;
+    }
+
+    .search-title {
+        width: 100%;
+    }
+
+    .item-inner img,
+    .search-inner img,
+    .register-inner img {
+        width: 43.5rem;
+        height: auto;
+    }
+
+    .search-content,
+    .search-title {
+        align-items: flex-end;
+    }
+
+    .search-content h2,
+    .search-content p {
+        text-align: right;
+    }
+
+    .item-content h2 br,
+    .search-content h2 br,
+    .register-content h2 br {
+        display: none;
+    }
+
+    .home-top-content h1 br {
+        display: none;
+    }
+
+    .home-bottom {
+        height: 57.9375rem;
+    }
+
+    .home-bottom-inner {
+        width: 46.5rem;
+        height: 45.375rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-bottom-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-bottom-inner img {
+        width: 46.5rem;
+        height: auto;
+    }
+}
+
+
+/* Mobile */
+@media (min-width: 23.4375rem) and (max-width: 46.4375rem) {
+    header {
+        padding: 0.625rem 1rem 0.5625rem;
+    }
+
+    .logo {
+        display: flex;
+        width: 6.4375rem;
+        height: 3.1875rem;
+        align-items: center;
+    }
+
+    .logo img {
+        height: auto;
+    }
+
+    .home-top,
+    .home-bottom {
+        height: 33.75rem;
+    }
+
+    .home-top-inner,
+    .home-bottom-inner,
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        flex-direction: column;
+    }
+
+    .home-top-inner {
+        width: 100%;
+        height: 29.375rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-top-content,
+    .item-content,
+    .search-content,
+    .register-content {
+        width: 21.5rem;
+        max-width: calc(100% - 1.9375rem);
+        height: auto;
+        padding-bottom: 0;
+        align-items: flex-start;
+    }
+
+    .home-top-content {
+        width: auto;
+        max-width: none;
+        margin: 0 auto;
+        align-items: center;
+        gap: 1.125rem;
+        text-align: center;
+    }
+
+    .home-top-content h1,
+    .home-bottom-content h2 {
+        font-size: 2rem;
+    }
+
+    .home-top-button {
+        width: auto;
+        height: 3rem;
+        padding: 0.75rem 4.4375rem;
+        align-self: stretch;
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .home-top-inner img,
+    .home-bottom-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .item,
+    .search,
+    .register {
+        padding: 0;
+    }
+
+    .item {
+        padding-top: 3.25rem;
+    }
+
+    .search,
+    .register {
+        padding-top: 2.5rem;
+    }
+
+    .register {
+        padding-bottom: 5.1875rem;
+    }
+
+    .item-inner,
+    .search-inner,
+    .register-inner {
+        width: calc(100% - 2rem);
+        max-width: none;
+        gap: 1.5rem;
+    }
+
+    .item-inner .layer,
+    .search-inner .layer,
+    .register-inner .layer {
+        width: 100%;
+    }
+
+    .search-inner .layer {
+        order: 1;
+    }
+
+    .search-content {
+        order: 2;
+    }
+
+    .item-inner img,
+    .search-inner img,
+    .register-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-content,
+    .search-content,
+    .register-content {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        gap: 0.5rem;
+    }
+
+    .item-title,
+    .search-title,
+    .register-title {
+        width: 100%;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .search-title {
+        gap: 0;
+    }
+
+    .search-title h2 {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-content h2,
+    .search-content p {
+        text-align: right;
+    }
+
+    .search-content,
+    .search-title {
+        align-items: flex-end;
+    }
+
+    .item-content h2 br,
+    .search-content h2 br,
+    .register-content h2 br {
+        display: none;
+    }
+
+    .item-content p,
+    .search-content p,
+    .register-content p {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .item-content span,
+    .search-content span,
+    .register-content span {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .item-content h2,
+    .search-content h2,
+    .register-content h2 {
+        font-size: 1.5rem;
+        line-height: 140%;
+    }
+
+    .home-bottom-inner {
+        width: 100%;
+        height: 27.5rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .home-bottom-content {
+        width: auto;
+        height: auto;
+        padding-bottom: 0;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer {
+        height: 10rem;
+        padding: 2rem 1rem;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        row-gap: 3.75rem;
+    }
+
+    .footer-menu {
+        order: 1;
+    }
+
+    .footer-sns {
+        order: 2;
+        justify-content: flex-end;
+    }
+
+    .footer-copyright {
+        order: 3;
+        width: 100%;
+        text-align: left;
+    }
+}

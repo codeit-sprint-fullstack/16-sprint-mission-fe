@@ -1,0 +1,57 @@
+html {
+    font-size: 100%;
+}
+
+:root {
+    /* Primary */
+    --primary-100: #3692FF;
+    --primary-200: #1967D6;
+    --primary-300: #1251AA;
+
+    /* Error */
+    --error-red: #F74747;
+
+    /* Secondary */
+    --secondary-900: #111827;
+    --secondary-800: #1F2937;
+    --secondary-700: #374151;
+    --secondary-600: #4B5563;
+    --secondary-500: #6B7280;
+    --secondary-400: #9CA3AF;
+    --secondary-200: #E5E7EB;
+    --secondary-100: #F3F4F6;
+    --secondary-50: #F9FAFB;
+}
+
+/* Pretendard */
+@font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+}
