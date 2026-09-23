@@ -1,0 +1,136 @@
+// ======================================================
+// src/components/SellingProducts/SellingProducts.module.scss
+// 판매 중인 상품 반응형
+// PC 5열 / Tablet 3열 / Mobile 2열
+// ======================================================
+.section {
+  width: 100%;
+  margin-top: 64px;
+}
+
+.top {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.title {
+  margin: 0;
+  color: #111827;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.searchForm {
+  display: flex;
+}
+
+.searchInput {
+  width: 280px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  background-color: #f3f4f6;
+  outline: none;
+
+  &:focus {
+    border-color: #3692ff;
+  }
+}
+
+.searchButton {
+  height: 42px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #3692ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.select {
+  width: 120px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: #3692ff;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 32px 20px;
+}
+
+.message {
+  color: #6b7280;
+}
+
+.error {
+  color: #ef4444;
+}
+
+// Tablet
+@media (max-width: 1199px) {
+  .top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controls {
+    width: 100%;
+  }
+
+  .searchForm {
+    flex: 1;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .section {
+    margin-top: 48px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .searchButton {
+    padding: 0 12px;
+  }
+
+  .select {
+    width: 108px;
+    padding: 0 8px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+}
