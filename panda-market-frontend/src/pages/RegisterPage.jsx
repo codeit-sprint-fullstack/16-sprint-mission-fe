@@ -14,11 +14,34 @@ function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const [productName, setProductName] = useState(null);
-  const [productDesc, setProductDesc] = useState(null);
-  const [price, setPrice] = useState(null);
+  const [productName, setProductName] = useState('');
+  const [productDesc, setProductDesc] = useState('');
+  const [price, setPrice] = useState('');
   const [tag, setTag] = useState('');
   const [tagList, setTagList] = useState([]);
+//등록api연결
+const handleRegister = async () => {
+    try {
+        const res = await axios.post(
+          //코드잇 테스트 서버 https://panda-market-api.vercel.app/products
+            'https://one6-sprint-mission-be.onrender.com/api/products',
+            {
+                name: productName,
+                description: productDesc,
+                price: Number(price),
+                tags: tagList
+            }
+        );
+        alert("상품을 등록했습니다");
+
+        console.log('등록 성공:', res.data);
+
+        navigate('/items');
+
+    } catch (error) {
+        console.error('상품 등록 실패:', error);
+    }
+};
 //태그 추가
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
@@ -55,8 +78,8 @@ function RegisterPage() {
               <p className="register-header-title">상품 등록하기</p>
               <button
                 className="register-confirm-button"
-                disabled={!productName && !productDesc && !price || tagList.length === 0}
-                onClick={() => { navigate('/registration') }}
+                disabled={!productName || !productDesc || !price}
+                onClick={handleRegister}
               >등록</button>
             </div>
 

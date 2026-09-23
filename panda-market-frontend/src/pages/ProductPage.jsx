@@ -14,6 +14,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 function ProductPage() {
 
     const navigate = useNavigate();
+    //한번에 불러오는 데이터 갯수
     const getPageSize = () => {
         if (window.innerWidth <= 767) {
             return 4;
@@ -38,9 +39,8 @@ function ProductPage() {
     const [totalCount, setTotalCount] = useState(0);
     //일반 상품 정렬기능 드롭다운 on/off
     const [showOptions, setOptions] = useState(false);
+
     //기기에 따라 페이지 항목 수 조정
-
-
 
     useEffect(() => {
         const handleResize = () => {
@@ -59,60 +59,53 @@ function ProductPage() {
             window.removeEventListener("resize", handleResize);
         };
     }, [pageSize]);
-    //각각 베스트 상품, 일반 상품용
-    const getBestProductList = async (page, pageSize, orderBy, keyword) => {
 
+    //각각 베스트 상품, 일반 상품용 데이터 로딩하기
+
+
+    const getBothProductList = async () => {
         try {
-            const res = await axios.get(
-                `https://panda-market-api.vercel.app/products`, {
-                params: {
-                    page: page,
-                    pageSize: pageSize,
-                    orderBy: orderBy,
-                    keyword: keyword
-                }
-            }
-            );
-            setBest(res.data.list);
-            // console.log("항목", res.data.list);
 
+            // 인기 상품
+            const bestRes = await axios.get(
+                'https://one6-sprint-mission-be.onrender.com/api/products',
+                {
+                    params: {
+                        page: 1,
+                        pageSize: 4,
+                        orderBy: "favorite",
+                        keyword: ""
+                    }
+                }
+            );
+
+            // 일반 상품
+            const regularRes = await axios.get(
+                'https://one6-sprint-mission-be.onrender.com/api/products',
+                {
+                    params: {
+                        page,
+                        pageSize,
+                        orderBy,
+                        keyword
+                    }
+                }
+            );
+
+            setBest(bestRes.data.list);
+            setProductList(regularRes.data.list);
+            setTotalCount(regularRes.data.totalCount);
 
         } catch (error) {
             console.log(error);
         }
-    }
-
-    const getRegularProductList = async (page, pageSize, orderBy, keyword) => {
-
-        try {
-            const res = await axios.get(
-                `https://panda-market-api.vercel.app/products`, {
-                params: {
-                    page: page,
-                    pageSize: pageSize,
-                    orderBy: orderBy,
-                    keyword: keyword
-                }
-            }
-            );
-            setTotalCount(res.data.totalCount);
-            setProductList(res.data.list);
-
-            // console.log("항목", res.data.list);
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    };
 
 
 
     useEffect(() => {
-
-        getBestProductList(1, 4, "favorite", "");
-        getRegularProductList(page, pageSize, orderBy, keyword);
+        getBothProductList();
     }, [page, pageSize, orderBy, keyword]);
-
 
 
     return (
@@ -198,8 +191,9 @@ function ProductPage() {
                                     />
                                 ))}
                             </div>
+
                             <div className='item-page-bar'>
-                                <button className = "page-button"
+                                <button className="page-button"
                                     onClick={() => {
                                         setPage((pageGroup - 1) * 5 + 1);
                                         setPageGroup(pageGroup - 1);
@@ -216,7 +210,7 @@ function ProductPage() {
                                     }
 
                                     return (
-                                        <button 
+                                        <button
                                             key={pageNumber}
                                             onClick={() => setPage(pageNumber)}
                                             className={`page-button ${page === pageNumber ? 'active-page' : ''}`}
@@ -226,7 +220,7 @@ function ProductPage() {
                                     );
                                 })}
 
-                                <button className = "page-button"
+                                <button className="page-button"
                                     onClick={() => {
                                         setPage(pageGroup * 5 + 6);
                                         setPageGroup(pageGroup + 1);
