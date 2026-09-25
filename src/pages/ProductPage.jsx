@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import useProducts from "../hooks/useProducts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
 import useResponsivePageSize from "../hooks/useResponsivePageSize";
 
@@ -13,6 +13,7 @@ import useResponsivePageSize from "../hooks/useResponsivePageSize";
 function ProductPage() {
 
     const [keyword, setKeyword] = useState("");
+    const [debouncedKeyword, setDebouncedKeyword] = useState("");
     const [orderBy, setOrderBy] = useState("recent");
     const [page, setPage] = useState(1);
 
@@ -29,6 +30,16 @@ function ProductPage() {
   keyword: "",
 });
 
+useEffect(() => {
+  const timerId = setTimeout(() => {
+    setDebouncedKeyword(keyword);
+    setPage(1);
+  }, 500);
+
+  return () => {
+    clearTimeout(timerId);
+  };
+}, [keyword]);
 
 const {
   products,
@@ -39,8 +50,10 @@ const {
   page,
   pageSize,
   orderBy,
-  keyword,
+  keyword: debouncedKeyword,
 });
+
+
 
   return (
     <>
@@ -63,7 +76,7 @@ const {
             bestProducts.map((product) => (
                 <ProductCard
                 key={product.id}
-                imageUrl={product.images[0]}
+                imageUrl={product.images?.[0]}
                 name={product.name}
                 price={product.price}
                 favoriteCount={product.favoriteCount}
@@ -82,7 +95,6 @@ const {
                     value={keyword}
                     onChange={(event) => {
                         setKeyword(event.target.value);
-                        setPage(1);
                     }}
                     placeholder="검색할 상품을 입력해주세요"
                      />
@@ -113,7 +125,7 @@ const {
                     products.map((product) => (
                     <ProductCard
                         key={product.id}
-                        imageUrl={product.images[0]}
+                        imageUrl={product.images?.[0]}
                         name={product.name}
                         price={product.price}
                         favoriteCount={product.favoriteCount}

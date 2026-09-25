@@ -5,6 +5,7 @@ export async function getProducts({
   pageSize = 10,
   orderBy = "recent",
   keyword = "",
+  signal,
 }) {
   const searchParams = new URLSearchParams({
     page,
@@ -13,7 +14,9 @@ export async function getProducts({
     keyword,
   });
 
-  const response = await fetch(`${BASE_URL}?${searchParams}`);
+  const response = await fetch(`${BASE_URL}?${searchParams}`, {
+    signal,
+  });
 
   if (!response.ok) {
     throw new Error("상품 목록을 불러오지 못했습니다.");

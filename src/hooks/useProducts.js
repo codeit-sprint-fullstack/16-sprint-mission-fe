@@ -7,7 +7,9 @@ function useProducts({ page, pageSize, orderBy, keyword }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+   useEffect(() => {
+    const controller = new AbortController();
+
     async function loadProducts() {
       try {
         setIsLoading(true);
@@ -18,18 +20,33 @@ function useProducts({ page, pageSize, orderBy, keyword }) {
           pageSize,
           orderBy,
           keyword,
+          signal: controller.signal,
         });
+
+        if (controller.signal.aborted) {
+          return;
+        }
 
         setProducts(data.list);
         setTotalCount(data.totalCount);
       } catch (error) {
+        if (error.name === "AbortError") {
+          return;
+        }
+
         setError(error.message);
       } finally {
-        setIsLoading(false);
+        if (!controller.signal.aborted) {
+          setIsLoading(false);
+        }
       }
     }
 
     loadProducts();
+
+    return () => {
+      controller.abort();
+    };
   }, [page, pageSize, orderBy, keyword]);
 
   return {

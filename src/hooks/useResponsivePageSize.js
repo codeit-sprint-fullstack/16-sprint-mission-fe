@@ -12,10 +12,16 @@ function getPageSize(width) {
   return 4;
 }
 
+function getInitialPageSize() {
+  if (typeof window === "undefined") {
+    return 10;
+  }
+
+  return getPageSize(window.innerWidth);
+}
+
 function useResponsivePageSize() {
-  const [pageSize, setPageSize] = useState(() => {
-    return getPageSize(window.innerWidth);
-  });
+  const [pageSize, setPageSize] = useState(getInitialPageSize);
 
   useEffect(() => {
     function handleResize() {
