@@ -25,6 +25,25 @@
     align-items: center;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.market-link {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  transform: translateY(2px);
+  text-decoration: none;
+}
+
+.market-link.is-active {
+  color: #3692ff;
+}
+
 .logo {
     width: auto;
     height: 2rem;
@@ -59,8 +78,16 @@
     padding-inline: var(--space-3);
   }
 
+  .nav-left {
+    gap: var(--space-2);
+  }
+
   .logo {
     height: 1.5rem;
+  }
+
+  .market-link {
+    font-size: 0.875rem;
   }
 
   .login-button {

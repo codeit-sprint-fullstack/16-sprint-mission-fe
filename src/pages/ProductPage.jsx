@@ -6,6 +6,7 @@ import useProducts from "../hooks/useProducts";
 import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
 import useResponsivePageSize from "../hooks/useResponsivePageSize";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -16,6 +17,7 @@ function ProductPage() {
     const [debouncedKeyword, setDebouncedKeyword] = useState("");
     const [orderBy, setOrderBy] = useState("recent");
     const [page, setPage] = useState(1);
+    const navigate = useNavigate();
 
     const pageSize = useResponsivePageSize();
 
@@ -99,7 +101,14 @@ const {
                     placeholder="검색할 상품을 입력해주세요"
                      />
 
-                  <button type="button">상품 등록하기</button>
+                  <button
+                        type="button"
+                        onClick={() => {
+                          navigate("/registration");
+                        }}
+                      >
+                        상품 등록하기
+                  </button>
 
                 <select
                     value={orderBy}
