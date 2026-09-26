@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/products";
 
-function useProducts({ page, pageSize, orderBy, keyword }) {
+function useProducts({ page, pageSize, keyword }) {
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-   useEffect(() => {
+  useEffect(() => {
     const controller = new AbortController();
 
     async function loadProducts() {
@@ -18,7 +18,6 @@ function useProducts({ page, pageSize, orderBy, keyword }) {
         const data = await getProducts({
           page,
           pageSize,
-          orderBy,
           keyword,
           signal: controller.signal,
         });
@@ -47,7 +46,7 @@ function useProducts({ page, pageSize, orderBy, keyword }) {
     return () => {
       controller.abort();
     };
-  }, [page, pageSize, orderBy, keyword]);
+  }, [page, pageSize, keyword]);
 
   return {
     products,

@@ -1,61 +1,42 @@
-import "./ProductPage.css";
-import Header from "../components/Header";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Pagination from "../components/Pagination";
 import ProductCard from "../components/ProductCard";
 import useProducts from "../hooks/useProducts";
-import { useEffect, useState } from "react";
-import Pagination from "../components/Pagination";
 import useResponsivePageSize from "../hooks/useResponsivePageSize";
-import { useNavigate } from "react-router-dom";
-
-
-
+import "./ProductPage.css";
 
 function ProductPage() {
+  const [keyword, setKeyword] = useState("");
+  const [debouncedKeyword, setDebouncedKeyword] = useState("");
+  const [page, setPage] = useState(1);
 
-    const [keyword, setKeyword] = useState("");
-    const [debouncedKeyword, setDebouncedKeyword] = useState("");
-    const [orderBy, setOrderBy] = useState("recent");
-    const [page, setPage] = useState(1);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const pageSize = useResponsivePageSize();
 
-    const pageSize = useResponsivePageSize();
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedKeyword(keyword);
+      setPage(1);
+    }, 500);
 
-    const {
-  products: bestProducts,
-  isLoading: isBestLoading,
-  error: bestError,
-} = useProducts({
-  page: 1,
-  pageSize: 4,
-  orderBy: "favorite",
-  keyword: "",
-});
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [keyword]);
 
-useEffect(() => {
-  const timerId = setTimeout(() => {
-    setDebouncedKeyword(keyword);
-    setPage(1);
-  }, 500);
-
-  return () => {
-    clearTimeout(timerId);
-  };
-}, [keyword]);
-
-const {
-  products,
-  totalCount,
-  isLoading,
-  error,
-} = useProducts({
-  page,
-  pageSize,
-  orderBy,
-  keyword: debouncedKeyword,
-});
-
-
+  const {
+    products,
+    totalCount,
+    isLoading,
+    error,
+  } = useProducts({
+    page,
+    pageSize,
+    keyword: debouncedKeyword,
+  });
 
   return (
     <>
@@ -64,90 +45,58 @@ const {
       <div className="product-page">
         <main>
           <div className="market-container">
-            <section className="best-products-section">
-        <h2>베스트 상품</h2>
-
-        <div className="best-products-list">
-            {bestError ? (
-            <p className="status-message">{bestError}</p>
-            ) : isBestLoading ? (
-            <p className="status-message">베스트 상품을 불러오는 중입니다.</p>
-            ) : bestProducts.length === 0 ? (
-            <p className="status-message">베스트 상품이 없습니다.</p>
-            ) : (
-            bestProducts.map((product) => (
-                <ProductCard
-                key={product.id}
-                imageUrl={product.images?.[0]}
-                name={product.name}
-                price={product.price}
-                favoriteCount={product.favoriteCount}
-                />
-            ))
-            )}
-        </div>
-        </section>
-
             <section className="products-section">
               <div className="products-section-header">
                 <h2>판매 중인 상품</h2>
 
                 <div className="product-actions">
-                <input
+                  <input
                     value={keyword}
                     onChange={(event) => {
-                        setKeyword(event.target.value);
+                      setKeyword(event.target.value);
                     }}
                     placeholder="검색할 상품을 입력해주세요"
-                     />
+                  />
 
                   <button
-                        type="button"
-                        onClick={() => {
-                          navigate("/registration");
-                        }}
-                      >
-                        상품 등록하기
-                  </button>
-
-                <select
-                    value={orderBy}
-                    onChange={(event) => {
-                        setOrderBy(event.target.value);
-                        setPage(1);
+                    type="button"
+                    onClick={() => {
+                      navigate("/registration");
                     }}
-                    >
-                    <option value="recent">최신순</option>
-                    <option value="favorite">좋아요순</option>
-                </select>
+                  >
+                    상품 등록하기
+                  </button>
                 </div>
               </div>
 
-             <div className="all-products-list">
+              <div className="all-products-list">
                 {error ? (
-                    <p className="status-message">{error}</p>
+                  <p className="status-message">{error}</p>
                 ) : isLoading ? (
-                    <p className="status-message">전체 상품을 불러오는 중입니다.</p>
+                  <p className="status-message">
+                    상품을 불러오는 중입니다.
+                  </p>
                 ) : products.length === 0 ? (
-                    <p className="status-message">검색 결과가 없습니다.</p>
+                  <p className="status-message">
+                    검색 결과가 없습니다.
+                  </p>
                 ) : (
-                    products.map((product) => (
+                  products.map((product) => (
                     <ProductCard
-                        key={product.id}
-                        imageUrl={product.images?.[0]}
-                        name={product.name}
-                        price={product.price}
-                        favoriteCount={product.favoriteCount}
+                      key={product.id}
+                      name={product.name}
+                      price={product.price}
                     />
-                    ))
+                  ))
                 )}
-                </div>
+              </div>
+
               <Pagination
-                    page={page}
-                    totalCount={totalCount}
-                    pageSize={pageSize}
-                    onPageChange={setPage}
-                    />
+                page={page}
+                totalCount={totalCount}
+                pageSize={pageSize}
+                onPageChange={setPage}
+              />
             </section>
           </div>
         </main>
