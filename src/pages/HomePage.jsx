@@ -1,5 +1,5 @@
 import ProductCard from '../components/ProductCard.jsx'
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const HomePage = () => {
     let pageSize = 10;
@@ -7,20 +7,22 @@ const HomePage = () => {
     const [productsByFavcount, setProductsByFavcount] = useState([]);
     const [productOrder, setProductOrder] = useState('recent');
     const [pageNumber, setPageNumber] = useState(1);
+    const [keyword, setKeyword] = useState("");
+    const timerRef = useRef(null);
 
     useEffect(() => {
-        fetch(`https://panda-market-api.vercel.app/products?page=2&orderBy=favorite&pageSize=4`)
+        fetch(`https://panda-market-api.vercel.app/products?page=1&orderBy=favorite&pageSize=4`)
             .then(response => response.json())
             .then(data => {setProductsByFavcount(data.list)})
             .catch(error => console.log(error));
     }, []);
 
     useEffect(() => {
-        fetch(`https://panda-market-api.vercel.app/products?page=${pageNumber}&pageSize=${pageSize}&orderBy=${productOrder}`)
+        fetch(`https://panda-market-api.vercel.app/products?page=${pageNumber}&pageSize=${pageSize}&orderBy=${productOrder}&keyword=${keyword}`)
             .then(response => response.json())
             .then(data => {setProducts(data.list)})
             .catch(error => console.log(error));
-    }, [productOrder, pageNumber]);
+    }, [productOrder, pageNumber, keyword]);
 
     console.log(products);
 
@@ -54,7 +56,19 @@ const HomePage = () => {
                 <div className="my-4 flex flex-row justify-between h-8">
                     <h1 className="font-bold" >판매 중인 상품</h1>
                     <div className="flex text-xs gap-4">
-                        <input className="p-2 bg-[#F3F4F6] rounded-lg" type="text" placeholder="검색할 삼품을 입력해주세요"/>
+                        <input
+                            className="p-2 bg-[#F3F4F6] rounded-lg"
+                            type="text"
+                            placeholder="검색할 상품을 입력해주세요"
+                            onChange={(e) => {
+                                const value = e.target.value;
+
+                                if (timerRef.current) {
+                                    clearTimeout(timerRef.current);
+                                }
+                                timerRef.current = setTimeout(() => {setKeyword(value)}, 300)
+                            }}
+                        />
                         <button className="btn-primary text-xs h-8">상품 등록하기</button>
                         <select className="border rounded-lg p-2"
                                 value={productOrder}
@@ -64,19 +78,22 @@ const HomePage = () => {
                         </select>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 grid-rows-2 gap-4">
-                    {
-                        products.map((item) => {
-                            return <ProductCard
-                                key={item.id}
-                                img={item.images[0]}
-                                name={item.name}
-                                price={item.price}
-                                favCount={item.favoriteCount}
-                            />
-                        })
-                    }
-                </div>
+                {
+                    products.length === 0 ? <p>검색 결과 없습니다...</p> :
+                        <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 grid-rows-2 gap-4">
+                            {
+                                products.map((item) => {
+                                    return <ProductCard
+                                        key={item.id}
+                                        img={item.images[0]}
+                                        name={item.name}
+                                        price={item.price}
+                                        favCount={item.favoriteCount}
+                                    />
+                                })
+                            }
+                        </div>
+                }
             </div>
             <div className="my-4 flex flex-row gap-2 justify-center">
                 <button onClick={() => setPageNumber(pageNumber-1)} disabled={pageNumber === 1} className="border border-gray-200 w-10 aspect-square rounded-4xl">{"<"}</button>
