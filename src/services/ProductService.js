@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "http://localhost:3000";const BASE_URL = "https://one6-sprint-mission-fe-n99u.onrender.com";
 
 export async function getProductList({
   offset = 0,
