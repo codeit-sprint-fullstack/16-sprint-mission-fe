@@ -1,94 +1,93 @@
-// src/pages/MarketPage.jsx
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { useEffect, useState } from "react";
-
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import ProductList from "../components/ProductList";
-import BestProductList from "../components/BestProductList";
-import SearchBar from "../components/SearchBar";
-import Pagination from "../components/Pagination";
-
-import { getProductList } from "../services/ProductService";
-import useResponsivePageSize from "../hooks/useResponsivePageSize";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+import { getProductList } from "../services/ProductService.js";
 
 function MarketPage() {
-  // 전체 상품
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
-
-  // 베스트 상품
-  const [bestProducts, setBestProducts] = useState([]);
-
-  // 현재 페이지
-  const [page, setPage] = useState(1);
-
-  // 전체 상품 개수
   const [totalCount, setTotalCount] = useState(0);
 
-  // 정렬 기준
-  const [orderBy, setOrderBy] = useState("recent");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
-  // 검색창에 입력하고 있는 값
   const [searchInput, setSearchInput] = useState("");
-
-  // 실제 API 검색에 사용할 값
   const [keyword, setKeyword] = useState("");
 
-  // 화면 크기에 따른 pageSize
-  const pageSize = useResponsivePageSize();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // 전체 상품 불러오기
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setPageSize(4);
+      } else if (width < 1200) {
+        setPageSize(6);
+      } else {
+        setPageSize(10);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     async function loadProducts() {
       try {
+        setLoading(true);
+        setError("");
+
+        const offset = (page - 1) * pageSize;
+
         const data = await getProductList({
-          page,
-          pageSize,
-          orderBy,
+          offset,
+          limit: pageSize,
           keyword,
         });
 
-        setProducts(data.list);
-        setTotalCount(data.totalCount);
+        setProducts(data.products ?? []);
+        setTotalCount(data.totalCount ?? 0);
       } catch (error) {
         console.error(error);
+        setError("상품 목록을 불러오지 못했습니다.");
+      } finally {
+        setLoading(false);
       }
     }
 
     loadProducts();
-  }, [page, pageSize, orderBy, keyword]);
+  }, [page, pageSize, keyword]);
 
-  // 베스트 상품 불러오기
-  useEffect(() => {
-    async function loadBestProducts() {
-      try {
-        const data = await getProductList({
-          page: 1,
-          pageSize: 4,
-          orderBy: "favorite",
-          keyword: "",
-        });
+  const handleSearch = (event) => {
+    event.preventDefault();
 
-        setBestProducts(data.list);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    loadBestProducts();
-  }, []);
-
-  // 총 페이지 개수
-  const totalPages = Math.ceil(
-    totalCount / pageSize
-  );
-
-  // 검색
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    setKeyword(searchInput);
+    setKeyword(searchInput.trim());
     setPage(1);
+  };
+
+  const totalPages = Math.ceil(totalCount / pageSize);
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
   };
 
   return (
@@ -96,51 +95,98 @@ function MarketPage() {
       <Header />
 
       <main className="market-page">
-        {/* 베스트 상품 */}
-        <section className="best-section">
-          <h2>베스트 상품</h2>
+        <div className="market-title-row">
+          <h1>판매 중인 상품</h1>
 
-          <BestProductList
-            products={bestProducts}
+          <button
+            type="button"
+            className="register-button"
+            onClick={() => navigate("/registration")}
+          >
+            상품 등록하기
+          </button>
+        </div>
+
+        <form className="market-search" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="검색할 상품을 입력해주세요"
+            value={searchInput}
+            onChange={(event) => setSearchInput(event.target.value)}
           />
-        </section>
 
-        {/* 전체 상품 */}
-        <section className="product-section">
-          <div className="product-title-area">
-            <h2>판매 중인 상품</h2>
+          <button type="submit">검색</button>
+        </form>
 
-            <SearchBar
-              searchInput={searchInput}
-              setSearchInput={setSearchInput}
-              onSearch={handleSearch}
-            />
+        {loading && (
+          <p className="market-message">
+            상품을 불러오는 중입니다...
+          </p>
+        )}
 
-            <select
-              value={orderBy}
-              onChange={(e) => {
-                setOrderBy(e.target.value);
-                setPage(1);
-              }}
-            >
-              <option value="recent">
-                최신순
-              </option>
+        {error && (
+          <p className="market-message market-error">
+            {error}
+          </p>
+        )}
 
-              <option value="favorite">
-                좋아요순
-              </option>
-            </select>
-          </div>
+        {!loading && !error && products.length === 0 && (
+          <p className="market-message">
+            등록된 상품이 없습니다.
+          </p>
+        )}
 
-          <ProductList products={products} />
+        {!loading && !error && products.length > 0 && (
+          <>
+         <div className="product-grid">
+  {products.map((product) => (
+    <article
+      className="product-card"
+      key={product._id}
+      onClick={() => navigate(`/items/${product._id}`)}
+    >
+      <img
+        className="product-image"
+        src="/default-product.png"
+        alt={product.name}
+      />
 
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            onChange={setPage}
-          />
-        </section>
+      <p className="product-name">
+        {product.name}
+      </p>
+
+      <strong className="product-price">
+        {Number(product.price).toLocaleString()}원
+      </strong>
+    </article>
+  ))}
+</div>
+
+            {totalPages > 1 && (
+              <div className="pagination">
+                <button
+                  type="button"
+                  onClick={handlePrevPage}
+                  disabled={page === 1}
+                >
+                  이전
+                </button>
+
+                <span>
+                  {page} / {totalPages}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={handleNextPage}
+                  disabled={page === totalPages}
+                >
+                  다음
+                </button>
+              </div>
+            )}
+          </>
+        )}
       </main>
 
       <Footer />

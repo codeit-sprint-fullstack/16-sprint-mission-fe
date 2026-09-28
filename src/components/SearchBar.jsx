@@ -1,4 +1,6 @@
 // src/components/SearchBar.jsx
+import React from "react";
+
 
 function SearchBar({
   searchInput,

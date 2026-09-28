@@ -1,4 +1,5 @@
 // src/components/ProductList.jsx
+import React from "react";
 
 import ProductCard from "./ProductCard";
 

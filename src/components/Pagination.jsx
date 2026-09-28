@@ -1,4 +1,6 @@
 // src/components/Pagination.jsx
+import React from "react";
+
 
 function Pagination({
   page,
