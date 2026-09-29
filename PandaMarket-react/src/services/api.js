@@ -5,8 +5,11 @@
 import axios from "axios";
 
 const api = axios.create({
-  // 반복되는 서버 기본 주소를 미리 저장
-  baseURL: "https://panda-market-api.vercel.app/",
+  // ❌ 기존
+  // baseURL: "https://panda-market-api.vercel.app",
+
+  // ✅ Express 서버
+  baseURL: "http://localhost:3000/api",
 });
 
 // ✅ 인터셉터를 한 번 설정하면

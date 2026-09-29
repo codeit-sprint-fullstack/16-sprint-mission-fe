@@ -2,13 +2,15 @@
 // src/pages/ProductPage/ProductPage.jsx
 // 각 컴포넌트를 조립하는 페이지
 // ======================================================
-import Header from "../components/header/header";
-// import Footer from "../../components/footer/footer";
-import BestProducts from "../components/BestProducts/BestProducts";
-import SellingProducts from "../components/SellingProducts/SellingProducts";
-// import styles from "../ProductPage.module.scss";
-import styles from "../pages/ProductPage.module.scss";
-import Footer from "../components/footer/footer";
+import Header from "../../components/header/header";
+import SellingProducts from "../../components/SellingProducts/SellingProducts";
+import Footer from "../../components/footer/footer";
+
+
+import styles from "../ProductPage/ProductPage.module.scss";
+
+// ❌ 이번에는 사용하지 않음
+// import BestProducts from "../../components/BestProducts/BestProducts";
 
 function ProductPage() {
   return (
@@ -17,7 +19,10 @@ function ProductPage() {
       <Header />
 
       <main className={styles.main}>
-        <BestProducts />
+        {/* ❌ 베스트 상품 목록은 이번 요구사항에서 제외 */}
+        {/* <BestProducts /> */}
+
+        {/* ✅ 판매 중인 상품 목록만 보여주기 */}
         <SellingProducts />
       </main>
 

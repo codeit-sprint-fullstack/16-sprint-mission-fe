@@ -1,0 +1,212 @@
+// ======================================================================
+// 2. RegistrationPage.module.scss
+// ======================================================================
+//
+// src/pages/RegistrationPage/RegistrationPage.module.scss
+// ======================================================================
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 40px 24px 80px;
+}
+
+// ======================================================================
+// 제목 영역
+// ======================================================================
+
+.titleArea {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+// ======================================================================
+// 등록 버튼
+// ======================================================================
+
+.submitButton {
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 12px 24px;
+
+  background-color: #3692ff;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+// ======================================================================
+// form
+// ======================================================================
+
+.form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+// ======================================================================
+// 한 입력칸 묶음
+//
+// 상품명
+// [____________]
+//
+// 이런 한 덩어리
+// ======================================================================
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.label {
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+// ======================================================================
+// input
+// ======================================================================
+
+.input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 16px 24px;
+
+  background-color: #f3f4f6;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+.input:focus {
+  outline: 2px solid #3692ff;
+}
+
+// ======================================================================
+// 상품 소개 textarea
+// ======================================================================
+
+.textarea {
+  width: 100%;
+
+  min-height: 160px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 16px 24px;
+
+  background-color: #f3f4f6;
+
+  font-size: 16px;
+
+  font-family: inherit;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.textarea:focus {
+  outline: 2px solid #3692ff;
+}
+
+// ======================================================================
+// Tablet
+// ======================================================================
+//
+// 화면이 1199px 이하일 때
+// ======================================================================
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: none;
+
+    padding: 32px 24px 64px;
+  }
+}
+
+// ======================================================================
+// Mobile
+// ======================================================================
+//
+// 화면이 767px 이하일 때
+// ======================================================================
+
+@media (max-width: 767px) {
+  .container {
+    padding: 24px 16px 48px;
+  }
+
+  .titleArea {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .submitButton {
+    padding: 10px 18px;
+
+    font-size: 14px;
+  }
+
+  .form {
+    gap: 20px;
+  }
+
+  .input {
+    padding: 14px 16px;
+
+    font-size: 14px;
+  }
+
+  .textarea {
+    min-height: 140px;
+
+    padding: 14px 16px;
+
+    font-size: 14px;
+  }
+}

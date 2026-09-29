@@ -32,3 +32,6 @@ src/
 │
 └── services/
     └── api.js
+
+
+    시작: npm run dev
