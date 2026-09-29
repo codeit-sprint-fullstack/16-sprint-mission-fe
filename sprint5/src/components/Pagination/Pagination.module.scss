@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.pageButton, .arrowButton, .active {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.pageButton, .arrowButton {
+  border: 1px solid $gray-200;
+  background-color: $white;
+  color: $gray-500;
+}
+
+.active {
+  border: 1px solid $primary;
+  background-color: $primary;
+  color: $white;
+}
+
+.arrowButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

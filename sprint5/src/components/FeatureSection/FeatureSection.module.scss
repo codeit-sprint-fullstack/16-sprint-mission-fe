@@ -1,0 +1,122 @@
+@use "../../styles/variables" as *;
+
+.featureSection {
+  width: 100%;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+
+  .featureWrap {
+    width: 988px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    background: $bg-color;
+  }
+
+  .featureImage {
+    display: block;
+  }
+
+  .featureText {
+    .label {
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.625rem;
+      color: $primary;
+    }
+
+    .title {
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+      letter-spacing: 0.05rem;
+    }
+
+    .description {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2rem;
+      color: $gray-700;
+    }
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+
+    .featureText {
+      text-align: right;
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .featureSection {
+    height: auto;
+    padding: 24px 24px 32px;
+
+    .featureImage {
+      width: 100%;
+      height: auto;
+    }
+    
+    .featureWrap {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      background: transparent;
+    }
+
+    .featureText {
+      .label {
+        margin-bottom: 1rem;
+      }
+      .title {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        line-height: 2.625rem;
+
+        br {
+          display: none;
+        }
+      }
+
+      .description {
+        font-size: 1.125rem;
+        line-height: 1.625rem; 
+      }
+    }
+  }
+}
+
+@media (max-width: 743px) {
+  .featureSection {
+    padding: 20px 16px;
+
+    .featureText {
+      width: 100%;
+
+      .label {
+        margin-bottom: 0.5rem;
+      }
+
+      .title {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        letter-spacing: 0;
+      }
+
+      .description {
+        line-height: 1.575rem;
+        letter-spacing: 0.09rem;
+      }
+    }
+  }
+}

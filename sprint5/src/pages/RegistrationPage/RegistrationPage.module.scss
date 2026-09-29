@@ -1,0 +1,207 @@
+@use "../../styles/variables" as *;
+
+.page {
+  padding-top: 70px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding: 40px 24px 120px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titleArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.submitButton {
+  height: 42px;
+  padding: 12px 23px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary;
+  color: $white;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: $gray-400;
+    cursor: default;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  label {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 16px 24px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    background-color: $gray-100;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: $gray-800;
+
+    outline: none;
+
+    &::placeholder {
+      color: $gray-400;
+    }
+  }
+
+  input {
+    height: 56px;
+  }
+
+  textarea {
+    height: 280px;
+    resize: none;
+  }
+
+  input.errorInput,
+  textarea.errorInput {
+    border-color: #f74747;
+  }
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background-color: $gray-100;
+
+  font-size: 16px;
+  color: $gray-800;
+
+  button {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-color: $gray-400;
+    color: $white;
+
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+
+
+.errorMessage {
+  margin: 0 0 0 12px;
+
+  color: #f74747;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 743px) {
+  .main {
+    padding: 40px 24px 80px;
+  }
+
+  .titleArea {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .form {
+    gap: 32px;
+  }
+
+  .field {
+    gap: 12px;
+
+    label {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    input,
+    textarea {
+      padding: 16px 24px;
+      font-size: 16px;
+    }
+
+    input {
+      height: 56px;
+    }
+
+    textarea {
+      height: 300px;
+    }
+  }
+}

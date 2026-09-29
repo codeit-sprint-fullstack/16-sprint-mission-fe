@@ -1,0 +1,23 @@
+@use "../../styles/variables" as *;
+
+
+.bottomBanner  {
+  .bannerWrap {
+    .bannerText{
+      display: flex;
+      align-items: center;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .bottomBanner  {
+    .bannerWrap {
+      .bannerText{
+        display: block;
+        padding: 120px 0 120px;
+      }
+    }
+  }
+}
