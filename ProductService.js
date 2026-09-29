@@ -1,4 +1,4 @@
-import axios from "https://cdn.jsdelivr.net/npm/axios@1.7.9/+esm";
+import axios from "axios";
 
 const BASE_URL = "https://panda-market-api-crud.vercel.app";
 

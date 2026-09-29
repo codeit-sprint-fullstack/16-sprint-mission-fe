@@ -1,26 +1,28 @@
-function Header() {
+import { Link, NavLink } from "react-router-dom";
+
+function Header({ landing = false }) {
   return (
     <header>
       <div className="header-inner">
         <div className="header-left">
-          <a href="/landing.html" className="logo">
+          <Link to="/" className="logo">
             <img
               className="logo-desktop"
               src="/images/logo.png"
               alt="판다마켓"
             />
 
-            <img
+            {!landing && <img
               className="logo-mobile"
               src="/images/logo-mobile@2x.png"
               alt="판다마켓"
-            />
-          </a>
+            />}
+          </Link>
 
-          <nav className="header-nav">
-            <a href="/free">자유게시판</a>
-            <a href="/">중고마켓</a>
-          </nav>
+          {!landing && <nav className="header-nav">
+            <a href="/free.html">자유게시판</a>
+            <NavLink to="/items" end>중고마켓</NavLink>
+          </nav>}
         </div>
 
         <a href="/login/" className="login">

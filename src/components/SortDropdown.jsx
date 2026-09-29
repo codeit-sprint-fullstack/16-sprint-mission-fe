@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 const OPTIONS = [
   { value: "recent", label: "최신순" },
-  { value: "favorite", label: "좋아요순" },
 ];
 
 function SortDropdown({ value, onChange }) {
