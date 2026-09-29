@@ -1,0 +1,138 @@
+/* 모바일 */
+form.toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem; // 8px
+}
+form.toolbar #searchInput{
+  padding: 0;
+  padding-left: 2.75rem; // 44px
+  padding-right: 1rem; // 16px
+  // 설명 적을 것
+  width: calc(100dvw - 88px);
+  min-width: 17rem; // 272px
+  height: 2.625rem; // 42px
+  border: none;
+  border-radius: 0.75rem; // 12px
+  background-color: var(--secondary-color-100);
+  background-image: url(../assets/ic_search.svg);
+  background-repeat: no-repeat;
+  background-position: 1.25rem center; // 20px center
+  line-height: 1.625rem; // 26px
+  
+  &::placeholder{
+    color: var(--secondary-color-400);
+  }
+
+  &:focus{
+    padding-left: 2.6875rem; // 43px
+    border: 1px solid var(--primary-color-100);
+    background-position: 1.1875rem center; // 20px center
+  }
+}
+form.toolbar .open-modal-btn{
+  order: -1;
+  margin-left: auto;
+  width: 8.313rem; // 133px
+  height: 2.625rem; // 42px
+  border: none;
+  border-radius: 0.5rem; // 8px
+  background: var(--primary-color-100);
+  color: var(--secondary-color-100);
+  font-family: inherit;
+  font-size: 1rem; // 16px
+  font-weight: 600;
+
+  &:hover{
+    background: var(--primary-color-200);
+  }
+  
+  &:active{
+    background: var(--primary-color-300);
+  }
+}
+form.toolbar #sort{
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+  width: 2.625rem; // 42px
+  height: 2.625rem; // 42px
+  border: 1px solid var(--secondary-color-200);
+  border-radius: 0.75rem; // 12px
+  background-color: #fff;
+  background-image: url(../assets/ic_sort.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: var(--secondary-color-800);
+  font-family: inherit;
+  font-size: 1rem; // 16px
+  font-weight: 400;
+  text-indent: -999em;
+  line-height: 2.625rem; // 42px
+
+  &::picker-icon{
+    content: url(../assets/ic_dropdown.svg);
+  }
+
+  &, &::picker(select) {
+    appearance: base-select;
+  }
+
+  &::picker(select) {
+    position: absolute;
+    top: 0.5rem; // 8px
+    border: none;
+    background: none;
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+  }
+}
+form.toolbar #sort option{
+  width: 8.125rem; // 130px
+  height: 2.625rem; // 42px
+  border: 1px solid var(--secondary-color-200);
+  background-color: #fff;
+  text-indent: 0;
+
+  &:first-of-type{
+    border-radius: 0.75rem 0.75rem 0 0; // 12px 12px 0 0
+  }
+  &:last-of-type{
+    margin-top: -1px;
+    border-radius: 0 0 0.75rem 0.75rem; // 0 0 12px 12px
+  }
+  // &::checkmark{
+  //   display: none;
+  // }
+}
+
+/* 태블릿 */
+@media (min-width: 768px){
+  form.toolbar{
+    column-gap: 0.75rem; // 12px
+    height: 2.625rem; // 42px
+  }
+  form.toolbar #searchInput{
+    width: 15.125rem; // 242px
+  }
+  form.toolbar .open-modal-btn{
+    order: 0;
+    margin-left: 0;
+  }
+  form.toolbar #sort{
+    padding: 0 1.25rem; // 0 20px
+    width: 8.125rem; // 130px
+    background-image: none;
+    text-indent: 0;
+  }
+}
+
+/* 데스크톱 */
+@media (min-width: 1024px) {
+  form.toolbar #searchInput{
+    width: 20.313rem; // 325px
+  }
+}
