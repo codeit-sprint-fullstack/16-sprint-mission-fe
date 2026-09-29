@@ -82,7 +82,19 @@ a{
   text-decoration: none;
 }
 input{
-  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+
+  &::placeholder{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 0;
+  }
+}
+textarea{
+  resize: none;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -105,9 +117,4 @@ input[type="password"]{
 }
 button{
   cursor: pointer;
-}
-
-/* 확인용 - 추후 삭제 예정 */
-body::-webkit-scrollbar{
-  display: none;
 }

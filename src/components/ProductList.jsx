@@ -40,10 +40,9 @@ const ProductList = () => {
                   products.map(product => 
                     <ProductItem 
                       key={product.id}
-                      image={product.images[0]}
+                      postId={product.id}
                       name={product.name}
                       price={product.price}
-                      favoriteCount={product.favoriteCount}
                     />
                   )
                 }
