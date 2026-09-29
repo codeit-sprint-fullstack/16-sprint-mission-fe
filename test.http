@@ -1,0 +1,79 @@
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "맥북",
+  "description": "사용감 적은 맥북 판매합니다.",
+  "price": 1000000,
+  "tags": ["노트북", "맥북"]
+}
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "아이폰",
+  "description": "아이폰 15 판매합니다.",
+  "price": 800000,
+  "tags": ["애플", "휴대폰"]
+}
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "갤럭시",
+  "description": "갤럭시 S24 판매합니다.",
+  "price": 700000,
+  "tags": ["삼성", "휴대폰"]
+}
+
+### 상품 목록 조회
+
+GET http://localhost:3000/products
+
+### 상품 상세 조회
+
+GET http://localhost:3000/products/6aba41719ae0faf59030d415
+
+### 상품 수정
+
+PATCH http://localhost:3000/products/6aba41719ae0faf59030d415
+Content-Type: application/json
+
+{
+  "name": "맥북 프로",
+  "description": "사용감 적은 맥북 프로 판매합니다.",
+  "price": 1200000,
+  "tags": ["노트북", "맥북"]
+}
+
+### 상품 삭제
+
+DELETE http://localhost:3000/products/6aba41719ae0faf59030d415
+
+GET http://localhost:3000/products/6aba41719ae0faf59030d415
+
+### offset 페이지네이션
+
+GET http://localhost:3000/products?offset=0&limit=10
+
+### 최신순 정렬
+
+GET http://localhost:3000/products?offset=0&limit=10&orderBy=recent
+
+### 검색
+
+GET http://localhost:3000/products?offset=0&limit=10&keyword=맥북
+
+### 상품 등록
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "아이폰",
+  "description": "아이폰 15 판매합니다.",
+  "price": 800000,
+  "tags": ["애플", "휴대폰"]
+}
