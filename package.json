@@ -1,0 +1,30 @@
+{
+  "name": "16-sprint-mission-fe",
+  "version": "1.0.0",
+  "description": "판다마켓 스프린트 미션을 진행하며 HTML과 CSS를 활용해 구현한 웹 프로젝트",
+  "main": "main.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Git-hallland/16-sprint-mission-fe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Git-hallland/16-sprint-mission-fe/issues"
+  },
+  "homepage": "https://github.com/Git-hallland/16-sprint-mission-fe#readme",
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
