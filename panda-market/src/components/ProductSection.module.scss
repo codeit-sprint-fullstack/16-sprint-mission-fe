@@ -1,0 +1,23 @@
+.section {
+  padding: 32px 0; // 좌우 여백 없음, 위아래만
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // h2 vs toolbar 양쪽 벌림
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.registerButton {
+  background-color: #3692ff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+}
