@@ -1,12 +1,12 @@
-const Banner = ({imgSrc, text, buttonText}) => {
+const Banner = ({imgSrc, title, buttonText}) => {
     return (
         <div className="bg-[#CFE5FF] w-full content-end h-80">
             <div className="flex flex-row justify-center h-3/4">
                 <div className="content-center">
-                    <h1>{text}</h1>
+                    <h1 className="text-[#374151] text-xl font-extrabold">{title}</h1>
                     {
                         buttonText && (
-                            <button className="btn-primary">{buttonText}</button>
+                            <button className="btn-primary h-10 rounded-full my-4 w-full">{buttonText}</button>
                         )
                     }
                 </div>

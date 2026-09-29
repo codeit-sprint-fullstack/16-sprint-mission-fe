@@ -8,8 +8,8 @@ const Navbar = () => {
         >
             <div className="flex flex-row gap-4 items-center">
                 <img src={logo} alt="Panda Logo" className="w-20 lg:w-40"/>
-                <Link to="">자유게시판</Link>
-                <Link to="">중고마켓</Link>
+                <Link to="" className="text-sm">자유게시판</Link>
+                <Link to="" className="text-sm">중고마켓</Link>
             </div>
             <button className="btn-primary h-3/4 self-center">로그인</button>
         </nav>
