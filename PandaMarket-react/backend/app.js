@@ -68,17 +68,19 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
+// 비밀번호 자체는 출력하지 않고
+// 환경변수가 들어왔는지만 확인
+console.log("MONGODB_URI 있음?", !!process.env.MONGODB_URI);
+
 mongoose
   .connect(process.env.MONGODB_URI)
-
   .then(() => {
     console.log("MongoDB 연결 성공");
 
-    app.listen(PORT, () => {
-      console.log(`서버 실행: http://localhost:${PORT}`);
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`서버 실행: ${PORT}`);
     });
   })
-
   .catch((error) => {
     console.error("MongoDB 연결 실패:", error);
   });
