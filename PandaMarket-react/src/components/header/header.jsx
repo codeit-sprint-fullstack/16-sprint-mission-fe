@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import logo from "../../assets/logo.png";
-
+import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -13,7 +13,16 @@ const Header = () => {
           </Link>
 
           <Link to="/free">자유게시판</Link>
-          <Link to="/market">중고마켓</Link>
+          <NavLink
+            to="/items"
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.marketLink} ${styles.active}`
+                : styles.marketLink
+            }
+          >
+            중고마켓
+          </NavLink>
         </div>
 
         {/* 오른쪽 로그인 */}

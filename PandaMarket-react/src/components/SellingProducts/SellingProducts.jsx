@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import Pagination from "../Pagination/Pagination";
@@ -8,6 +8,9 @@ import styles from "./SellingProducts.module.scss";
 const PAGE_SIZE = 10;
 
 function SellingProducts() {
+  // 페이지 이동
+  const navigate = useNavigate();
+
   // ====================================================
   // 페이지
   // ====================================================
@@ -76,6 +79,13 @@ function SellingProducts() {
               검색
             </button>
           </form>
+          {/* 상품 등록하기 */}
+          <button
+            className={styles.registrationButton}
+            onClick={() => navigate("/registration")}
+          >
+            상품 등록하기
+          </button>
 
           {/* ================================================
           ❌ 정렬 select 삭제
@@ -89,6 +99,18 @@ function SellingProducts() {
             <option value="recent">최신 순</option>
             <option value="favorite">좋아요 순</option>
           </select> */}
+          
+          {/* ==================================================
+              좋아요순은 없애고 최신순 하나만 남김
+
+              실제 정렬은 백엔드에서
+              createdAt 최신순으로 하고 있으므로
+              여기서는 화면 표시용으로만 둠.
+          =================================================== */}
+
+          <select className={styles.select} value="recent" disabled>
+            <option value="recent">최신순</option>
+          </select>
         </div>
       </div>
 

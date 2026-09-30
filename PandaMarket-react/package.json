@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
     "dev": "vite",
     "server": "node --watch backend/app.js",
     "build": "vite build",

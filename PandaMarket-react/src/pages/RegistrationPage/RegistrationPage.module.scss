@@ -1,39 +1,57 @@
 // ======================================================================
-// 2. RegistrationPage.module.scss
+// 3. RegistrationPage.module.scss
 // ======================================================================
 //
+// 기존 SCSS에 아래 스타일들이 반드시 있어야 함.
+//
 // src/pages/RegistrationPage/RegistrationPage.module.scss
+//
 // ======================================================================
 
-.container {
+.page {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.main {
   width: 100%;
+
   max-width: 1200px;
 
   margin: 0 auto;
 
-  padding: 40px 24px 80px;
+  padding: 40px 24px 100px;
+
+  box-sizing: border-box;
+
+  flex: 1;
 }
 
-// ======================================================================
-// 제목 영역
-// ======================================================================
+.form {
+  width: 100%;
+}
 
-.titleArea {
+.top {
   display: flex;
 
   align-items: center;
 
   justify-content: space-between;
 
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .title {
   margin: 0;
 
-  font-size: 20px;
+  font-size: 22px;
 
   font-weight: 700;
+
+  color: #111827;
 }
 
 // ======================================================================
@@ -41,11 +59,15 @@
 // ======================================================================
 
 .submitButton {
+  min-width: 80px;
+
+  height: 48px;
+
+  padding: 0 24px;
+
   border: none;
 
   border-radius: 8px;
-
-  padding: 12px 24px;
 
   background-color: #3692ff;
 
@@ -59,24 +81,17 @@
 }
 
 // ======================================================================
-// form
+// ★ 버튼 비활성화
 // ======================================================================
 
-.form {
-  display: flex;
+.submitButton:disabled {
+  background-color: #9ca3af;
 
-  flex-direction: column;
-
-  gap: 24px;
+  cursor: not-allowed;
 }
 
 // ======================================================================
-// 한 입력칸 묶음
-//
-// 상품명
-// [____________]
-//
-// 이런 한 덩어리
+// 입력 영역
 // ======================================================================
 
 .field {
@@ -84,129 +99,203 @@
 
   flex-direction: column;
 
-  gap: 12px;
+  gap: 8px;
+
+  margin-bottom: 28px;
 }
 
 .label {
   font-size: 16px;
 
   font-weight: 700;
+
+  color: #111827;
 }
 
-// ======================================================================
-// input
-// ======================================================================
-
-.input {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  border: none;
-
-  border-radius: 12px;
-
-  padding: 16px 24px;
-
-  background-color: #f3f4f6;
-
-  font-size: 16px;
-
-  outline: none;
-}
-
-.input:focus {
-  outline: 2px solid #3692ff;
-}
-
-// ======================================================================
-// 상품 소개 textarea
-// ======================================================================
-
+.input,
 .textarea {
   width: 100%;
 
-  min-height: 160px;
-
   box-sizing: border-box;
 
-  border: none;
+  border: 1px solid transparent;
 
   border-radius: 12px;
 
-  padding: 16px 24px;
-
   background-color: #f3f4f6;
 
-  font-size: 16px;
+  padding: 16px 24px;
 
   font-family: inherit;
 
-  resize: vertical;
+  font-size: 16px;
+
+  color: #111827;
 
   outline: none;
 }
 
-.textarea:focus {
-  outline: 2px solid #3692ff;
+.input {
+  height: 56px;
+}
+
+.textarea {
+  min-height: 180px;
+
+  resize: vertical;
+}
+
+// ======================================================================
+// ★ 에러 input 빨간 테두리
+// ======================================================================
+
+.errorInput {
+  border: 1px solid #f74747;
+}
+
+// focus했어도 빨간색 유지
+
+.errorInput:focus {
+  outline: none;
+
+  border: 1px solid #f74747;
+}
+
+// ======================================================================
+// ★ 빨간 에러 메시지
+// ======================================================================
+
+.errorMessage {
+  margin: 0 0 0 12px;
+
+  color: #f74747;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+// ======================================================================
+// 태그 목록
+// ======================================================================
+
+.tagList {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+// ======================================================================
+// 태그 칩
+// ======================================================================
+
+.tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  border-radius: 18px;
+
+  background-color: #f3f4f6;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+// ======================================================================
+// 태그 X 버튼
+// ======================================================================
+
+.tagDeleteButton {
+  width: 18px;
+
+  height: 18px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: #9ca3af;
+
+  color: #ffffff;
+
+  cursor: pointer;
 }
 
 // ======================================================================
 // Tablet
 // ======================================================================
-//
-// 화면이 1199px 이하일 때
-// ======================================================================
 
 @media (max-width: 1199px) {
-  .container {
+  .main {
     max-width: none;
 
-    padding: 32px 24px 64px;
+    padding: 32px 24px 80px;
+  }
+
+  .textarea {
+    min-height: 160px;
   }
 }
 
 // ======================================================================
 // Mobile
 // ======================================================================
-//
-// 화면이 767px 이하일 때
-// ======================================================================
 
 @media (max-width: 767px) {
-  .container {
-    padding: 24px 16px 48px;
-  }
-
-  .titleArea {
-    margin-bottom: 24px;
+  .main {
+    padding: 24px 16px 60px;
   }
 
   .title {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .submitButton {
-    padding: 10px 18px;
+    min-width: 70px;
+
+    height: 42px;
+
+    padding: 0 18px;
 
     font-size: 14px;
   }
 
-  .form {
-    gap: 20px;
-  }
-
-  .input {
+  .input,
+  .textarea {
     padding: 14px 16px;
 
     font-size: 14px;
+  }
+
+  .input {
+    height: 52px;
   }
 
   .textarea {
     min-height: 140px;
+  }
 
-    padding: 14px 16px;
+  .errorMessage {
+    font-size: 11px;
+  }
 
-    font-size: 14px;
+  .tag {
+    min-height: 32px;
+
+    font-size: 13px;
   }
 }

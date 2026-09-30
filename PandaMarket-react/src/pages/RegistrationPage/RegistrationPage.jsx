@@ -1,155 +1,185 @@
-// ======================================================
-// 3. 상품 등록 페이지 파일 만들기
+// ======================================================================
+// 2. RegistrationPage.jsx
+// ======================================================================
+//
 // src/pages/RegistrationPage/RegistrationPage.jsx
 // ======================================================================
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import api from "../../services/api";
 import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+
+import api from "../../services/api";
+
+import useProductFormValidation from "../../hooks/useProductFormValidation";
 
 import styles from "./RegistrationPage.module.scss";
 
 function RegistrationPage() {
-  // ====================================================================
-  // 등록 성공 후 페이지 이동할 때 사용
-  // ====================================================================
-
   const navigate = useNavigate();
 
   // ====================================================================
-  // 상품명
+  // 입력값
   // ====================================================================
 
   const [name, setName] = useState("");
 
-  // ====================================================================
-  // 상품 소개
-  // ====================================================================
-
   const [description, setDescription] = useState("");
-
-  // ====================================================================
-  // 판매 가격
-  // ====================================================================
 
   const [price, setPrice] = useState("");
 
-  // ====================================================================
-  // 태그
-  //
-  // 지금은 심화의 "태그 칩"을 만들지 않음.
-  //
-  // 그냥:
-  //
-  // 전자제품, 노트북, 애플
-  //
-  // 이렇게 입력받음.
-  // ====================================================================
+  // 현재 입력 중인 태그
+  const [tagText, setTagText] = useState("");
 
-  const [tags, setTags] = useState("");
+  // Enter로 등록된 태그
+  const [tags, setTags] = useState([]);
 
   // ====================================================================
-  // 등록 중인지
+  // 사용자가 한 번이라도 입력했는지 확인
   // ====================================================================
+  //
+  // 처음 페이지 들어오자마자
+  // 빨간 에러가 전부 뜨면 보기 안 좋음.
+  //
+  // 사용자가 해당 input을 건드린 뒤부터
+  // 에러를 보여주기 위한 값.
 
+  const [touched, setTouched] = useState({
+    name: false,
+    description: false,
+    price: false,
+    tag: false,
+  });
+
+  // 등록 중
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // ====================================================================
-  // 등록하기
+  // Custom Hook
   // ====================================================================
 
-  const handleSubmit = async (e) => {
-    // form의 기본 새로고침 막기
-    e.preventDefault();
+  const { nameError, descriptionError, priceError, tagError, isFormValid } =
+    useProductFormValidation({
+      name,
+      description,
+      price,
+      tagText,
+      tags,
+    });
+
+  // ====================================================================
+  // input을 건드렸다고 기록
+  // ====================================================================
+
+  const handleBlur = (field) => {
+    setTouched((prev) => ({
+      ...prev,
+      [field]: true,
+    }));
+  };
+
+  // ====================================================================
+  // 태그 Enter
+  // ====================================================================
+
+  const handleTagKeyDown = (event) => {
+    if (event.key !== "Enter") {
+      return;
+    }
+
+    // Enter 때문에 form이 제출되는 것 막기
+    event.preventDefault();
+
+    const newTag = tagText.trim();
+
+    // 태그 input을 건드렸다고 표시
+    setTouched((prev) => ({
+      ...prev,
+      tag: true,
+    }));
+
+    // --------------------------------------------------
+    // 아무것도 안 적었으면 추가 X
+    // --------------------------------------------------
+
+    if (!newTag) {
+      return;
+    }
+
+    // --------------------------------------------------
+    // 5글자 넘으면 추가 X
+    // --------------------------------------------------
+
+    if (newTag.length > 5) {
+      return;
+    }
+
+    // --------------------------------------------------
+    // 이미 같은 태그가 있다면 추가 X
+    // --------------------------------------------------
+
+    if (tags.includes(newTag)) {
+      setTagText("");
+      return;
+    }
+
+    // --------------------------------------------------
+    // 태그 배열에 추가
+    // --------------------------------------------------
+
+    setTags((prevTags) => [...prevTags, newTag]);
+
+    // input 비우기
+    setTagText("");
+  };
+
+  // ====================================================================
+  // 태그 삭제
+  // ====================================================================
+
+  const handleRemoveTag = (tagToRemove) => {
+    setTags((prevTags) => prevTags.filter((tag) => tag !== tagToRemove));
+  };
+
+  // ====================================================================
+  // 상품 등록
+  // ====================================================================
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // 혹시 버튼 외 다른 방법으로 submit돼도
+    // 잘못된 값이면 POST 보내지 않기
+    if (!isFormValid) {
+      return;
+    }
 
     try {
       setIsSubmitting(true);
 
       // ================================================================
-      // 태그 문자열을 배열로 변경
+      // 내가 만든 POST API
       // ================================================================
-      //
-      // 입력:
-      //
-      // "전자제품, 노트북, 애플"
-      //
-      //        ↓
-      //
-      // split(",")
-      //
-      //        ↓
-      //
-      // ["전자제품", " 노트북", " 애플"]
-      //
-      //        ↓
-      //
-      // trim()
-      //
-      //        ↓
-      //
-      // ["전자제품", "노트북", "애플"]
-
-      const tagList = tags
-        .split(",")
-        .map((tag) => tag.trim())
-        .filter((tag) => tag !== "");
-
-      // ================================================================
-      // 내 Express 서버에 상품 등록 요청
-      // ================================================================
-      //
-      // api.js의 baseURL:
-      //
-      // http://localhost:3000/api
-      //
-      // 이므로
-      //
-      // api.post("/products")
-      //
-      // 실제 요청:
-      //
-      // POST http://localhost:3000/api/products
 
       const response = await api.post("/products", {
-        name: name,
-
-        description: description,
-
-        // input 값은 문자열이므로 숫자로 변경
+        name,
+        description,
         price: Number(price),
-
-        tags: tagList,
+        tags,
       });
 
-      // ================================================================
-      // 서버에서 받은 새 상품
-      // ================================================================
-      //
-      // response.data
-      //
-      // 예:
-      //
-      // {
-      //   id: 5,
-      //   name: "맥북",
-      //   description: "상태 좋아요",
-      //   price: 900000,
-      //   tags: ["전자제품"]
-      // }
-
-      const newProduct = response.data;
+      // api interceptor가 있든 없든 대응
+      const newProduct = response.data ?? response;
 
       // ================================================================
-      // 등록 성공 후 상품 상세 페이지로 이동
+      // 등록 성공
+      //
+      // id가 7이면
+      //
+      // /items/7
       // ================================================================
-      //
-      // newProduct.id = 5
-      //
-      //        ↓
-      //
-      // /items/5
 
       navigate(`/items/${newProduct.id}`);
     } catch (error) {
@@ -162,43 +192,33 @@ function RegistrationPage() {
   };
 
   return (
-    <>
-      {/* ================================================================
-          Header
-      ================================================================= */}
-
+    <div className={styles.page}>
       <Header />
 
-      {/* ================================================================
-          상품 등록 페이지
-      ================================================================= */}
+      <main className={styles.main}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          {/* ============================================================
+              제목 + 등록 버튼
+          ============================================================= */}
 
-      <main className={styles.container}>
-        {/* ==============================================================
-            제목 + 등록 버튼
-        =============================================================== */}
+          <div className={styles.top}>
+            <h1 className={styles.title}>상품 등록하기</h1>
 
-        <div className={styles.titleArea}>
-          <h1 className={styles.title}>상품 등록하기</h1>
+            <button
+              type="submit"
+              className={styles.submitButton}
+              // ========================================================
+              // ★ 핵심
+              //
+              // 하나라도 조건에 안 맞으면 disabled
+              // ========================================================
 
-          <button
-            type="submit"
-            form="registration-form"
-            className={styles.submitButton}
-          >
-            {isSubmitting ? "등록 중..." : "등록"}
-          </button>
-        </div>
+              disabled={!isFormValid || isSubmitting}
+            >
+              {isSubmitting ? "등록 중..." : "등록"}
+            </button>
+          </div>
 
-        {/* ==============================================================
-            상품 등록 폼
-        =============================================================== */}
-
-        <form
-          id="registration-form"
-          className={styles.form}
-          onSubmit={handleSubmit}
-        >
           {/* ============================================================
               상품명
           ============================================================= */}
@@ -210,13 +230,22 @@ function RegistrationPage() {
 
             <input
               id="name"
-              className={styles.input}
               type="text"
+              className={`
+                ${styles.input}
+                ${touched.name && nameError ? styles.errorInput : ""}
+              `}
               placeholder="상품명을 입력해주세요"
               value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
+              onChange={(event) => setName(event.target.value)}
+              onBlur={() => handleBlur("name")}
             />
+
+            {/* 에러 메시지 */}
+
+            {touched.name && nameError && (
+              <p className={styles.errorMessage}>{nameError}</p>
+            )}
           </div>
 
           {/* ============================================================
@@ -230,12 +259,23 @@ function RegistrationPage() {
 
             <textarea
               id="description"
-              className={styles.textarea}
+              className={`
+                ${styles.textarea}
+                ${
+                  touched.description && descriptionError
+                    ? styles.errorInput
+                    : ""
+                }
+              `}
               placeholder="상품 소개를 입력해주세요"
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
+              onChange={(event) => setDescription(event.target.value)}
+              onBlur={() => handleBlur("description")}
             />
+
+            {touched.description && descriptionError && (
+              <p className={styles.errorMessage}>{descriptionError}</p>
+            )}
           </div>
 
           {/* ============================================================
@@ -249,13 +289,23 @@ function RegistrationPage() {
 
             <input
               id="price"
-              className={styles.input}
-              type="number"
+              // 숫자만 검사하기 쉽게 text 사용
+              type="text"
+              // 모바일에서는 숫자 키패드
+              inputMode="numeric"
+              className={`
+                ${styles.input}
+                ${touched.price && priceError ? styles.errorInput : ""}
+              `}
               placeholder="판매 가격을 입력해주세요"
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              required
+              onChange={(event) => setPrice(event.target.value)}
+              onBlur={() => handleBlur("price")}
             />
+
+            {touched.price && priceError && (
+              <p className={styles.errorMessage}>{priceError}</p>
+            )}
           </div>
 
           {/* ============================================================
@@ -263,22 +313,65 @@ function RegistrationPage() {
           ============================================================= */}
 
           <div className={styles.field}>
-            <label className={styles.label} htmlFor="tags">
+            <label className={styles.label} htmlFor="tag">
               태그
             </label>
 
             <input
-              id="tags"
-              className={styles.input}
+              id="tag"
               type="text"
-              placeholder="태그를 쉼표(,)로 구분해주세요"
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
+              className={`
+                ${styles.input}
+                ${touched.tag && tagError ? styles.errorInput : ""}
+              `}
+              placeholder="태그를 입력해주세요"
+              value={tagText}
+              onChange={(event) => {
+                setTagText(event.target.value);
+
+                // 타이핑하기 시작하면
+                // 바로 validation 표시
+                setTouched((prev) => ({
+                  ...prev,
+                  tag: true,
+                }));
+              }}
+              onKeyDown={handleTagKeyDown}
             />
+
+            {/* 태그 글자 수 오류 */}
+
+            {touched.tag && tagError && (
+              <p className={styles.errorMessage}>{tagError}</p>
+            )}
+
+            {/* ==========================================================
+                태그 칩
+            =========================================================== */}
+
+            {tags.length > 0 && (
+              <div className={styles.tagList}>
+                {tags.map((tag) => (
+                  <div key={tag} className={styles.tag}>
+                    <span>#{tag}</span>
+
+                    <button
+                      type="button"
+                      className={styles.tagDeleteButton}
+                      onClick={() => handleRemoveTag(tag)}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </form>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 }
 

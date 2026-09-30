@@ -12,11 +12,9 @@ import cors from "cors";
 
 import productsRouter from "./routes/Product.js";
 
-
 // .env가 backend 폴더 안에 있으므로
 // 정확한 위치를 알려주는 것
-dotenv.config({ path: "./backend/.env" });
-
+dotenv.config();
 const app = express();
 
 // ======================================================================

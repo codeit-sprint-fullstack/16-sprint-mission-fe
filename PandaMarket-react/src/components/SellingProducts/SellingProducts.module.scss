@@ -3,134 +3,238 @@
 // 판매 중인 상품 반응형
 // PC 5열 / Tablet 3열 / Mobile 2열
 // ======================================================
+// 전체 판매상품 영역
 .section {
   width: 100%;
-  margin-top: 64px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 80px 24px;
 }
 
+// ======================================================================
+// 위쪽
+//
+// 판매 중인 상품               검색 / 등록 / 최신순
+// ======================================================================
+
 .top {
-  margin-bottom: 24px;
   display: flex;
-  align-items: flex-end;
+
+  align-items: center;
+
   justify-content: space-between;
+
   gap: 24px;
+
+  margin-bottom: 32px;
 }
 
 .title {
   margin: 0;
-  color: #111827;
+
   font-size: 20px;
-  white-space: nowrap;
+
+  font-weight: 700;
 }
+
+// ======================================================================
+// 오른쪽 버튼들
+// ======================================================================
 
 .controls {
   display: flex;
+
+  align-items: center;
+
   gap: 12px;
 }
 
+// ======================================================================
+// 검색
+// ======================================================================
+
 .searchForm {
   display: flex;
+
+  align-items: center;
 }
 
 .searchInput {
-  width: 280px;
-  height: 42px;
-  padding: 0 14px;
-  border: 1px solid #e5e7eb;
-  border-right: none;
-  border-radius: 10px 0 0 10px;
-  background-color: #f3f4f6;
-  outline: none;
+  width: 300px;
 
-  &:focus {
-    border-color: #3692ff;
-  }
+  height: 44px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px 0 0 10px;
+
+  padding: 0 16px;
+
+  background-color: #f3f4f6;
+
+  outline: none;
 }
 
 .searchButton {
-  height: 42px;
-  padding: 0 16px;
+  height: 44px;
+
   border: none;
+
   border-radius: 0 10px 10px 0;
+
+  padding: 0 18px;
+
   background-color: #3692ff;
+
   color: #ffffff;
+
   cursor: pointer;
 }
+
+// ======================================================================
+// 상품 등록하기
+// ======================================================================
+
+.registrationButton {
+  height: 44px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 0 18px;
+
+  background-color: #3692ff;
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+// ======================================================================
+// 최신순
+// ======================================================================
 
 .select {
-  width: 120px;
-  height: 42px;
-  padding: 0 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background-color: #ffffff;
-  outline: none;
-  cursor: pointer;
+  height: 44px;
 
-  &:focus {
-    border-color: #3692ff;
-  }
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  padding: 0 36px 0 14px;
+
+  background-color: #ffffff;
+
+  color: #111827;
 }
+
+// disabled여도 너무 흐리게 안 보이도록
+.select:disabled {
+  opacity: 1;
+
+  cursor: default;
+}
+
+// ======================================================================
+// ★ 상품 카드 5개씩
+// ======================================================================
 
 .grid {
   display: grid;
+
+  // PC 한 줄에 5개
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 32px 20px;
+
+  gap: 40px 24px;
 }
 
+// ======================================================================
+// 메시지
+// ======================================================================
+
 .message {
-  color: #6b7280;
+  margin-top: 40px;
+
+  text-align: center;
 }
 
 .error {
-  color: #ef4444;
+  margin-top: 40px;
+
+  text-align: center;
 }
 
+// ======================================================================
 // Tablet
+// ======================================================================
+
 @media (max-width: 1199px) {
+  .section {
+    padding: 60px 24px;
+  }
+
+  // 태블릿은 3개씩
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .searchInput {
+    width: 220px;
+  }
+}
+
+// ======================================================================
+// Mobile
+// ======================================================================
+
+@media (max-width: 767px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  // 제목과 검색 영역을 세로로
   .top {
-    align-items: flex-start;
+    align-items: stretch;
+
     flex-direction: column;
   }
 
   .controls {
-    width: 100%;
+    flex-wrap: wrap;
   }
 
   .searchForm {
-    flex: 1;
-  }
-
-  .searchInput {
     width: 100%;
   }
 
+  .searchInput {
+    flex: 1;
+
+    width: auto;
+  }
+
+  // 모바일은 상품 2개씩
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-// Mobile
-@media (max-width: 767px) {
-  .section {
-    margin-top: 48px;
+    gap: 24px 16px;
   }
 
-  .controls {
-    gap: 8px;
-  }
-
-  .searchButton {
-    padding: 0 12px;
+  .registrationButton {
+    flex: 1;
   }
 
   .select {
-    width: 108px;
-    padding: 0 8px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 12px;
+    flex: 1;
   }
 }

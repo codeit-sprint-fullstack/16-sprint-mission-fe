@@ -51,6 +51,15 @@ header {
   }
 }
 
+.marketLink {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.active {
+  color: #3692ff;
+}
+
 .loginButton {
   background-color: #3692ff;
   padding: 0.75rem 2.5rem; /* 12px 40px; */
