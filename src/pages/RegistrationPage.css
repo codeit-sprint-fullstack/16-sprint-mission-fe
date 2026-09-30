@@ -1,0 +1,206 @@
+.registration-page {
+  min-height: calc(100vh - var(--space-7) - 6.625rem);
+  padding: 2.5rem 1.5rem 8rem;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.registration-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registration-heading h1 {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.submit-button {
+  min-width: 4.625rem;
+  height: 2.625rem;
+  padding-inline: 1.5rem;
+
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--color-primary);
+
+  color: var(--color-on-primary);
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-field label {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: #f3f4f6;
+
+  padding: 1rem 1.5rem;
+
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-field input {
+  height: 3.5rem;
+}
+
+.form-field textarea {
+  min-height: 17.5rem;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.form-field input.input-error,
+.form-field textarea.input-error {
+  border-color: #dc2626;
+}
+
+.field-error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.registration-error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-chip {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border-radius: 1.125rem;
+  background: #f3f4f6;
+
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag-chip button {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  background: transparent;
+
+  color: #9ca3af;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.tag-chip button:hover {
+  color: #dc2626;
+}
+
+.tag-chip button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1199px) {
+  .registration-page {
+    padding: 2rem 1.5rem 6rem;
+  }
+
+  .registration-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .registration-page {
+    padding: 1.5rem 1rem 4rem;
+  }
+
+  .registration-form {
+    gap: 1.5rem;
+  }
+
+  .registration-heading h1 {
+    font-size: 1.125rem;
+  }
+
+  .submit-button {
+    min-width: 3.5rem;
+    height: 2.5rem;
+    padding-inline: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .form-field textarea {
+    min-height: 12rem;
+  }
+}
