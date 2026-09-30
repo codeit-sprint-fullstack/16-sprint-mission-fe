@@ -1,0 +1,412 @@
+// ----------------------------------------------------------------------
+// 전체 공통
+// ----------------------------------------------------------------------
+
+.hero,
+.featureSection,
+.bottomBanner {
+  width: 100%;
+}
+
+// ======================================================================
+// 1. Hero
+// ======================================================================
+
+.hero {
+  background-color: #cfe3ff;
+}
+
+.heroInner {
+  width: 100%;
+
+  max-width: 1200px;
+
+  min-height: 540px;
+
+  margin: 0 auto;
+
+  padding: 80px 40px 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 60px;
+}
+
+.heroText {
+  flex-shrink: 0;
+}
+
+.heroText h1 {
+  margin: 0 0 32px;
+
+  font-size: 40px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+.heroButton {
+  width: 200px;
+
+  height: 56px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background-color: #3692ff;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.heroImage {
+  width: 520px;
+
+  max-width: 50%;
+
+  align-self: flex-end;
+
+  object-fit: contain;
+}
+
+// ======================================================================
+// 2. 가운데 Feature 영역 공통
+// ======================================================================
+
+.featureSection {
+  background-color: #ffffff;
+
+  padding: 120px 24px;
+}
+
+.featureInner {
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 80px;
+}
+
+.featureImage {
+  width: 520px;
+
+  max-width: 55%;
+
+  object-fit: contain;
+}
+
+.featureText {
+  min-width: 260px;
+}
+
+.keyword {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #3692ff;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.featureText h2 {
+  margin: 0 0 24px;
+
+  color: #111827;
+
+  font-size: 36px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+.featureText p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+// ======================================================================
+// 3. 두 번째 영역
+// ======================================================================
+//
+// PC에서는:
+//
+// 글      이미지
+//
+// 순서.
+//
+// JSX에서 이미 이 순서로 작성했으므로
+// 특별한 추가 작업은 많이 필요 없음.
+// ======================================================================
+
+.reverse {
+  justify-content: center;
+}
+
+// ======================================================================
+// 4. 아래쪽 배너
+// ======================================================================
+
+.bottomBanner {
+  margin-top: 80px;
+
+  background-color: #cfe3ff;
+}
+
+.bottomInner {
+  width: 100%;
+
+  max-width: 1200px;
+
+  min-height: 500px;
+
+  margin: 0 auto;
+
+  padding: 80px 40px 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 80px;
+}
+
+.bottomInner h2 {
+  margin: 0;
+
+  font-size: 36px;
+
+  line-height: 1.5;
+
+  color: #1f2937;
+}
+
+.bottomImage {
+  width: 520px;
+
+  max-width: 55%;
+
+  align-self: flex-end;
+
+  object-fit: contain;
+}
+
+// ======================================================================
+// Tablet
+// ======================================================================
+//
+// 768 ~ 1199 정도
+// ======================================================================
+
+@media (max-width: 1199px) {
+  .heroInner {
+    min-height: 460px;
+
+    padding: 60px 32px 0;
+
+    gap: 40px;
+  }
+
+  .heroText h1 {
+    font-size: 32px;
+  }
+
+  .heroImage {
+    width: 440px;
+  }
+
+  .featureSection {
+    padding: 90px 32px;
+  }
+
+  .featureInner {
+    gap: 48px;
+  }
+
+  .featureImage {
+    width: 450px;
+  }
+
+  .featureText h2 {
+    font-size: 30px;
+  }
+
+  .bottomInner {
+    min-height: 430px;
+
+    padding: 60px 32px 0;
+
+    gap: 48px;
+  }
+
+  .bottomInner h2 {
+    font-size: 30px;
+  }
+
+  .bottomImage {
+    width: 440px;
+  }
+}
+
+// ======================================================================
+// Mobile
+// ======================================================================
+
+@media (max-width: 767px) {
+  // --------------------------------------------------------------------
+  // Hero
+  // --------------------------------------------------------------------
+
+  .heroInner {
+    min-height: auto;
+
+    padding: 56px 20px 0;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 40px;
+  }
+
+  .heroText h1 {
+    margin-bottom: 24px;
+
+    font-size: 30px;
+  }
+
+  .heroButton {
+    width: 160px;
+
+    height: 48px;
+
+    font-size: 14px;
+  }
+
+  .heroImage {
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+  // --------------------------------------------------------------------
+  // Feature
+  // --------------------------------------------------------------------
+
+  .featureSection {
+    padding: 70px 20px;
+  }
+
+  .featureInner,
+  .reverse {
+    flex-direction: column;
+
+    gap: 36px;
+  }
+
+  .featureImage {
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+  .featureText {
+    width: 100%;
+
+    min-width: 0;
+
+    text-align: left;
+  }
+
+  .featureText h2 {
+    margin-bottom: 16px;
+
+    font-size: 26px;
+  }
+
+  .featureText p {
+    font-size: 14px;
+  }
+
+  .keyword {
+    font-size: 14px;
+  }
+
+  // --------------------------------------------------------------------
+  // 모바일에서 Search 영역은
+  // 이미지가 먼저 나오게 하고 싶으면 order 사용
+  // --------------------------------------------------------------------
+
+  .reverse .featureText {
+    order: 2;
+  }
+
+  .reverse .featureImage {
+    order: 1;
+  }
+
+  // --------------------------------------------------------------------
+  // Bottom
+  // --------------------------------------------------------------------
+
+  .bottomBanner {
+    margin-top: 30px;
+  }
+
+  .bottomInner {
+    min-height: auto;
+
+    padding: 64px 20px 0;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 40px;
+  }
+
+  .bottomInner h2 {
+    font-size: 28px;
+  }
+
+  .bottomImage {
+    width: 100%;
+
+    max-width: 500px;
+  }
+}
