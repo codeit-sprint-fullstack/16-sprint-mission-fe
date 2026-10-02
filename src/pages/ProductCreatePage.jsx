@@ -20,7 +20,7 @@ const ProductCreatePage = () => {
                 <input type="text" id="product-name" className="input-primary" placeholder="상품명을 입력해주세요" />
                 <label htmlFor="product-description" className="font-bold">상품 소개</label>
                 <textarea id="product-description" className="input-primary h-50" placeholder="상품 소개를 입력해주세요" />
-                <label htmlFor="product-price" className="font-bold">판매가격</label>
+                <label htmlFor="product-price" className="font-bold">판매 가격</label>
                 <input type="number" id="product-price" className="input-primary" placeholder="판매 가격을 입력해주세요" />
                 <label htmlFor="product-tag" className="font-bold">태그</label>
                 <input onKeyDown={(e) => {
@@ -34,7 +34,7 @@ const ProductCreatePage = () => {
                 <div className="flex flex-row gap-2">
                     {tagList.map((tag, index) => (
                         <span key={index} className="flex items-center gap-2 bg-[#F3F4F6] py-1 px-3 rounded-full">
-                            #{tag.toLowerCase()}
+                            #{tag.toLowerCase().replace(/\s+/g, '')}
                             <button
                                 type="button"
                                 onClick={() => {
