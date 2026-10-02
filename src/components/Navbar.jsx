@@ -11,7 +11,7 @@ const Navbar = () => {
                 <Link to="" className="text-sm">자유게시판</Link>
                 <Link to="/items" className="text-sm">중고마켓</Link>
             </div>
-            <button className="btn-primary h-3/4 self-center">로그인</button>
+            <button className="btn-primary h-3/4 self-center hover:cursor-pointer">로그인</button>
         </nav>
     );
 };
