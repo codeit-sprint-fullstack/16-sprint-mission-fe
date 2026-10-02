@@ -4,7 +4,7 @@ import {Link} from "react-router";
 const Navbar = () => {
     return (
         <nav
-            className="flex flex-row h-15 justify-around border-b border-gray-200 text-xs lg:text-lg md:text-xl"
+            className="flex flex-row w-4/5 max-w-300 mx-auto h-15 justify-between border-b border-gray-200 text-xs lg:text-lg md:text-xl"
         >
             <div className="flex flex-row gap-4 items-center">
                 <Link to="/"><img src={logo} alt="Panda Logo" className="w-20 lg:w-40"/></Link>

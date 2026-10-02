@@ -1,7 +1,9 @@
 import {useEffect, useRef, useState} from 'react';
 import ProductCard from "../components/ProductCard.jsx";
+import {useNavigate} from "react-router";
 
 const MarketPage = () => {
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const timerRef = useRef(null);
@@ -61,7 +63,9 @@ const MarketPage = () => {
                                 }, 300)
                             }}
                         />
-                        <button className="btn-primary text-xs h-8">상품 등록하기</button>
+                        <button className="btn-primary text-xs h-8" onClick={() => {
+                            navigate("/registration");
+                        }}>상품 등록하기</button>
                         <select className="border rounded-lg p-2"
                                 // value={productOrder}
                                 // onChange={(e) => setProductOrder(e.target.value)}

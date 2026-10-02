@@ -11,4 +11,7 @@
   .btn-primary {
     @apply bg-brand px-4 rounded-lg text-white text-sm
   }
+  .input-primary {
+    @apply bg-[#F3F4F6] rounded-lg px-4 py-2 text-sm
+  }
 }
