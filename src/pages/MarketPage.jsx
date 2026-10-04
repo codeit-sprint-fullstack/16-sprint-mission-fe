@@ -14,12 +14,10 @@ const MarketPage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch("http://localhost:3000/items")
-
+        fetch("http://localhost:3000/api/products")
             .then(response => response.json())
             .then(data => {
                 setProducts(data);
-                console.log(data[0].images[0]);
             })
             .catch(error => {
                 setError(error.message);
@@ -87,7 +85,7 @@ const MarketPage = () => {
                                 products.map((item) => {
                                     return <ProductCard
                                         key={item.id}
-                                        img={item.images[0]}
+                                        img="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg"
                                         name={item.name}
                                         price={item.price}
                                         favCount={item.favoriteCount}
