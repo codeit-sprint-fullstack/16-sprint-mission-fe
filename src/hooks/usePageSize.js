@@ -1,34 +1,25 @@
 import { useEffect, useState } from "react";
 
-function getPageSizes() {
+function getProductPageSize() {
   const width = window.innerWidth;
 
   if (width >= 1200) {
-    return {
-      productPageSize: 10,
-      bestPageSize: 4,
-    };
+    return 10;
   }
 
   if (width >= 744) {
-    return {
-      productPageSize: 6,
-      bestPageSize: 2,
-    };
+    return 6;
   }
 
-  return {
-    productPageSize: 6,
-    bestPageSize: 1,
-  };
+  return 6;
 }
 
 function usePageSize() {
-  const [pageSizes, setPageSizes] = useState(getPageSizes());
+  const [productPageSize, setProductPageSize] = useState(getProductPageSize());
 
   useEffect(() => {
     const handleResize = () => {
-      setPageSizes(getPageSizes());
+      setProductPageSize(getProductPageSize());
     };
 
     window.addEventListener("resize", handleResize);
@@ -38,7 +29,7 @@ function usePageSize() {
     };
   }, []);
 
-  return pageSizes;
+  return { productPageSize };
 }
 
 export default usePageSize;
