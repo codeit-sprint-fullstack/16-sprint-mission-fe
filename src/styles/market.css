@@ -1,10 +1,10 @@
-body {
+.market-page {
   min-width: 20rem;
   color: var(--secondary-900);
   background: #fcfcfc;
 }
 
-header {
+:where(.market-page) header {
   z-index: 10;
   height: 4.375rem;
   padding: 0 12.5rem;
@@ -13,7 +13,7 @@ header {
   border-bottom: 0.0625rem solid #dfdfdf;
 }
 
-.logo {
+:where(.market-page) .logo {
   display: flex;
   width: 9.5625rem;
   height: 3.1875rem;
@@ -22,31 +22,31 @@ header {
   flex: 0 0 auto;
 }
 
-.logo img {
+:where(.market-page) .logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.logo-mobile {
+:where(.market-page) .logo-mobile {
   display: none;
 }
 
-.header-left,
-.header-nav {
+:where(.market-page) .header-left,
+:where(.market-page) .header-nav {
   display: flex;
   align-items: center;
 }
 
-.header-left {
+:where(.market-page) .header-left {
   gap: 1.5rem;
 }
 
-.header-nav {
+:where(.market-page) .header-nav {
   gap: 0;
 }
 
-.header-nav a {
+:where(.market-page) .header-nav a {
   display: flex;
   padding: 1.3125rem 0.9375rem;
   align-items: center;
@@ -58,7 +58,7 @@ header {
   white-space: nowrap;
 }
 
-.login {
+:where(.market-page) .login {
   width: 5.5rem;
   height: 2.625rem;
   padding: 0.75rem 1.4375rem;
@@ -72,22 +72,22 @@ header {
   white-space: nowrap;
 }
 
-.market-main {
+:where(.market-page) .market-main {
   width: min(75rem, calc(100% - 3rem));
   max-width: none;
   margin: 0 auto;
   padding: 6.875rem 0 5rem;
 }
 
-.market-section:first-of-type {
+:where(.market-page) .market-section:first-of-type {
   margin-bottom: 1.5rem;
 }
 
-.market-section:last-of-type {
+:where(.market-page) .market-section:last-of-type {
   margin-bottom: 2.5rem;
 }
 
-.market-section-title {
+:where(.market-page) .market-section-title {
   margin: 0 0 1rem;
   color: var(--secondary-900);
   font-size: 1.25rem;
@@ -95,25 +95,25 @@ header {
   line-height: 1.75rem;
 }
 
-.best-product-grid,
-.product-grid {
+:where(.market-page) .best-product-grid,
+:where(.market-page) .product-grid {
   display: grid;
   gap: 1.5rem;
 }
 
-.best-product-grid {
+:where(.market-page) .best-product-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.product-grid {
+:where(.market-page) .product-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.product-card {
+:where(.market-page) .product-card {
   min-width: 0;
 }
 
-.product-card-image {
+:where(.market-page) .product-card-image {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
@@ -121,26 +121,26 @@ header {
   background: var(--secondary-100);
 }
 
-.product-card-info {
+:where(.market-page) .product-card-info {
   margin-top: 1rem;
 }
 
-.product-card-name,
-.product-card-price,
-.product-card-favorite {
+:where(.market-page) .product-card-name,
+:where(.market-page) .product-card-price,
+:where(.market-page) .product-card-favorite {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.product-card-name {
+:where(.market-page) .product-card-name {
   color: var(--secondary-700);
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5rem;
 }
 
-.product-card-price {
+:where(.market-page) .product-card-price {
   margin-top: 0.375rem;
   color: var(--secondary-900);
   font-size: 1rem;
@@ -148,7 +148,7 @@ header {
   line-height: 1.625rem;
 }
 
-.product-card-favorite {
+:where(.market-page) .product-card-favorite {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -158,7 +158,7 @@ header {
   line-height: 1.125rem;
 }
 
-.product-card-favorite svg {
+:where(.market-page) .product-card-favorite svg {
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
@@ -169,7 +169,7 @@ header {
   stroke-width: 1.5;
 }
 
-.market-toolbar {
+:where(.market-page) .market-toolbar {
   display: flex;
   width: 100%;
   align-items: center;
@@ -177,41 +177,41 @@ header {
   margin-bottom: 1.5rem;
 }
 
-.market-toolbar-top,
-.market-toolbar-bottom {
+:where(.market-page) .market-toolbar-top,
+:where(.market-page) .market-toolbar-bottom {
   display: contents;
 }
 
-.market-toolbar .market-section-title {
+:where(.market-page) .market-toolbar .market-section-title {
   order: 1;
   margin: 0 auto 0 0;
 }
 
-.market-search-wrap {
+:where(.market-page) .market-search-wrap {
   order: 2;
 }
 
-.market-register-button {
+:where(.market-page) .market-register-button {
   order: 3;
 }
 
-.sort-dropdown {
+:where(.market-page) .sort-dropdown {
   order: 4;
 }
 
-.market-actions {
+:where(.market-page) .market-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.market-search-wrap {
+:where(.market-page) .market-search-wrap {
   position: relative;
   display: block;
   width: 20.3125rem;
 }
 
-.market-search-wrap svg {
+:where(.market-page) .market-search-wrap svg {
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -225,10 +225,10 @@ header {
   pointer-events: none;
 }
 
-.market-search,
-.market-register-button,
-.sort-dropdown-trigger,
-.sort-dropdown-option {
+:where(.market-page) .market-search,
+:where(.market-page) .market-register-button,
+:where(.market-page) .sort-dropdown-trigger,
+:where(.market-page) .sort-dropdown-option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +242,7 @@ header {
   text-align: center;
 }
 
-.market-search {
+:where(.market-page) .market-search {
   width: 100%;
   padding: 0.5625rem 1rem 0.5625rem 2.75rem;
   border: 0;
@@ -254,19 +254,18 @@ header {
   text-align: left;
 }
 
-.market-search::placeholder {
+:where(.market-page) .market-search::placeholder {
   color: var(--secondary-400);
 }
 
-.market-search:focus-visible,
-.sort-dropdown button:focus-visible,
-.market-register-button:focus-visible,
-.pagination button:focus-visible {
+:where(.market-page) .market-search:focus-visible,
+:where(.market-page) .market-register-button:focus-visible,
+:where(.market-page) .pagination button:focus-visible {
   outline: 0.125rem solid var(--primary-100);
   outline-offset: 0.125rem;
 }
 
-.market-register-button {
+:where(.market-page) .market-register-button {
   width: 8.3125rem;
   padding: 0.5rem 1rem;
   border: 0;
@@ -279,13 +278,13 @@ header {
   cursor: pointer;
 }
 
-.sort-dropdown {
+:where(.market-page) .sort-dropdown {
   position: relative;
   width: 8.125rem;
   flex: 0 0 auto;
 }
 
-.sort-dropdown-trigger {
+:where(.market-page) .sort-dropdown-trigger {
   display: flex;
   width: 100%;
   padding: 0.5rem 2.375rem 0.5rem 1.25rem;
@@ -297,68 +296,17 @@ header {
   background: #fff;
   font-weight: 500;
   line-height: 1.5rem;
-  cursor: pointer;
+  cursor: default;
 }
 
-.sort-dropdown-chevron {
-  position: absolute;
-  right: 0.875rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.sort-dropdown-mobile-icon {
-  display: none;
-}
-
-.sort-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 0.25rem);
-  right: 0;
-  z-index: 20;
-  display: flex;
-  width: 8.125rem;
-  overflow: hidden;
-  flex-direction: column;
-  border: 0.0625rem solid var(--secondary-200);
-  border-radius: 0.75rem;
-  background: #fff;
-}
-
-.sort-dropdown-option {
-  width: 100%;
-  padding: 0.5rem 1.25rem;
-  border: 0;
-  color: var(--secondary-800);
-  background: #fff;
-  font-weight: 500;
-  line-height: 1.5rem;
-  text-align: left;
-  cursor: pointer;
-}
-
-.sort-dropdown-option+.sort-dropdown-option {
-  border-top: 0.0625rem solid var(--secondary-200);
-}
-
-.sort-dropdown-option:hover,
-.sort-dropdown-option[aria-selected="true"] {
-  background: var(--secondary-100);
-}
-
-.pagination {
+:where(.market-page) .pagination {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 0;
 }
 
-.pagination button {
+:where(.market-page) .pagination button {
   display: inline-flex;
   width: 2.5rem;
   height: 2.5rem;
@@ -375,17 +323,17 @@ header {
   cursor: pointer;
 }
 
-.pagination button.active {
+:where(.market-page) .pagination button.active {
   color: #fff;
   background: var(--primary-100);
 }
 
-.pagination button:disabled {
+:where(.market-page) .pagination button:disabled {
   color: #d1d5db;
   cursor: default;
 }
 
-.pagination svg {
+:where(.market-page) .pagination svg {
   width: 1.25rem;
   height: 1.25rem;
   fill: none;
@@ -395,49 +343,49 @@ header {
   stroke-width: 1.5;
 }
 
-footer {
+:where(.market-page) footer {
   padding-right: max(1.5rem, calc((100% - 95rem) / 2));
   padding-left: max(1.5rem, calc((100% - 95rem) / 2));
 }
 
 @media (max-width: 74.9375rem) {
-  header,
-  footer {
+  :where(.market-page) header,
+  :where(.market-page) footer {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
   }
 
-  .market-main {
+  :where(.market-page) .market-main {
     width: calc(100% - 3rem);
   }
 
-  .best-product-grid {
+  :where(.market-page) .best-product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .product-grid {
+  :where(.market-page) .product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
 
-  .market-actions {
+  :where(.market-page) .market-actions {
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
-  .market-search-wrap {
+  :where(.market-page) .market-search-wrap {
     width: 15.125rem;
   }
 }
 
 @media (max-width: 46.4375rem) {
-  header {
+  :where(.market-page) header {
     width: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
   }
 
-  .logo {
+  :where(.market-page) .logo {
     display: flex;
     width: 5.0625rem;
     height: 2.5rem;
@@ -446,22 +394,22 @@ footer {
     flex: 0 0 5.0625rem;
   }
 
-  .logo-desktop {
+  :where(.market-page) .logo-desktop {
     display: none;
   }
 
-  .logo-mobile {
+  :where(.market-page) .logo-mobile {
     display: block;
     width: 5.0625rem;
     height: 1.6875rem;
     object-fit: contain;
   }
 
-  .header-left {
+  :where(.market-page) .header-left {
     gap: 0.5rem;
   }
 
-  .header-nav {
+  :where(.market-page) .header-nav {
     display: flex;
     width: 8.375rem;
     height: 4.375rem;
@@ -470,7 +418,7 @@ footer {
     flex: 0 0 8.375rem;
   }
 
-  .header-nav a {
+  :where(.market-page) .header-nav a {
     display: flex;
     height: 4.375rem;
     padding: 1.5625rem 0;
@@ -488,17 +436,17 @@ footer {
     white-space: nowrap;
   }
 
-  .header-nav a:first-child {
+  :where(.market-page) .header-nav a:first-child {
     width: 4.375rem;
     flex: 0 0 4.375rem;
   }
 
-  .header-nav a:last-child {
+  :where(.market-page) .header-nav a:last-child {
     width: 3.5rem;
     flex: 0 0 3.5rem;
   }
 
-  .market-main {
+  :where(.market-page) .market-main {
     width: auto;
     margin-left: 1rem;
     margin-right: 0.9375rem;
@@ -506,25 +454,25 @@ footer {
     padding-bottom: 4rem;
   }
 
-  .best-product-grid {
+  :where(.market-page) .best-product-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .product-grid {
+  :where(.market-page) .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 0.5rem;
     row-gap: 1.5rem;
   }
 
-  .product-card-image {
+  :where(.market-page) .product-card-image {
     border-radius: 0.75rem;
   }
 
-  .product-card-info {
+  :where(.market-page) .product-card-info {
     margin-top: 0.75rem;
   }
 
-  .market-toolbar {
+  :where(.market-page) .market-toolbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -532,7 +480,7 @@ footer {
     width: 100%;
   }
 
-  .market-toolbar-top {
+  :where(.market-page) .market-toolbar-top {
     display: flex;
     align-items: center;
     width: 100%;
@@ -540,11 +488,11 @@ footer {
     position: relative;
   }
 
-  .market-toolbar-top .market-section-title {
+  :where(.market-page) .market-toolbar-top .market-section-title {
     margin: 0;
   }
 
-  .market-register-button {
+  :where(.market-page) .market-register-button {
     display: flex;
     width: auto;
     height: 2.625rem;
@@ -567,14 +515,14 @@ footer {
     white-space: nowrap;
   }
 
-  .market-toolbar-bottom {
+  :where(.market-page) .market-toolbar-bottom {
     display: flex;
     align-items: center;
     gap: 0.875rem;
     width: 100%;
   }
 
-  .market-search-wrap {
+  :where(.market-page) .market-search-wrap {
     display: flex;
     width: auto;
     height: 2.625rem;
@@ -587,7 +535,7 @@ footer {
     background: var(--Secondary-100, #f3f4f6);
   }
 
-  .market-search-wrap svg {
+  :where(.market-page) .market-search-wrap svg {
     position: static;
     width: 1.5rem;
     height: 1.5rem;
@@ -595,7 +543,7 @@ footer {
     transform: none;
   }
 
-  .market-search {
+  :where(.market-page) .market-search {
     width: auto;
     min-width: 0;
     height: 1.5rem;
@@ -607,54 +555,52 @@ footer {
     text-align: left;
   }
 
-  .sort-dropdown {
-    width: 2.625rem;
-    height: 2.625rem;
-    flex: 0 0 2.625rem;
+  :where(.market-page) .sort-dropdown {
+    width: 5.25rem;
+    flex: 0 0 5.25rem;
   }
 
-  .sort-dropdown-trigger {
-    display: flex;
-    width: 2.625rem;
-    height: 2.625rem;
-    padding: 0.5625rem;
+  :where(.market-page) .sort-dropdown-trigger {
+    width: 100%;
+    padding: 0.5625rem 0.5rem;
     justify-content: center;
-    align-items: center;
-    border: 0.0625rem solid var(--Cool-Gray-200, #e5e7eb);
-    border-radius: 0.75rem;
-    background: #fff;
+    font-size: 0.875rem;
   }
 
-  .sort-dropdown-label,
-  .sort-dropdown-chevron {
-    display: none;
-  }
-
-  .sort-dropdown-mobile-icon {
+  :where(.market-page) .sort-dropdown-label {
     display: block;
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: none;
-    stroke: var(--secondary-800);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.5;
+    white-space: nowrap;
   }
 
-  .pagination {
+  :where(.market-page) .pagination {
     gap: 0.25rem;
     margin-top: 0;
   }
 
-  .pagination button {
+  :where(.market-page) .pagination button {
     width: 2.25rem;
     height: 2.25rem;
     font-size: 0.875rem;
   }
 
-  footer {
+  :where(.market-page) footer {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 
+}
+
+:where(.market-page) .market-error-message {
+  margin: 2rem 0;
+  color: var(--secondary-600);
+  font-size: 1rem;
+  line-height: 1.625rem;
+  text-align: center;
+}
+.market-page .header-nav a.active {
+  color: #3692FF;
+}
+
+.route-placeholder {
+  min-height: calc(100vh - 10rem);
 }

@@ -1,0 +1,163 @@
+.market-page .registration-main {
+  padding-top: 5.375rem;
+  padding-bottom: 5rem;
+}
+
+.registration-section {
+  width: 100%;
+}
+
+.registration-title {
+  margin: 0;
+  color: var(--secondary-900);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.registration-form {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.registration-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  color: var(--secondary-900);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.registration-label {
+  display: block;
+}
+
+.registration-control {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--secondary-200);
+  border-radius: 0.75rem;
+  outline: none;
+  color: var(--secondary-900);
+  background: #fff;
+  font: 400 1rem/1.5rem Pretendard, sans-serif;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.registration-control::placeholder {
+  color: var(--secondary-400);
+}
+
+.registration-control:focus-visible {
+  border-color: var(--primary-100);
+  box-shadow: 0 0 0 2px rgb(54 146 255 / 16%);
+}
+
+.registration-control[aria-invalid="true"] {
+  border-color: var(--error-red);
+}
+
+.registration-control[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 2px rgb(247 71 71 / 14%);
+}
+
+.registration-description {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.registration-error {
+  margin: 0;
+  color: var(--error-red);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.registration-tags {
+  display: flex;
+  min-height: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.registration-tag {
+  display: inline-flex;
+  min-height: 2rem;
+  padding: 0.375rem 0.75rem;
+  align-items: center;
+  gap: 0.375rem;
+  border: 0;
+  border-radius: 999px;
+  color: var(--secondary-700);
+  background: var(--secondary-100);
+  font: 500 0.875rem/1.25rem Pretendard, sans-serif;
+  cursor: pointer;
+}
+
+.registration-tag:hover {
+  background: var(--secondary-200);
+}
+
+.registration-tag:focus-visible,
+.registration-submit:focus-visible {
+  outline: 2px solid var(--primary-100);
+  outline-offset: 2px;
+}
+
+.registration-submit {
+  display: flex;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0.75rem;
+  color: #fff;
+  background: var(--primary-100);
+  font: 600 1rem/1.5rem Pretendard, sans-serif;
+  cursor: pointer;
+}
+
+.registration-submit:disabled {
+  color: #fff;
+  background: var(--secondary-400);
+  cursor: not-allowed;
+}
+
+.registration-submit-error {
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 46.4375rem) {
+  .market-page .registration-main {
+    padding-top: 5.875rem;
+    padding-bottom: 4rem;
+  }
+
+  .registration-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .registration-form {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .registration-description {
+    min-height: 10rem;
+  }
+}
