@@ -1,0 +1,139 @@
+@use "../../styles/variables" as *;
+
+.mainBanner {
+  width: 100%;
+  height: 540px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: $bg-banner;
+
+  .bannerWrap {
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bannerText {
+    width: 357px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      margin: 40px 0 32px;
+    }
+  }
+
+  .bannerItemBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 357px;
+    height: 56px;
+    padding: 16px;
+    border-radius: 40px;
+    background: $primary;
+    font-size: 1.25rem;
+    color: $gray-50;
+  }
+
+  .bannerImg {
+    display: flex;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.bottomBanner  {
+  .bannerWrap {
+    .bannerText{
+      display: flex;
+      align-items: center;
+      padding-bottom: 60px;
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .mainBanner {
+    height: 770px; 
+
+    .bannerWrap {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bannerText {
+      width: 100%;
+      text-align: center;
+
+      h2 {
+        margin: 84px 0 24px;
+      }
+    }
+
+    .bannerImg {
+      justify-content: center;
+    }
+  }
+  .bottomBanner  {
+    height: 952px; 
+    .bannerWrap {
+      .bannerText{
+        padding: 117px 0 217px;
+      }
+    }
+  }
+}
+
+@media (max-width: 743px) {
+  .mainBanner {
+    height: 480px;
+    margin: 70px 0 32px;
+
+    .bannerText {
+      width: 100%;
+      padding: 0 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h2 {
+        margin: 40px 0 24px;
+        font-size: 2rem;
+        line-height:2.8rem;
+      }
+    }
+
+    .bannerItemBtn {
+      max-width: 300px;
+      height: 48px;
+      padding: 0;
+      font-size: 1.125rem;
+    }
+
+    .bannerImg {
+      width: 100%;
+
+      img {
+        max-width: 375px;
+      }
+    }
+  } 
+  .bottomBanner  {
+    height: 565px;
+    margin-bottom: 0px;
+    .bannerWrap {
+      .bannerText{
+        padding: 81px 0 131px;
+      }
+    }
+  }
+}
