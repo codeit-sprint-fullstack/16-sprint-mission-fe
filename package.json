@@ -7,10 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node --env-file=.env server.js",
+    "seed": "node --env-file=.env seed.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.10.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
