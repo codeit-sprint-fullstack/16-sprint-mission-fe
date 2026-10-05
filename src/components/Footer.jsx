@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Footer.scss';
 
 const Footer = () => {
@@ -6,8 +7,8 @@ const Footer = () => {
       <div className='inner'>
         <p className='copy'>©codeit - 2026</p>
         <ul className='fnb'>
-          <li><a href='#'>Privacy Policy</a></li>
-          <li><a href='#'>FAQ</a></li>
+          <li><Link to='/privacy'>Privacy Policy</Link></li>
+          <li><Link to='/faq'>FAQ</Link></li>
         </ul>
         <div className='sns-box'>
           <a target='_blank' href='https://www.facebook.com/' className='ic-facebook'>페이스북</a>
