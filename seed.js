@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
-import Product from './models/Product.js';
-import { items } from './db.js';
+import Product from './src/models/Product.js';
+import { items } from './src/db.js';
 
 const MONGO_URL = process.env.MONGODB_URI;
 await mongoose.connect(MONGO_URL);

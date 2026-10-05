@@ -1,7 +1,7 @@
 // ~/instagram-api/app.js
 import express from 'express';
 import cors from 'cors';
-import Product from './models/Product.js'
+import Product from './src/models/Product.js'
 import mongoose from 'mongoose';
 
 const MONGO_URL = process.env.MONGODB_URI;
