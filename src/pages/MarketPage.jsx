@@ -16,7 +16,7 @@ const MarketPage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`${API_BASE}/api/products?page=${pageNumber}&limit=10&order=${productOrder}`)
+        fetch(`https://one6-sprint-mission-fe-tn89.onrender.com/api/products?page=${pageNumber}&limit=10&order=${productOrder}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('상품 데이터를 불러오는데 실패했습니다.');
