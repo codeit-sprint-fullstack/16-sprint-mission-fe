@@ -12,18 +12,27 @@ const MarketPage = () => {
     const [pageNumber, setPageNumber] = useState(1);
     const [pageCount, setPageCount] = useState(0);
 
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+
     useEffect(() => {
         setIsLoading(true);
-        fetch("http://localhost:3000/api/products")
-            .then(response => response.json())
-            .then(data => {
-                setProducts(data);
+        fetch(`${API_BASE}/api/products?page=${pageNumber}&limit=10&order=${productOrder}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('상품 데이터를 불러오는데 실패했습니다.');
+                }
+                return response.json();
             })
-            .catch(error => {
+            .then((data) => {
+                setProducts(data.data);
+                setPageCount(Math.ceil(data.totalCount / data.limit));
+                setIsLoading(false);
+            })
+            .catch((error) => {
                 setError(error.message);
-            })
-            .finally(() => setIsLoading(false));
-    }, []);
+                setIsLoading(false);
+            });
+    }, [productOrder]);
 
     // Pagination login
     const maxVisiblePages = 5;

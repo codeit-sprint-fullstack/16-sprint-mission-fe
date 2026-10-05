@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node --env-file=.env server.js"
+    "server": "node --env-file=.env server.js",
+    "seed": "node --env-file=.env seed.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

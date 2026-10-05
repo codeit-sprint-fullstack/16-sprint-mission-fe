@@ -9,9 +9,38 @@ const ProductCreatePage = () => {
         }
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const name = e.target.elements['product-name'].value;
+        const description = e.target.elements['product-description'].value;
+        const price = Number(e.target.elements['product-price'].value);
+        const tags = tagList;
+
+        try {
+            const response = await fetch('http://localhost:3000/api/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, description, price, tags }),
+            });
+
+            if (!response.ok) {
+                throw new Error('상품 등록에 실패했습니다.');
+            }
+
+            const data = await response.json();
+            console.log('상품 등록 성공:', data);
+            // Redirect or show success message
+        } catch (error) {
+            console.error('상품 등록 에러:', error);
+            // Show error message to user
+        }
+    };
+
     return (
         <div>
-            <form method="post" className="flex flex-col gap-4 p-4 max-w-200 w-3/4 mx-auto">
+            <form method="post" className="flex flex-col gap-4 p-4 max-w-200 w-3/4 mx-auto" onSubmit={handleSubmit}>
                 <div className="flex flex-row justify-between">
                     <h1 className="font-bold text-lg">상품 등록하기</h1>
                     <button type="submit" className="btn-primary hover:cursor-pointer">등록</button>
@@ -27,8 +56,10 @@ const ProductCreatePage = () => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
                         const tag = e.target.value;
-                        addTag(tag);
-                        e.target.value = '';
+                        if (tag) {
+                            addTag(tag);
+                            e.target.value = '';
+                        }
                     }
                 }} type="text" id="product-tag" className="input-primary" placeholder="태그를 입력해주세요" />
                 <div className="flex flex-row gap-2">
