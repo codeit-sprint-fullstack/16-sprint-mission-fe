@@ -1,0 +1,71 @@
+.best-article-cell-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.best-article-cell-wrapper {
+    height: 15rem;
+    width: 29rem;
+    border : 1px solid red;
+    background-color: #F9FAFB;
+    border-radius: 1rem;
+    margin : 1rem;
+    display : flex;
+    flex-direction: column;
+}
+
+.best-article-tag{
+    width : 9rem;
+    position: relative;
+    left : 2rem;
+    height : 2.7rem;
+    background-color: var(--base-blue);
+    color : #FFFFFF;
+    font-size : 1.6rem;
+    font-weight: 600;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    gap : 0.4rem;
+    
+}
+
+.best-medal-icon{
+    width : 1.2rem;  
+}
+
+
+.best-article-cell-title {
+    border : 1px solid red;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 1rem;
+    height : 9rem;
+}
+
+
+.best-article-cell-favorite {
+    font-size: 1.2rem;
+    border : 1px solid red;
+    margin: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+   
+}
+
+.heart-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media(max-width : 1023px) {
+    .best-card-cell-wrapper {
+        height: 100%;
+        width: 29rem;
+        border : 1px solid red;
+    }
+}

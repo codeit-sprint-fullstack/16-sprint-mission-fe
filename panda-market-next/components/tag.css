@@ -1,0 +1,22 @@
+.tag-wrapper{
+    background-color: var(--input-box);
+    width : auto;
+    height : 2.5rem;
+    display : flex;
+    flex-direction : row;
+    border-radius: 1rem;
+    padding : 0 1rem;
+    align-items: center;
+    justify-content: space-between;
+    color : var(--font-black);
+    font-size : 1.2rem;
+}
+
+.tag-remove-button img{
+    width : 1.5rem;
+    height : 1.5rem;
+    margin-left : 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

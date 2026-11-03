@@ -1,0 +1,30 @@
+.article-comment-cell-wrapper{
+    background-color : #FCFCFC;
+    border-bottom : 0.1rem solid #E5E7EB;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height : auto;
+    width : 100%;
+}
+
+.article-comment-section{
+    border : 1px solid transparent;
+    display : flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.article-comment-text{
+    border : 1px solid transparent;
+    padding : 0rem;
+    margin : 1rem 0rem;
+    font-size : 1.3rem;
+    color : #1F2937;
+}
+
+.article-comment-date{
+    color : #9CA3AF;
+    padding : 0;
+    margin : 0;
+}

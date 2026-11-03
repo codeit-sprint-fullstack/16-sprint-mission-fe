@@ -1,0 +1,33 @@
+.regular-article-cell-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.regular-article-cell-wrapper{
+    background-color : #FCFCFC;
+    border-bottom : 0.1rem solid #E5E7EB;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height : 10rem;
+}
+
+.article-regular-article-cell-title{
+    border : 1px solid transparent;
+    padding : 0rem;
+    margin : 1rem 0rem;
+    font-size : 2rem;
+}
+
+.article-cell-container{
+    border : 1px solid transparent;
+    height : auto;
+    margin : 0rem;
+    padding : 0rem;
+}
+
+.article-cell-upload-date{
+    font-size : 1.1rem;
+    color : #9CA3AF
+}
