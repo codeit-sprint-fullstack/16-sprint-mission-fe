@@ -16,6 +16,24 @@ export default function ArticleDetailPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [comment, setComment] = useState('');
     const [commentList, setCommentList] = useState([]);
+    const [showMenu, setShowMenu] = useState(false);
+
+    const handleEdit = () => {
+        router.push(`/upload?editId=${id}`);
+    };
+
+    const handleDelete = async () => {
+        if (!window.confirm('정말 이 게시글을 삭제하시겠습니까?')) return;
+        try {
+            const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
+            await axios.delete(`${apiUrl}/api/articles/${id}`);
+            alert('게시글이 삭제되었습니다.');
+            router.push('/article');
+        } catch (error) {
+            console.error('게시글 삭제 실패:', error);
+            alert('게시글 삭제에 실패했습니다.');
+        }
+    };
 
     const fetchComments = async () => {
         if (!id) return;
@@ -103,10 +121,33 @@ export default function ArticleDetailPage() {
                     <div className="article-detail-title">{article.title}</div>
                     <div
                         className="article-detail-button-pack"
-                        onClick={() => router.push(`/upload?editId=${id}`)}
-                        style={{ cursor: 'pointer' }}
+                        onClick={() => setShowMenu((prev) => !prev)}
                     >
-                        <img className="buttonpack-icon" src="/asset/button_pack.png" alt="수정하기"></img>
+                        <img className="buttonpack-icon" src="/asset/button_pack.png" alt="메뉴"></img>
+                        {showMenu && (
+                            <div className="article-detail-dropdown-modal">
+                                <div
+                                    className="article-detail-dropdown-option"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowMenu(false);
+                                        handleEdit();
+                                    }}
+                                >
+                                    수정하기
+                                </div>
+                                <div
+                                    className="article-detail-dropdown-option"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowMenu(false);
+                                        handleDelete();
+                                    }}
+                                >
+                                    삭제하기
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -147,7 +188,7 @@ export default function ArticleDetailPage() {
                                 id={p.id}
                                 content={p.content}
                                 createdAt={p.createdAt}
-
+                                onRefresh={fetchComments}
                             />
                         ))}
                 </div>
