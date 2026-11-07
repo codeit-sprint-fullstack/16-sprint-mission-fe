@@ -8,6 +8,7 @@ import './articledetailpage.css';
 import CommentArticleCard from '@/components/CommentArticleCard';
 
 export default function ArticleDetailPage() {
+    const router = useRouter();
     const params = useParams();
     const id = params?.id;
 
@@ -100,8 +101,12 @@ export default function ArticleDetailPage() {
 
                 <div className="article-detail-header">
                     <div className="article-detail-title">{article.title}</div>
-                    <div className="article-detail-button-pack">
-                        <img className="buttonpack-icon" src="/asset/button_pack.png" alt="..."></img>
+                    <div
+                        className="article-detail-button-pack"
+                        onClick={() => router.push(`/upload?editId=${id}`)}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        <img className="buttonpack-icon" src="/asset/button_pack.png" alt="수정하기"></img>
                     </div>
                 </div>
 

@@ -1,19 +1,48 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './uploadpage.css';
 import Tag from '@/components/Tag';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function UploadPage() {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const editId = searchParams.get('editId');
+    const isEditMode = Boolean(editId);
 
     const [articleName, setArticleName] = useState('');
     const [articleContent, setArticleContent] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [previewUrl, setPreviewUrl] = useState('');
     const fileInputRef = useRef(null);
+
+    // 수정 모드일 때 기존 데이터 불러오기
+    useEffect(() => {
+        if (!editId) return;
+
+        const fetchArticle = async () => {
+            try {
+                const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
+                const res = await axios.get(`${apiUrl}/api/articles/${editId}`);
+                const data = res.data;
+                if (data) {
+                    setArticleName(data.title || '');
+                    setArticleContent(data.content || '');
+                    if (data.imageUrl) {
+                        setImageUrl(data.imageUrl);
+                        setPreviewUrl(data.imageUrl);
+                    }
+                }
+            } catch (error) {
+                console.error('기존 게시글 불러오기 실패:', error);
+                alert('게시글 정보를 불러오는데 실패했습니다.');
+            }
+        };
+
+        fetchArticle();
+    }, [editId]);
 
     const handleImageClick = () => {
         if (previewUrl) {
@@ -37,44 +66,53 @@ export default function UploadPage() {
         }
     };
 
-   
-    // 등록 API 연결
+    // 등록 및 수정 API 연결
     const handleRegister = async () => {
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            const res = await axios.post(
-                `${apiUrl}/api/articles`,
-                {
-                    title: articleName,
-                    content: articleContent,
-                    imageUrl: imageUrl
-                   
-                }
-            );
-            alert('게시글을 등록했습니다');
-            console.log('등록 성공:', res.data);
-
-            router.push('/article');
+            
+            if (isEditMode) {
+                const res = await axios.patch(
+                    `${apiUrl}/api/articles/${editId}`,
+                    {
+                        title: articleName,
+                        content: articleContent,
+                        imageUrl: imageUrl
+                    }
+                );
+                alert('게시글을 수정했습니다');
+                console.log('수정 성공:', res.data);
+                router.push(`/article/${editId}`);
+            } else {
+                const res = await axios.post(
+                    `${apiUrl}/api/articles`,
+                    {
+                        title: articleName,
+                        content: articleContent,
+                        imageUrl: imageUrl
+                    }
+                );
+                alert('게시글을 등록했습니다');
+                console.log('등록 성공:', res.data);
+                router.push('/article');
+            }
         } catch (error) {
-            console.error('게시글 등록 실패:', error);
-            alert('게시글 등록에 실패했습니다.');
+            console.error(isEditMode ? '게시글 수정 실패:' : '게시글 등록 실패:', error);
+            alert(isEditMode ? '게시글 수정에 실패했습니다.' : '게시글 등록에 실패했습니다.');
         }
     };
-
-
-
 
     return (
         <div className="upload-wrapper">
             <div className="upload-section-center">
                 <div className="upload-header">
-                    <p className="upload-header-title">게시글 쓰기</p>
+                    <p className="upload-header-title">{isEditMode ? '게시글 수정' : '게시글 쓰기'}</p>
                     <button
                         className="upload-confirm-button"
                         disabled={!articleName || !articleContent}
                         onClick={handleRegister}
                     >
-                        등록
+                        {isEditMode ? '수정' : '등록'}
                     </button>
                 </div>
 
