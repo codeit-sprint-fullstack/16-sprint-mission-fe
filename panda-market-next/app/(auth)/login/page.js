@@ -3,15 +3,38 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import './login.css';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('로그인 시도:', { email, password });
-    // TODO: 로그인 API 연동
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
+      const res = await axios.post(
+        `${apiUrl}/auth/signIn`,
+        {
+          email: email,
+          password: password
+        }
+      );
+
+      const accessToken = res.data.accessToken;
+      //console.log("토큰",accessToken);
+      localStorage.setItem("accessToken", accessToken);
+
+      alert("로그인 성공");
+      router.push('/items');
+
+    } catch (error) {
+
+    }
   };
 
   return (
@@ -33,12 +56,25 @@ export default function LoginPage() {
           />
 
           <p>비밀번호</p>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="비밀번호를 입력해주세요"
-          />
+          <div className="password-input-container">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              <img
+                src="/asset/btn_eye.png"
+                alt="비밀번호 보기 토글"
+                className="eye-icon"
+              />
+            </button>
+          </div>
 
           <button className="login-confirm" type="submit">
             로그인

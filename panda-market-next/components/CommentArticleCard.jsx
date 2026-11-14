@@ -27,16 +27,34 @@ function CommentArticleCard({ id, content, createdAt, onRefresh }) {
             alert('댓글 내용을 입력해주세요.');
             return;
         }
+
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+            alert('로그인이 필요한 기능입니다.');
+            return;
+        }
+
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            await axios.patch(`${apiUrl}/api/comments/articles/${id}`, {
-                content: editContent,
-            });
+            await axios.patch(
+                `${apiUrl}/comments/articles/${id}`,
+                {
+                    content: editContent,
+                },
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            );
             alert('댓글이 수정되었습니다.');
             setIsEditing(false);
             if (onRefresh) onRefresh();
         } catch (error) {
             console.error('댓글 수정 실패:', error);
+             console.error('서버 에러 상세:', error.response?.data);
+            if (error.response?.status === 401) {
+                alert('로그인이 만료되었습니다. 다시 로그인해 주세요.');
+                return;
+            }
             alert('댓글 수정에 실패했습니다.');
         }
     };
@@ -44,13 +62,26 @@ function CommentArticleCard({ id, content, createdAt, onRefresh }) {
     // 댓글 삭제 API 호출
     const handleDelete = async () => {
         if (!window.confirm('정말 이 댓글을 삭제하시겠습니까?')) return;
+
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+            alert('로그인이 필요한 기능입니다.');
+            return;
+        }
+
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            await axios.delete(`${apiUrl}/api/comments/articles/${id}`);
+            await axios.delete(`${apiUrl}/comments/articles/${id}`, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
             alert('댓글이 삭제되었습니다.');
             if (onRefresh) onRefresh();
         } catch (error) {
             console.error('댓글 삭제 실패:', error);
+            if (error.response?.status === 401) {
+                alert('로그인이 만료되었습니다. 다시 로그인해 주세요.');
+                return;
+            }
             alert('댓글 삭제에 실패했습니다.');
         }
     };

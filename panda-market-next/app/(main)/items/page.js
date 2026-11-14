@@ -66,7 +66,7 @@ export default function ProductPage() {
 
       // 인기 상품
       const bestRes = await axios.get(
-        `${apiUrl}/api/products`,
+        `${apiUrl}/products`,
         {
           params: {
             page: 1,
@@ -79,7 +79,7 @@ export default function ProductPage() {
 
       // 일반 상품
       const regularRes = await axios.get(
-        `${apiUrl}/api/products`,
+        `${apiUrl}/products`,
         {
           params: {
             page,

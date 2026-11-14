@@ -34,7 +34,7 @@ export default function ArticlePage() {
     const getBestArticleList = async () => {
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            const bestRes = await axios.get(`${apiUrl}/api/articles`, {
+            const bestRes = await axios.get(`${apiUrl}/articles`, {
                 params: {
                     page: 1,
                     pageSize: 5,
@@ -55,7 +55,7 @@ export default function ArticlePage() {
 
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            const regularRes = await axios.get(`${apiUrl}/api/articles`, {
+            const regularRes = await axios.get(`${apiUrl}/articles`, {
                 params: {
                     page: targetPage,
                     pageSize,

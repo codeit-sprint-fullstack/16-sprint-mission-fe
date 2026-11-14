@@ -25,7 +25,7 @@ export default function UploadPage() {
         const fetchArticle = async () => {
             try {
                 const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-                const res = await axios.get(`${apiUrl}/api/articles/${editId}`);
+                const res = await axios.get(`${apiUrl}/articles/${editId}`);
                 const data = res.data;
                 if (data) {
                     setArticleName(data.title || '');
@@ -62,22 +62,34 @@ export default function UploadPage() {
         const file = e.target.files?.[0];
         if (file) {
             setPreviewUrl(URL.createObjectURL(file));
-            setImageUrl(file.name); // url은 파일명을 그대로 사용
+            setImageUrl(`https://${file.name}`);
         }
     };
 
     // 등록 및 수정 API 연결
     const handleRegister = async () => {
+        const token = localStorage.getItem("accessToken");
+        if (!token) {
+            alert('로그인이 필요한 기능입니다.');
+            router.push('/login');
+            return;
+        }
+
         try {
             const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
-            
+
+
+
             if (isEditMode) {
                 const res = await axios.patch(
-                    `${apiUrl}/api/articles/${editId}`,
+                    `${apiUrl}/articles/${editId}`,
                     {
                         title: articleName,
                         content: articleContent,
-                        imageUrl: imageUrl
+                        image: imageUrl
+                    },
+                    {
+                        headers: { Authorization: `Bearer ${token}` },
                     }
                 );
                 alert('게시글을 수정했습니다');
@@ -85,11 +97,14 @@ export default function UploadPage() {
                 router.push(`/article/${editId}`);
             } else {
                 const res = await axios.post(
-                    `${apiUrl}/api/articles`,
+                    `${apiUrl}/articles`,
                     {
                         title: articleName,
                         content: articleContent,
-                        imageUrl: imageUrl
+                        image: imageUrl
+                    },
+                    {
+                        headers: { Authorization: `Bearer ${token}` },
                     }
                 );
                 alert('게시글을 등록했습니다');
@@ -98,6 +113,13 @@ export default function UploadPage() {
             }
         } catch (error) {
             console.error(isEditMode ? '게시글 수정 실패:' : '게시글 등록 실패:', error);
+            console.error('서버 에러 상세:', error.response?.data);
+            if (error.response?.status === 401) {
+                alert('로그인이 만료되었습니다. 다시 로그인해 주세요.');
+                localStorage.removeItem('accessToken');
+                router.push('/login');
+                return;
+            }
             alert(isEditMode ? '게시글 수정에 실패했습니다.' : '게시글 등록에 실패했습니다.');
         }
     };

@@ -65,6 +65,47 @@ body .signup-wrapper{
     border : 1px solid var(--base-blue);
 }
 
+.signup-wrapper .signup-banner-bottom-container .password-input-container {
+    position: relative;
+    width: 64rem;
+}
+
+.signup-wrapper .signup-banner-bottom-container .password-input-container.password-mismatch input {
+    border: 1px solid #F74747;
+}
+
+.signup-wrapper .signup-banner-bottom-container .password-error-text {
+    color: #F74747;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+}
+
+.signup-wrapper .signup-banner-bottom-container .password-input-container input {
+    width: 100%;
+    padding-right: 4.5rem;
+}
+
+.signup-wrapper .signup-banner-bottom-container .password-toggle-btn {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-wrapper .signup-banner-bottom-container .password-toggle-btn .eye-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+}
+
 .signup-wrapper .signup-banner-bottom-container .signup-confirm{
     width : 100%;
     height : 4.7rem;

@@ -69,6 +69,36 @@ body .login-wrapper{
     border : 1px solid var(--base-blue);
 }
 
+.login-wrapper .login-banner-bottom-container .password-input-container {
+    position: relative;
+    width: 64rem;
+}
+
+.login-wrapper .login-banner-bottom-container .password-input-container input {
+    width: 100%;
+    padding-right: 4.5rem;
+}
+
+.login-wrapper .login-banner-bottom-container .password-toggle-btn {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper .login-banner-bottom-container .password-toggle-btn .eye-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+}
+
 .login-wrapper .login-banner-bottom-container .login-confirm{
     width : 100%;
     height : 4.7rem;

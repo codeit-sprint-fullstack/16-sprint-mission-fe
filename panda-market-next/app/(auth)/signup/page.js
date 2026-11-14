@@ -3,21 +3,46 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import './signup.css';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function SignupPage() {
+  const router = useRouter();
+
   const [email, setEmail] = useState('');
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [passwordConfirmation, setPasswordConfirm] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
 
-  const handleSubmit = (e) => {
+  const isPasswordMismatch = Boolean(passwordConfirmation && password !== passwordConfirmation);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== passwordConfirm) {
+    if (password !== passwordConfirmation) {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
-    console.log('회원가입 시도:', { email, nickname, password });
-    // TODO: 회원가입 API 연동
+    console.log('회원가입 시도:', { email, nickname, password, passwordConfirmation });
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API || 'https://one6-sprint-mission-be.onrender.com';
+
+      const res = await axios.post(
+        `${apiUrl}/auth/signUp`, {
+        email: email,
+        nickname: nickname,
+        password: password,
+        passwordConfirmation: passwordConfirmation
+      });
+
+      alert('회원가입 완료!');
+      router.push('/items');
+    } catch (error) {
+      console.error('회원가입 실패:', error);
+      alert('회원가입에 실패했습니다.');
+    }
   };
 
   return (
@@ -47,20 +72,49 @@ export default function SignupPage() {
           />
 
           <p>비밀번호</p>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="비밀번호를 입력해주세요"
-          />
+          <div className="password-input-container">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              <img
+                src="/asset/btn_eye.png"
+                alt="비밀번호 보기 토글"
+                className="eye-icon"
+              />
+            </button>
+          </div>
 
           <p>비밀번호 확인</p>
-          <input
-            type="password"
-            value={passwordConfirm}
-            onChange={(e) => setPasswordConfirm(e.target.value)}
-            placeholder="비밀번호를 다시 한 번 입력해주세요"
-          />
+          <div className={`password-input-container password-input-confirm${isPasswordMismatch ? ' password-mismatch' : ''}`}>
+            <input
+              type={showPasswordConfirm ? 'text' : 'password'}
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirm(e.target.value)}
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+            />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPasswordConfirm((prev) => !prev)}
+            >
+              <img
+                src="/asset/btn_eye.png"
+                alt="비밀번호 확인 보기 토글"
+                className="eye-icon"
+              />
+            </button>
+          </div>
+          {isPasswordMismatch && (
+            <p className="password-error-text">비밀번호가 일치하지 않습니다.</p>
+          )}
 
           <button className="signup-confirm" type="submit">
             회원가입
