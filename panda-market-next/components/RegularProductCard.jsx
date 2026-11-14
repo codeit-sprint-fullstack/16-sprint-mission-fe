@@ -1,0 +1,35 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import './regularCell.css';
+
+function RegularProductCard({ id, name, price, favoriteCount, images }) {
+  const imageUrl = images && images.length > 0 ? images[0] : null;
+
+  return (
+    <Link href={`/items/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <div className="regular-card-cell-wrapper">
+        <div className="regular-card-cell-image">
+          <img
+            className="regular-card-cell-image"
+            src={imageUrl || "/asset/img_default.svg"}
+            alt={name}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = "/asset/img_default.svg";
+            }}
+          />
+        </div>
+        <p className="regular-card-cell-name">{name}</p>
+        <p className="regular-card-cell-price">{price?.toLocaleString()}원</p>
+        <p className="regular-card-cell-favorite">
+          <img className="heart_icon" src="/asset/ic_heart.png" alt="좋아요" />
+          {favoriteCount}
+        </p>
+      </div>
+    </Link>
+  );
+}
+
+export default RegularProductCard;

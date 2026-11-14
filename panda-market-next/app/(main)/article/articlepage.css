@@ -1,0 +1,235 @@
+.article-page-wrapper {
+
+    margin-top: 7rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+
+}
+
+.article-page-center {
+    width: auto;
+    height: auto;
+    border: 1px solid blue;
+
+    margin-right : 1rem;
+    margin-left : 1rem;
+}
+
+.article-page-best-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border : 1px solid green;
+}
+
+.article-page-best-header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+.article-page-best-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border : 1px solid greenyellow
+}
+
+
+.article-page-regular-section {
+    width: 100%;
+    height: auto;
+
+}
+.article-page-regular-header {
+    width: 100%;
+    height: auto;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    border: 1px solid green;
+    flex-direction: column;
+}
+
+.article-page-regular-right {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+.article-page-input-wrapper {
+    border : 1px solid red;
+    display: flex;
+    position: relative;
+}
+
+.article-regular-search {
+    width: 60rem;
+    height: 3.5rem;
+    background-color: #F3F4F6;
+    border: transparent;
+    border-radius: 1rem;
+    padding-right: 1rem;
+    padding-left: 3.4rem;
+}
+
+
+.search-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    position: absolute;
+    transform: translate(-50%, 15%);
+    left: 1.8rem;
+}
+
+.article-page-header-container p {
+    margin: 1.3rem 0rem;
+    line-height: 1;
+}
+
+.article-page-header-container{
+    border : 1px solid blue;
+    padding : 0rem;
+    margin : 0.5rem 0rem;
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    width : 100%;
+    height : auto;
+    justify-content: space-between;
+}
+
+.article-regular-upload-button {
+    width: 8rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    background-color: var(--base-blue);
+    border-radius: 1rem;
+    color: #F3F4F6;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.article-regular-sort-selector {
+    border: 0.15rem solid #F3F4F6;
+    width: 11rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.article-regular-sort-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0.7rem;
+    width: 70%;
+}
+
+.sort-select-icon {
+    width: 1.3rem;
+    height: 0.7rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.article-regular-sort-selector-modal {
+    border: 0.15rem solid #F3F4F6;
+    width: 11rem;
+    height: 7rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 5rem;
+    overflow: hidden;
+}
+
+.article-regular-sort-option-cell {
+    border: 0.15rem solid #F3F4F6;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-page-regular-list {
+    width: 100%;
+    height: auto;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0rem;
+    border: 1px solid cyan;
+
+}
+
+@media(max-width : 1023px){
+  .article-page-best-list> :nth-child(n + 3) {
+        display: none;
+    }
+
+    .article-regular-search{
+        width : 45rem;
+    }
+
+}
+
+@media (max-width: 767px) {
+.article-page-best-list> :nth-child(n + 2) {
+        display: none;
+    }
+
+     .article-page-center {
+        width: 100%;
+        height: auto;
+        border: 1px solid red;
+        
+    }
+
+    .article-regular-search{
+        width : 23rem;
+    }
+
+
+}
+
